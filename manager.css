@@ -1,0 +1,43 @@
+﻿*{
+text-align: center;
+
+}
+
+
+.i1{
+
+background-color: MistyRose;
+    grid-column: 1/1;
+		padding: 10px;
+border: 2px solid MediumVioletRed;
+margin: 5px;
+}
+
+.i2{
+background-color: MistyRose;
+    grid-column: 2/2;
+		padding: 10px;
+border: 2px solid MediumVioletRed;
+margin: 5px;
+}
+
+.i3{
+background-color: MistyRose;
+    grid-column: 3/3;
+		padding: 10px;
+border: 2px solid MediumVioletRed;
+margin: 5px;
+}
+
+.g1{
+
+	display: grid;
+	padding: 10px;
+border: 2px solid MediumVioletRed;
+margin: 5px;
+
+	animation-name: a1;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+
+}
