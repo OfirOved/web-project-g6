@@ -1,34 +1,55 @@
-:root {
-    --lightOrg: #ffe6cc;
-    --orange:  #ff6600;
+﻿:root {
+    --olive: #739b70;
+    --seaBlue: #2596be;
 } 
 
 @font-face {
-        font-family: varela;
-        src: url(VarelaRound-Regular.ttf);
+        font-family: Raleway;
+        src: url(Raleway-VariableFont_wght.ttf);
         }
-
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
     
 body {
-        background-color: var(--lightOrg);
-        font-family: varela; 
+        background-image: url("background.jpg");
+        background-repeat: repeat-y;
+        background-position: center;
+        background-size: 200%;
+        font-family: Raleway; 
         line-height: 2em;
+        animation-name: backgroundAnimation;
+        animation-duration: 4s; 
+        animation-fill-mode: forwards;
     }
-      
+
+h1 {
+        text-align: center;
+        font-size: 70px;
+        color: var(--olive);
+        animation-name: textAnimation;
+        animation-duration: 4s; 
+        animation-fill-mode: forwards;
+        }
+        
 h3 {
-        color: var(--orange);
-        text-align: right;
+        color: var(--olive);
+        animation-name: textAnimation;
+        animation-duration: 4s; 
+        animation-fill-mode: forwards;
         }
 
 a{
         color: black;
         text-decoration: none;
         }
+
+#git{
+    color:blue;
+    text-decoration: underline;
+}
+
+ul{
+    list-style-type: none;
+    text-align: right;
+}
 
 ul a:hover{
     font-weight: 900;
@@ -39,78 +60,40 @@ li{
     padding: 10px;
 }
 
-ul li ul li{
-    display: none;
-}
-ul li:hover ul li{
-    display: block;
-}
-
+ 
 .grid-container {
     display: grid;
     grid-template-areas:
-    'header header header header header'
-    'main main main main main'
-    'footer footer footer footer footer';
-    height: 100vh;
-    width: 100vw;
+    'blank blank blank blank blank navi navi navi navi navi'
+    'left left left left left left right right right right';
 }
 
-.header{
-    grid-area: header;
+.blank {
+    grid-area: blank;
 }
-
-.main { 
-    grid-area: main;
-    padding: 10px;
-}
-
-.footer { 
-    grid-area: footer; 
-    background-image: url('r1.jpg'); 
-    text-align: center;
-    height: 2cm;
-}
-
-.grid-container-header {
-    display: grid;
-    grid-template-areas:
-    'navi navi navi navi navi'
-    'pic pic pic logo logo';
-}
-
-.navi { 
+.navi{
     grid-area: navi;
-    display: flex;
-    padding:0;
-    margin:0;
-    background-image: url('r1.jpg');
-    text-align: right;
-    list-style-type: none;
+}
+.left { 
+    grid-area: left;
+}
+.right { 
+    grid-area: right; 
+}
+.Obj{
+    padding-bottom: 10px;
+}
+.Edu{
+    padding-bottom: 10px;
+}
+.Exp{
+    padding-bottom: 10px;
+}
+.Prog{
+    padding-bottom: 10px;
 }
 
-.pic{
-    grid-area: pic;
-    padding: 10px;
-}
-
-.logo { 
-    grid-area: logo; 
-    padding: 50px;
-}
-
-.profilepic{
-    height: 3cm;
-    width: 3cm;
-}
-
-.naviTable{
-    display: flex;
-}
-
-
-
-/*@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px){
     .grid-container {
         display: grid;
         grid-template-areas:
@@ -128,7 +111,22 @@ ul li:hover ul li{
         font-size: 10px ;
         text-align: left;
     }
+
+    .Ofir{
+        font-size: 50px;
+    }
+
+    .left{
+        font-size: 12px;
+    }
 }
 
+@keyframes backgroundAnimation {
+    from {background-image: url("background.jpg");}
+    to {background-image: url("IMG_9556.jpg");}
+}
 
-    
+@keyframes textAnimation {
+    from {color: var(--olive);}
+    to {color: var(--seaBlue);}
+}
