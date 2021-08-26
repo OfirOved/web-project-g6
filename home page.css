@@ -7,19 +7,19 @@
         font-family: varela;
         src: url(VarelaRound-Regular.ttf);
         }
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
     
 body {
         background-color: var(--lightOrg);
         font-family: varela; 
         line-height: 2em;
     }
-
-/*.h1 {
-        text-align: center;
-        font-size: 70px;
-        color: var(--olive);
-        }*/
-        
+      
 h3 {
         color: var(--orange);
         text-align: right;
@@ -30,12 +30,6 @@ a{
         text-decoration: none;
         }
 
-
-ul{
-    list-style-type: none;
-    text-align: right;
-}
-
 ul a:hover{
     font-weight: 900;
 }
@@ -45,8 +39,64 @@ li{
     padding: 10px;
 }
 
-.down{
+ul li ul li{
+    display: none;
+}
+ul li:hover ul li{
+    display: block;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    'header header header header header'
+    'main main main main main'
+    'footer footer footer footer footer';
+    height: 100vh;
+    width: 100vw;
+}
+
+.header{
+    grid-area: header;
+}
+
+.main { 
+    grid-area: main;
+    padding: 10px;
+}
+
+.footer { 
+    grid-area: footer; 
+    background-image: url('r1.jpg'); 
     text-align: center;
+    height: 2cm;
+}
+
+.grid-container-header {
+    display: grid;
+    grid-template-areas:
+    'navi navi navi navi navi'
+    'pic pic pic logo logo';
+}
+
+.navi { 
+    grid-area: navi;
+    display: flex;
+    padding:0;
+    margin:0;
+    background-image: url('r1.jpg');
+    text-align: right;
+    list-style-type: none;
+}
+
+.pic{
+    grid-area: pic;
+    padding: 10px;
+}
+
+.logo { 
+    grid-area: logo; 
+    padding: 50px;
 }
 
 .profilepic{
@@ -54,61 +104,8 @@ li{
     width: 3cm;
 }
 
-h5{
-    text-align: left;
-}
-
- 
-.grid-container {
-    display: grid;
-    grid-template-areas:
-    'header header header header header'
-    'main main main main main'
-    'footer footer footer footer footer';
-}
-
-
-.header{
-    grid-area: header;
-    padding: 10px;
-    border: black 5px;
-}
-.main { 
-    grid-area: main;
-    padding: 10px;
-    border: black 5px;
-}
-.footer { 
-    grid-area: footer; 
-    padding: 10px;
-    border: black 5px;
-}
-
-.grid-container-header {
-    display: grid;
-    grid-template-areas:
-    'blank blank navi navi navi'
-    'pic pic pic logo logo';
-}
-
-.pic{
-    grid-area: pic;
-}
-
-.blank{
-    grid-area: blank;
-    padding: 10px;
-    border: black 5px;
-}
-.navi { 
-    grid-area: navi;
-    padding: 10px;
-    border: black 5px;
-}
-.logo { 
-    grid-area: logo; 
-    padding: 10px;
-    border: black 5px;
+.naviTable{
+    display: flex;
 }
 
 
