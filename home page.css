@@ -1,39 +1,28 @@
 :root {
-    --olive: #739b70;
-    --seaBlue: #2596be;
+    --lightOrg: #ffe6cc;
+    --orange:  #ff6600;
 } 
 
 @font-face {
-        font-family: Raleway;
-        src: url(Raleway-VariableFont_wght.ttf);
+        font-family: varela;
+        src: url(VarelaRound-Regular.ttf);
         }
     
 body {
-        background-image: url("background.jpg");
-        background-repeat: repeat-y;
-        background-position: center;
-        background-size: 200%;
-        font-family: Raleway; 
+        background-color: var(--lightOrg);
+        font-family: varela; 
         line-height: 2em;
-        animation-name: backgroundAnimation;
-        animation-duration: 4s; 
-        animation-fill-mode: forwards;
     }
 
-h1 {
+/*.h1 {
         text-align: center;
         font-size: 70px;
         color: var(--olive);
-        animation-name: textAnimation;
-        animation-duration: 4s; 
-        animation-fill-mode: forwards;
-        }
+        }*/
         
 h3 {
-        color: var(--olive);
-        animation-name: textAnimation;
-        animation-duration: 4s; 
-        animation-fill-mode: forwards;
+        color: var(--orange);
+        text-align: right;
         }
 
 a{
@@ -41,10 +30,6 @@ a{
         text-decoration: none;
         }
 
-#git{
-    color:blue;
-    text-decoration: underline;
-}
 
 ul{
     list-style-type: none;
@@ -60,40 +45,75 @@ li{
     padding: 10px;
 }
 
+.down{
+    text-align: center;
+}
+
+.profilepic{
+    height: 3cm;
+    width: 3cm;
+}
+
+h5{
+    text-align: left;
+}
+
  
 .grid-container {
     display: grid;
     grid-template-areas:
-    'blank blank blank blank blank navi navi navi navi navi'
-    'left left left left left left right right right right';
+    'header header header header header'
+    'main main main main main'
+    'footer footer footer footer footer';
 }
 
-.blank {
+
+.header{
+    grid-area: header;
+    padding: 10px;
+    border: black 5px;
+}
+.main { 
+    grid-area: main;
+    padding: 10px;
+    border: black 5px;
+}
+.footer { 
+    grid-area: footer; 
+    padding: 10px;
+    border: black 5px;
+}
+
+.grid-container-header {
+    display: grid;
+    grid-template-areas:
+    'blank blank navi navi navi'
+    'pic pic pic logo logo';
+}
+
+.pic{
+    grid-area: pic;
+}
+
+.blank{
     grid-area: blank;
+    padding: 10px;
+    border: black 5px;
 }
-.navi{
+.navi { 
     grid-area: navi;
+    padding: 10px;
+    border: black 5px;
 }
-.left { 
-    grid-area: left;
-}
-.right { 
-    grid-area: right; 
-}
-.Obj{
-    padding-bottom: 10px;
-}
-.Edu{
-    padding-bottom: 10px;
-}
-.Exp{
-    padding-bottom: 10px;
-}
-.Prog{
-    padding-bottom: 10px;
+.logo { 
+    grid-area: logo; 
+    padding: 10px;
+    border: black 5px;
 }
 
-@media only screen and (max-width: 768px){
+
+
+/*@media only screen and (max-width: 768px){
     .grid-container {
         display: grid;
         grid-template-areas:
@@ -111,24 +131,7 @@ li{
         font-size: 10px ;
         text-align: left;
     }
-
-    .Ofir{
-        font-size: 50px;
-    }
-
-    .left{
-        font-size: 12px;
-    }
 }
 
-@keyframes backgroundAnimation {
-    from {background-image: url("background.jpg");}
-    to {background-image: url("IMG_9556.jpg");}
-}
-
-@keyframes textAnimation {
-    from {color: var(--olive);}
-    to {color: var(--seaBlue);}
-}
 
     
