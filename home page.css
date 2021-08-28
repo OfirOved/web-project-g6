@@ -69,7 +69,7 @@ ul li:hover ul li{
     grid-area: footer; 
     background-image: url('r1.jpg'); 
     text-align: center;
-    height: 2cm;
+    height: 2cm; 
 }
 
 .grid-container-header {
