@@ -44,6 +44,8 @@ ul li ul li{
 }
 ul li:hover ul li{
     display: block;
+    background-color: burlywood;
+    opacity: .9;
 }
 
 .grid-container {
@@ -54,10 +56,12 @@ ul li:hover ul li{
     'footer footer footer footer footer';
     height: 100vh;
     width: 100vw;
+    position: fixed;
 }
 
 .header{
     grid-area: header;
+    height: 5cm;
 }
 
 .main { 
@@ -83,17 +87,16 @@ ul li:hover ul li{
 
 .navi { 
     grid-area: navi;
-    display: flex;
     padding:0;
     margin:0;
-    background-image: url('r1.jpg');
     text-align: right;
     list-style-type: none;
+    background-image: url('r1.jpg');
 }
 
 .pic{
     grid-area: pic;
-    padding: 10px;
+    padding: 50px;
 }
 
 .logo { 
@@ -102,12 +105,26 @@ ul li:hover ul li{
 }
 
 .profilepic{
-    height: 3cm;
-    width: 3cm;
+    height: 2cm;
+    width: 2cm;
 }
 
 .naviTable{
-    display: flex;
+    display: flex; 
+    background-image: url('r1.jpg');
+}
+
+.search{
+    float: right;
+    padding: 6px;
+    margin-right: 16px;
+    font-size: 17px;
+    width: 10cm;
+}
+
+.icon{
+    background-image: url('search icon.png');
+    margin: auto;
 }
 
 
