@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel = "stylesheet" href="metargel.css">
+    <script src="metargel.js"></script>
     <title>metargel</title>
 </head>
 <body dir="rtl">
@@ -13,30 +14,37 @@
 <div class = "i2"><a href="active.html#active">השנתון שלי</a></div>
 <div class = "i3"><a href="active.html#active">רשימת הקורסים שלי</a></div>
 </div>
+
+<div>
+<a href="#Rating" onclick="Rating()">דירוג</a><br />
+<a href="#info" onclick="info()">מידע אישי</a><br />
+<a href="#Professions" onclick="Professions()">מקצועות</a><br />
+<a href="#ContactUsEmail" onclick="ContactUsEmail()">מייל</a><br />
+<a href="#ContactUsphone" onclick="ContactUsphone()">מספר טלפון</a><br />
+<a href="#Recommendations" onclick="Recommendations()">המלצות</a><br />
+
+</div>
 <div class = "g2"> 
 <img src="m1.JPG" 
      width="150" height="150" alt="hello" />
      <div>שלום ברנע</div>
-      <div>דירוג סטודנטים:</div>
+      <div id="Rating">דירוג סטודנטים:</div>
       <div>4.5</div>
-     <div> שלום קוראים לי שלום, סטודנט לתעשייה וניהול בשנה ג. 
+     <div id="info"> שלום קוראים לי שלום, סטודנט לתעשייה וניהול בשנה ג. 
      מעביר שיעורים פרטיים באלגברה לינארית, הסתברות וחדווא 2. 
     .מאפס ידע ועד 100 במבחן
     .מוזמנים ליצור קשר בפרטי</div>
     <br>
-    <div>מקצועות:</div>
-
+    <div id="Professions">מקצועות:</div>
     <li>אלגברה לינארית</li>
     <li>הסתברות</li>
     <li>חדווא 2</li>
-
-    <div>מייל:</div>
+    <div id="ContactUsEmail">מייל:</div>
     <div>fhgdjgh@post.bgu.ac.il</div>
-
-        <div>טלפון:</div>
+        <div id="ContactUsphone">טלפון:</div>
     <div>0534448025</div>
 
-          <div>המלצות:</div>
+          <div id="Recommendations">המלצות:</div>
     <div>מושלם!!! אין עליו. מאפס ידע עזר לי לקבל 95</div>
 
     <div>ממש ממליצה</div>
