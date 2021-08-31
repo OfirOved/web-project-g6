@@ -1,10 +1,9 @@
 :root {
     --white: #ffffff;
     --orange: #ff6600;
-    --shadow: rgba(114,114,114, 0.1);
+    --shadow: rgba(114, 114, 114, 0.1);
     --login: #535353;
     --hi: #858585;
-
 }
 
 @font-face {
@@ -32,9 +31,9 @@ ul a:hover {
 
 li {
     display: inline;
-    padding-block: 10px;
+    padding-top: 30px;
     /* padding-inline: 20px; */
-    width: 200px;
+    width: 150px;
     text-align: center;
     display: inline-block;
     position: relative;
@@ -64,7 +63,7 @@ ul li:hover ul li {
     display: block;
     background-color: burlywood;
     opacity: .9;
-    width: 200px;
+    width: 150px;
     /* position: absolute;
     left: 0; */
     /* position: absolute; */
@@ -73,10 +72,7 @@ ul li:hover ul li {
 
 .grid-container {
     display: grid;
-    grid-template-areas:
-    'header header header header header'
-    'main main main main main'
-    'footer footer footer footer footer';
+    grid-template-areas: 'header header header header header' 'main main main main main' 'footer footer footer footer footer';
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -86,69 +82,75 @@ ul li:hover ul li {
     grid-area: header;
     box-shadow: 0 2px 15px var(--shadow);
     width: 100vw;
-    height: 100px;
-    padding-inline-start: 83px;
+    height: 50px;
+    /* padding-inline-start: 83px;
     padding-inline-end: 83px;
     padding-block-start: 23px;
-    padding-block-end: 23px;
+    padding-block-end: 23px; */
 }
 
 .main {
     grid-area: main;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .footer {
     grid-area: footer;
     background-image: url('footer.jpg');
-    position:absolute;
-    bottom:0;
-    width:100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     height: 150px;
 }
 
-.footerLogo{
+.footerLogo {
     display: inline-block;
     padding-top: 20px;
 }
 
 .grid-container-header {
     display: grid;
-    grid-template-areas:
-    'pic navi navi navi logo';
+    grid-template-areas: 'pic navi navi navi logo';
+    /* border: solid 2px red; */
+    width: 100%;
 }
 
 .navi {
     grid-area: navi;
-    padding: 0;
-    margin: 0;
-    text-align: right;
+    /* text-align: right; */
     list-style-type: none;
-    padding-inline: 10px;
+    /* padding-inline: 10px; */
     display: flex;
     text-decoration: none;
+    /* border: solid 2px blue; */
+    width: max-content;
 }
 
 .pic {
     grid-area: pic;
-    padding: 50px;
+    display: flex;
+    /* border: solid 2px purple; */
+    width: 300px;
+    /* padding: 50px; */
 }
 
 .logo {
-    grid-area: logo;
-    display: flex; 
-    justify-content: center;
-    position: absolute; 
-    text-align: center;
-    vertical-align: middle;
-
+    /* grid-area: logo; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* position: absolute; */
+    /* text-align: center; */
+    /* vertical-align: middle; */
+    /* border: solid 2px red; */
+    width: max-content;
 }
 
-.logoPic{
+.logoPic {
     width: 250px;
     height: 74px;
-    line-height: 74px;
-    vertical-align: middle;
+    /* border: solid 2px green; */
+    /* line-height: 74px; */
+    /* vertical-align: middle; */
 }
 
 .naviTable {
@@ -157,5 +159,17 @@ ul li:hover ul li {
     text-decoration: none;
 }
 
+#profile_pic {
+    border-radius: 50%;
+    border: solid 1px black;
+    width: 70px;
+    height: 70px;
+    /* border: solid 2px red; */
+    margin-left: 50px;
+}
 
-
+#profile_pic_div {
+    display: flex;
+    float: right;
+    justify-content: space-between;
+}
