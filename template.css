@@ -1,7 +1,7 @@
 :root {
     --white: #ffffff;
     --orange: #ff6600;
-    --shadow: rgba(114, 114, 114, 0.1);
+    --shadow: rgba(143, 143, 143, 0.1);
     --login: #535353;
     --hi: #858585;
 }
@@ -21,8 +21,9 @@ body {
     font-family: assistant;
 }
 
-a {
+.navi a {
     text-decoration: none;
+    color: var(--orange);
 }
 
 ul a:hover {
@@ -31,28 +32,35 @@ ul a:hover {
 
 li {
     display: inline;
-    padding-top: 30px;
+    /* padding-top: 30px; */
     /* padding-inline: 20px; */
     width: 150px;
     text-align: center;
     display: inline-block;
-    position: relative;
+    /* position: relative; */
     vertical-align: middle;
+}
+
+.navi li {
     color: var(--orange);
 }
 
-ul li ul li {
+.down li {
+    color: white;
+}
+
+.navi ul li ul li {
     display: none;
     text-decoration: none;
     color: var(--orange);
 }
 
-ul li ul {
+.navi ul li ul {
     display: block;
     /* width: 200px; */
     /* position: relative; */
     /* border: solid 2px red; */
-    position: fixed;
+    /* position: fixed; */
     z-index: 100;
     width: auto;
     text-decoration: none;
@@ -70,9 +78,13 @@ ul li:hover ul li {
     /* margin: auto;  */
 }
 
+.navi li {
+    padding-top: 20px;
+}
+
 .grid-container {
     display: grid;
-    grid-template-areas: 'header header header header header' 'main main main main main' 'footer footer footer footer footer';
+    grid-template-areas: 'header header header header header' 'main main main main main' 'main main main main main' 'main main main main main' 'main main main main main' 'footer footer footer footer footer';
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -80,9 +92,12 @@ ul li:hover ul li {
 
 .header {
     grid-area: header;
-    box-shadow: 0 2px 15px var(--shadow);
+    /* box-shadow: 0 2px 5px var(--shadow); */
     width: 100vw;
-    height: 50px;
+    /* height: 120px; */
+    /* border: solid 2px pink; */
+    padding-top: 5px;
+    position: fixed;
     /* padding-inline-start: 83px;
     padding-inline-end: 83px;
     padding-block-start: 23px;
@@ -91,21 +106,41 @@ ul li:hover ul li {
 
 .main {
     grid-area: main;
+    background-color: var(--shadow);
+    /* border: solid 2px green; */
     /* padding: 10px; */
 }
 
 .footer {
     grid-area: footer;
-    background-image: url('footer.jpg');
+    background: white url(footer.jpg) top center repeat-y;
+    background-size: 100%;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 150px;
+    height: 200px;
+    /* border: solid 2px blue; */
+    display: block
 }
 
 .footerLogo {
-    display: inline-block;
-    padding-top: 20px;
+    /* display: block; */
+    /* padding-top: 20px; */
+    margin-inline: auto;
+    margin-top: 30px;
+    /* border: solid 2px red; */
+    width: max-content;
+}
+
+.footerLogo img {
+    width: 130px;
+}
+
+.down {
+    /* border: solid 2px purple; */
+    width: max-content;
+    /* height: 10px; */
+    margin-inline: auto;
 }
 
 .grid-container-header {
@@ -130,8 +165,16 @@ ul li:hover ul li {
     grid-area: pic;
     display: flex;
     /* border: solid 2px purple; */
-    width: 300px;
+    margin-left: 50px;
+    /* width: 300px; */
     /* padding: 50px; */
+}
+
+#greeting {
+    margin-top: 20px;
+    margin-right: 20px;
+    border: soild 2px red;
+    text-align: right;
 }
 
 .logo {
@@ -146,11 +189,12 @@ ul li:hover ul li {
 }
 
 .logoPic {
-    width: 250px;
-    height: 74px;
+    width: 180px;
+    height: 60px;
     /* border: solid 2px green; */
     /* line-height: 74px; */
     /* vertical-align: middle; */
+    padding-top: 5px;
 }
 
 .naviTable {
@@ -165,11 +209,25 @@ ul li:hover ul li {
     width: 70px;
     height: 70px;
     /* border: solid 2px red; */
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
 
 #profile_pic_div {
     display: flex;
     float: right;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+}
+
+#login_function {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    transition: all .2s ease-in-out;
+}
+
+#login_function:hover {
+    transform: scale(1.1);
 }
