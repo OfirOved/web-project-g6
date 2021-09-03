@@ -92,6 +92,7 @@ ul li:hover ul li {
 
 .header {
     grid-area: header;
+    z-index: 100;
     /* box-shadow: 0 2px 5px var(--shadow); */
     width: 100vw;
     /* height: 120px; */
@@ -106,16 +107,20 @@ ul li:hover ul li {
 
 .main {
     grid-area: main;
+    position: absolute;
+    width: 100%;
+    height: 350px;
     background-color: var(--shadow);
     /* border: solid 2px green; */
-    /* padding: 10px; */
+    padding-top: 30px;
+    overflow-y: scroll;
 }
 
 .footer {
     grid-area: footer;
     background: white url(footer.jpg) top center repeat-y;
     background-size: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 200px;
@@ -162,18 +167,19 @@ ul li:hover ul li {
 }
 
 .pic {
+    /* justify-content: right; */
     grid-area: pic;
     display: flex;
     /* border: solid 2px purple; */
     margin-left: 50px;
-    /* width: 300px; */
+    width: 200px;
     /* padding: 50px; */
 }
 
 #greeting {
     margin-top: 20px;
     margin-right: 20px;
-    border: soild 2px red;
+    /* border: soild 2px red; */
     text-align: right;
 }
 

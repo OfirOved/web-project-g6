@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="grades.css">
+    <script src="grades.js"></script>
+    <title id="pageTitle">גיליון ציונים</title>
+</head>
+
+<body onload="setup_page('galy')">
+    <div class="grid-container">
+        <div class="header">
+            <div class="grid-container-header">
+                <div class="logo">
+                    <img class="logoPic" src="mainLogo.png" alt="Logo">
+                </div>
+                <div class="navi" dir="rtl">
+                    <ul class="naviTable" dir="rtl">
+                        <li><a class="activeClasses">שנתונים פעילים</a>
+                            <ul>
+                                <li><a>תש"ף 2020 תבנית א'</a></li>
+                                <li><a>תש"ף 2020 תבנית ב'</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="grades" href="#">גיליון ציונים</a></li>
+                        <li><a class="mentors" href="#">מאגר חונכים</a></li>
+                        <li><a class="marathons" href="#">מרתונים ועזרתונים</a>
+                            <ul>
+                                <li><a href="#">עזרתונים/מרתונים פעילים</a></li>
+                                <li><a href="#">פתיחת עזרתון/מרתון</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="Education">מפה</a></li>
+                    </ul>
+                </div>
+
+                <div class="pic">
+                    <div id="greeting">
+                        <a id="username"></a>
+                        <br>
+                        <button id="login_function" onclick="login_function()"></button>
+                    </div>
+                    <!-- <button style="width:100p></button> -->
+                    <div id="profile_pic_div">
+                        <img src="profilePic.png" id="profile_pic">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main" dir="rtl">
+            <div id="table_wrapper">
+                <table id="gradesheet"></table>
+            </div>
+            <div id="calc_gpa">
+                <button onclick="calc_GPA()"><b>חשב ממוצע</b></button>
+                <div id="gpa_diff">
+                    <p>הממוצע הנוכחי שלך הוא: &nbsp; <span id="current_gpa"></span></p>
+                    <p>הממוצע החדש שלך הוא: &nbsp; <span id="new_gpa"></span></p>
+                    <p><span id="notice"></span><span id="gpa_change"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerLogo">
+                <img src="footerLogo.png" alt="Logo">
+            </div>
+            <div class="down">
+                <ul dir="rtl">
+                    <li><a class="activeClasses">צור קשר</a></li>
+                    <li><a class="grades">משוב</a></li>
+                    <li><a class="mentors">מי אנחנו?</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="users.js"></script>
+    <script src="grades.js"></script>
+
+</body>
+
+</html>
