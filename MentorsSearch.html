@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
     <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="MentorsSearch.css">
     <title id="pageTitle">מאגר חונכים</title>
 </head>
 
@@ -42,17 +43,17 @@
                     </div>
                     <!-- <button style="width:100p></button> -->
                     <div id="profile_pic_div">
-                        <img src="mainLogo.png" id="profile_pic">
+                        <img src="profilePic.png" id="profile_pic">
                     </div>
                 </div>
             </div>
         </div>
         <div class="main" dir="rtl">
-            <div>
-                <input id="searchMentor" type="text" placeholder="הכנס שם קורס/חונך" dir="rtl">
+            <div id="searchMentor">
+                <input id="search_Mentor" type="text" placeholder="הכנס שם קורס/חונך" dir="rtl">
                 <img src="search icon.png" onclick="search()">
             </div>
-            <div class="sortBy" dir="rtl">
+            <div id="sortBy" dir="rtl">
                 <form>
                     <label>חיפוש לפי:</label>
                     <input type="radio" id="course" name="sort" value="course">
@@ -61,7 +62,7 @@
                     <label for="name">שם</label>
                 </form>
             </div>
-            <div class="table">
+            <div id="mentors_table">
                 <table dir="rtl">
                     <tr>
                         <th>שם פרטי</th>

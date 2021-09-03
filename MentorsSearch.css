@@ -5,6 +5,11 @@
     margin-right: 16px;
     font-size: 17px;
     width: 10cm;
+    border: solid 5px blue;
+}
+
+#mentors_table{
+    border: solid 5px blue; 
 }
 
 
