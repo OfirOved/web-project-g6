@@ -1,25 +1,4 @@
-﻿*{
-text-align: center;
-
-
-}
-
-h1{
-	background-image: url('r1.JPG');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  color: MintCream;
-}
-
-.g1{
-
-	display: grid;
-	padding: 10px;
-border: 2px solid GoldenRod;
-margin: 5px;
-
-}
+﻿
 .g2{
 text-align: center;
 
@@ -31,28 +10,3 @@ background-image: url('r1.JPG');
 
 }
 
-.i1{
-
-background-color: FloralWhite;
-    grid-column: 1/1;
-		padding: 10px;
-border: 2px solid GoldenRod;
-margin: 5px;
-}
-
-.i2{
-background-color: FloralWhite;
-    grid-column: 2/2;
-		padding: 10px;
-border: 2px solid GoldenRod;
-margin: 5px;
-color: GoldenRod ;
-}
-
-.i3{
-background-color: FloralWhite;
-    grid-column: 3/3;
-		padding: 10px;
-border: 2px solid GoldenRod;
-margin: 5px;
-}

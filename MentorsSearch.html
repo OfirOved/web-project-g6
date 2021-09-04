@@ -49,44 +49,52 @@
             </div>
         </div>
         <div class="main" dir="rtl">
-            <div id="searchMentor">
-                <input id="search_Mentor" type="text" placeholder="הכנס שם קורס/חונך" dir="rtl">
-                <img src="search icon.png" onclick="search()">
+            <div id="grid-container-main">
+                <div id="searchMentor">
+                    <span id="searching">
+                        <input id="input_search" type="text" placeholder="הכנס שם קורס/חונך" dir="rtl">
+                    </span>
+                    <span id="search_button">
+                        <img id="searchIcon" src="searchButton.png" onclick="search()"> 
+                    </span>
+                </div>
+                <div id="sortBy" dir="rtl">
+                    <form>
+                        <label>חיפוש לפי:</label>
+                        <input type="radio" id="course" name="sort" value="course">
+                        <label for="course">קורס</label>
+                        <input type="radio" id="name" name="sort" value="name">
+                        <label for="name">שם</label>
+                    </form>
+                </div>
+             
+                <div id="mentors_table">
+                    <table id="mentorsTable" dir="rtl">
+                        <tr>
+                            <th>שם פרטי</th>
+                            <th>שם משפחה</th>
+                            <th>קורס</th>
+                            <th>שיעורים פרטיים</th>
+                            <th>פלאפון</th>
+                        </tr>
+                        <tr>
+                            <td>נירת</td>
+                            <td>ברששת</td>
+                            <td>אלגברה לינארית</td>
+                            <td>כן</td>
+                            <td>054-2221111</td>
+                        </tr>
+                        <tr>
+                            <td>אורי</td>
+                            <td>ברק</td>
+                            <td>פיזיקה 1ב</td>
+                            <td>כן</td>
+                            <td>054-2221111</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-            <div id="sortBy" dir="rtl">
-                <form>
-                    <label>חיפוש לפי:</label>
-                    <input type="radio" id="course" name="sort" value="course">
-                    <label for="course">קורס</label>
-                    <input type="radio" id="name" name="sort" value="name">
-                    <label for="name">שם</label>
-                </form>
-            </div>
-            <div id="mentors_table">
-                <table dir="rtl">
-                    <tr>
-                        <th>שם פרטי</th>
-                        <th>שם משפחה</th>
-                        <th>קורס</th>
-                        <th>שיעורים פרטיים</th>
-                        <th>פלאפון</th>
-                    </tr>
-                    <tr>
-                        <td>נירת</td>
-                        <td>ברששת</td>
-                        <td>אלגברה לינארית</td>
-                        <td>כן</td>
-                        <td>054-2221111</td>
-                    </tr>
-                    <tr>
-                        <td>אורי</td>
-                        <td>ברק</td>
-                        <td>פיזיקה 1ב</td>
-                        <td>כן</td>
-                        <td>054-2221111</td>
-                    </tr>
-                </table>
-            </div>
+           
         </div>
         <div class="footer">
             <div class="footerLogo">

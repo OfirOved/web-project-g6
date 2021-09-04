@@ -1,34 +1,84 @@
 ﻿<!DOCTYPE html>
+<html lang="he">
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="template.css">
     <link rel = "stylesheet" href="contactUs.css">
-    <title>contactUs</title>
+    <title id="pageTitle">צור קשר</title>
 </head>
-<body>
-<h1>BGU Students</h1>
-<div class = "g1"> 
-<div class = "i1"><a href="active.html#active">דף הבית</a></div>
-<div class = "i2"><a href="active.html#active">השנתון שלי</a></div>
-<div class = "i3"><a href="active.html#active">רשימת הקורסים שלי</a></div>
-</div>
 
+<body onload="set_user_name('galy')">
+    <div class="grid-container">
+        <div class="header">
+            <div class="grid-container-header">
+                <div class="logo">
+                    <img class="logoPic" src="mainLogo.png" alt="Logo">
+                </div>
+                <div class="navi" dir="rtl">
+                    <ul class="naviTable" dir="rtl">
+                        <li><a class="activeClasses">שנתונים פעילים</a>
+                            <ul>
+                                <li><a>תש"ף 2020 תבנית א'</a></li>
+                                <li><a>תש"ף 2020 תבנית ב'</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="grades" href="#">גיליון ציונים</a></li>
+                        <li><a class="mentors" href="#">מאגר חונכים</a></li>
+                        <li><a class="marathons" href="#">מרתונים ועזרתונים</a>
+                            <ul>
+                                <li><a href="#">עזרתונים/מרתונים פעילים</a></li>
+                                <li><a href="#">פתיחת עזרתון/מרתון</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="Education">מפה</a></li>
+                    </ul>
+                </div>
 
-<form class ="g2">
+                <div class="pic">
+                    <div id="greeting">
+                        <a id="username"></a>
+                        <br>
+                        <button id="login_function" onclick="login_function()"></button>
+                    </div>
+                    <!-- <button style="width:100p></button> -->
+                    <div id="profile_pic_div">
+                        <img src="profilePic.png" id="profile_pic">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<h3>Contact Us:</h3>
-<lable id="phone"> מספר טלפון </lable>
-<input> <br>
-<lable> email </lable>
-<input> <br>
-<lable> שם ושם משפחה </lable>
-<input> <br>
-<lable> תוכן ההודעה: </lable> <br>
-<textarea cols= "40" rows= "5"></textarea> <br>
-<button type="button"onclick="f1()" >שלח</button>
-
-</form>
-
+        <div class="main" dir="rtl">
+            <form class ="g2">
+                <h3>Contact Us:</h3>
+                <lable id="phone"> מספר טלפון </lable>
+                <input> <br>
+                <lable> email </lable>
+                <input> <br>
+                <lable> שם ושם משפחה </lable>
+                <input> <br>
+                <lable> תוכן ההודעה: </lable> <br>
+                <textarea cols= "40" rows= "5"></textarea> <br>
+                <button type="button"onclick="f1()" >שלח</button>
+                
+                </form>
+        </div>
+        <div class="footer">
+            <div class="footerLogo">
+                <img src="footerLogo.png" alt="Logo">
+            </div>
+            <div class="down">
+                <ul dir="rtl">
+                    <li><a class="activeClasses">צור קשר</a></li>
+                    <li><a class="grades">משוב</a></li>
+                    <li><a class="mentors">מי אנחנו?</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="users.js"></script>
 </body>
+
 </html>
