@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
     <link rel="stylesheet" href="template.css">
-    <link rel = "stylesheet" href="contactUs.css">
+    <link rel="stylesheet" href="contactUs.css">
     <title id="pageTitle">צור קשר</title>
 </head>
 
@@ -55,14 +55,20 @@
                 <h2>נשמח לשמוע מכם!</h2>
                 <div class="contactForm">
                     <form action="/todo">
-                        <label>שם:</lable>
-                        <input type="text"><br>
-                        <lable>אימייל:</lable>
-                        <input type="text"> <br>
-                        <lable>נושא הפניה:</lable>
-                        <input type="text"><br>
+                        <div class="form_row">
+                            <div class="row_elem"><label>שם:</lable></div>
+                            <div class="row_elem"><input class="row_elem_input" style="width:250px;" type="text"></div><br>        
+                        </div>
+                        <div class="form_row">
+                            <div class="row_elem"><lable>אימייל:</lable></div>
+                            <div class="row_elem"><input class="row_elem_input" style="width:250px;" type="text"></div> <br>    
+                        </div>
+                        <div class="form_row">
+                            <div class="row_elem"><lable>נושא הפניה:</lable></div>
+                            <div class="row_elem"><input class="row_elem_input" style="width:250px;" type="text"></div><br>    
+                        </div>
                         <lable>תוכן ההודעה:</lable> <br>
-                        <textarea cols= "40" rows= "5"></textarea> <br>
+                        <textarea id="content" cols= "100" rows= "10"></textarea> <br>
                         <button type="button"onclick="f1()">שלח</button>
                     </form>
                 </div>
