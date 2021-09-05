@@ -1,3 +1,38 @@
+users_grades_original = {
+    'galy': {
+        '364.1.1291': {
+            name: 'אמידה ומבחני השערות',
+            credit_points: 3.5,
+            grade: 85
+        },
+        '203.1.1391': {
+            name: 'פיסיקה 1ב',
+            credit_points: 3.5,
+            grade: 91
+        },
+        '201.1.9321': {
+            name: 'אלגברה לינארית',
+            credit_points: 4.5,
+            grade: 88
+        },
+        '364.1.1421': {
+            name: 'פיתוח תוכנה מונחה עצמים',
+            credit_points: 3.5,
+            grade: 83
+        },
+        '202.1.9031': {
+            name: 'מבוא לתכנות בJava',
+            credit_points: 4,
+            grade: 86
+        },
+        '364.1.1901': {
+            name: 'בסיסי נתונים',
+            credit_points: 3.5,
+            grade: 95
+        }
+    }
+}
+
 users_grades = {
     'galy': {
         '364.1.1291': {
@@ -34,6 +69,7 @@ users_grades = {
 }
 
 
+
 function calc_total_credit_points() {
     let total_credit_points = 0
     for (course in users_grades[logged_user]) {
@@ -45,9 +81,9 @@ function calc_total_credit_points() {
 function calc_current_GPA() {
     let total_credit_points = 0
     let sum = 0
-    for (course in users_grades[logged_user]) {
-        sum += users_grades[logged_user][course].grade * users_grades[logged_user][course].credit_points
-        total_credit_points += users_grades[logged_user][course].credit_points
+    for (course in users_grades_original[logged_user]) {
+        sum += users_grades_original[logged_user][course].grade * users_grades_original[logged_user][course].credit_points
+        total_credit_points += users_grades_original[logged_user][course].credit_points
     }
     if (total_credit_points > 0)
         return (sum / total_credit_points).toFixed(2);
