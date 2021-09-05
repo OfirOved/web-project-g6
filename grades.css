@@ -44,3 +44,43 @@
 #gpa_diff p {
     margin-block: 10px;
 }
+
+#add_course {
+    /* border: solid 2px red; */
+    width: 60%;
+    margin: auto;
+}
+
+#add_course button {
+    width: 100px;
+    height: 35px;
+    font-size: 16px;
+    background-color: #ffb004;
+    color: white;
+}
+
+#course_inputs {
+    display: flex;
+    margin-top: 10px;
+    display: none;
+    /* border: solid 2px blue; */
+}
+
+#course_inputs button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-size: 24px;
+    /* border: solid 2px red; */
+}
+
+.course_input {
+    margin-inline: 5px;
+}
+
+.course_input input {
+    width: 150px;
+    height: 25px;
+}

@@ -53,6 +53,28 @@
 
         <div class="main" dir="rtl">
             <div id="table_wrapper">
+                <div id="add_course">
+                    <button onclick="add_course()">הוסף קורס</button>
+                    <div id="course_inputs">
+                        <div class="course_input">
+                            <p>מספר קורס</p>
+                            <input id="course_num" placeholder="מספר קורס">
+                        </div>
+                        <div class="course_input">
+                            <p>שם קורס</p>
+                            <input id="course_name" placeholder="שם קורס">
+                        </div>
+                        <div class="course_input">
+                            <p>נק"ז</p>
+                            <input id="course_credit" placeholder='נק"ז'>
+                        </div>
+                        <div class="course_input">
+                            <p>ציון</p>
+                            <input id="course_grade" placeholder="ציון">
+                        </div>
+                        <button onclick="add_course_to_table()">+</button>
+                    </div>
+                </div>
                 <table id="gradesheet"></table>
             </div>
             <div id="calc_gpa">

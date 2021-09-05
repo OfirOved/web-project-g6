@@ -96,7 +96,7 @@ ul li:hover ul li {
     /* box-shadow: 0 2px 5px var(--shadow); */
     width: 100vw;
     /* height: 120px; */
-    /* border: solid 2px pink; */
+    /* border: solid 2px red; */
     padding-top: 5px;
     position: fixed;
     /* padding-inline-start: 83px;
@@ -109,10 +109,11 @@ ul li:hover ul li {
     grid-area: main;
     position: absolute;
     width: 100%;
-    height: 350px;
+    height: 470px;
     background-color: var(--shadow);
     /* border: solid 2px green; */
-    padding-top: 30px;
+    padding-block: 30px;
+    margin-top: -30px;
     overflow-y: scroll;
 }
 
@@ -123,7 +124,7 @@ ul li:hover ul li {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 200px;
+    height: 120px;
     /* border: solid 2px blue; */
     display: block
 }
@@ -132,31 +133,30 @@ ul li:hover ul li {
     /* display: block; */
     /* padding-top: 20px; */
     margin-inline: auto;
-    margin-top: 30px;
+    margin-top: 10px;
     /* border: solid 2px red; */
     width: max-content;
 }
 
 .footerLogo img {
-    width: 130px;
+    width: 100px;
 }
 
 .down {
     /* border: solid 2px purple; */
     width: max-content;
     /* height: 10px; */
-    margin-inline: auto; 
+    margin-inline: auto;
     display: flex;
 }
 
-.footerBar{
+.footerBar {
     display: flex;
 }
 
-#aguda{
+#aguda {
     width: fit-content;
 }
-
 
 .grid-container-header {
     display: grid;
@@ -220,11 +220,13 @@ ul li:hover ul li {
 }
 
 #profile_pic {
+    margin-top: 15px;
     border-radius: 50%;
-    border: solid 1px black;
-    width: 70px;
-    height: 70px;
+    border: solid 1.5px black;
+    width: 50px;
+    height: 50px;
     /* border: solid 2px red; */
+    padding: 5px;
     /* margin-left: 50px; */
 }
 
@@ -233,6 +235,12 @@ ul li:hover ul li {
     float: right;
     /* justify-content: space-between; */
 }
+
+
+/* #profile_pic_div img {
+    width: 50px;
+    height: 50px;
+} */
 
 #login_function {
     background-color: Transparent;

@@ -54,6 +54,58 @@ function calc_current_GPA() {
     return total_credit_points
 }
 
+function add_table_record(course, tbody) {
+    let row_2 = document.createElement('tr');
+    let row_2_data_1 = document.createElement('td');
+    row_2_data_1.innerHTML = course;
+    let row_2_data_2 = document.createElement('td');
+    row_2_data_2.innerHTML = user_gradesheet[course].name;
+    let row_2_data_3 = document.createElement('td');
+    row_2_data_3.innerHTML = user_gradesheet[course].credit_points;
+    let row_2_data_4 = document.createElement('td');
+    row_2_data_4.innerHTML = user_gradesheet[course].grade;
+    let row_2_data_5 = document.createElement('td');
+    let row_2_data_5_input = document.createElement('input');
+    let row_2_data_6 = document.createElement('td');
+    let row_2_data_6_button = document.createElement('button');
+    row_2_data_6_button.style.width = "40px"
+    row_2_data_6_button.style.height = "40px"
+    row_2_data_6_button.innerHTML = "-"
+    row_2_data_6_button.style.fontSize = "24px"
+    row_2_data_6_button.style.borderRadius = "50%"
+    row_2_data_6_button.style.backgroundColor = "#ffb004"
+    row_2_data_6_button.style.color = "white"
+    row_2_data_6_button.onclick = function() {
+        delete user_gradesheet[course]
+        row_2.remove();
+    }
+    row_2_data_5_input.style.width = "60px"
+    row_2_data_5_input.style.height = "25px"
+    row_2_data_5_input.style.marginInline = 'auto'
+    row_2_data_5_input.style.textAlign = 'center'
+    row_2_data_5_input.type = 'number'
+    row_2_data_5_input.pattern = "\d"
+    row_2_data_5_input.oninput = function() {
+        if (this.value.length > 3) {
+            this.value = this.value.slice(0, 3);
+        }
+    }
+    row_2_data_5_input.maxLength = "3"
+    row_2_data_5_input.min = '0'
+    row_2_data_5_input.max = '100'
+    row_2_data_5_input.placeholder = user_gradesheet[course].grade
+    row_2.appendChild(row_2_data_1);
+    row_2.appendChild(row_2_data_2);
+    row_2.appendChild(row_2_data_3);
+    row_2.appendChild(row_2_data_4);
+    row_2.appendChild(row_2_data_5);
+    row_2.appendChild(row_2_data_6);
+    row_2_data_5.appendChild(row_2_data_5_input)
+    row_2_data_6.appendChild(row_2_data_6_button)
+    tbody.appendChild(row_2);
+}
+
+
 function set_gradesheet_table() {
     let table = document.getElementById("gradesheet")
     let thead = document.createElement('thead');
@@ -80,39 +132,7 @@ function set_gradesheet_table() {
     row_1.appendChild(heading_5);
     thead.appendChild(row_1);
     for (course in user_gradesheet) {
-        let row_2 = document.createElement('tr');
-        let row_2_data_1 = document.createElement('td');
-        row_2_data_1.innerHTML = course;
-        let row_2_data_2 = document.createElement('td');
-        row_2_data_2.innerHTML = user_gradesheet[course].name;
-        let row_2_data_3 = document.createElement('td');
-        row_2_data_3.innerHTML = user_gradesheet[course].credit_points;
-        let row_2_data_4 = document.createElement('td');
-        row_2_data_4.innerHTML = user_gradesheet[course].grade;
-        let row_2_data_5 = document.createElement('td');
-        let row_2_data_5_input = document.createElement('input');
-        row_2_data_5_input.style.width = "60px"
-        row_2_data_5_input.style.height = "25px"
-        row_2_data_5_input.style.marginInline = 'auto'
-        row_2_data_5_input.style.textAlign = 'center'
-        row_2_data_5_input.type = 'number'
-        row_2_data_5_input.pattern = "\d"
-        row_2_data_5_input.oninput = function() {
-            if (this.value.length > 3) {
-                this.value = this.value.slice(0, 3);
-            }
-        }
-        row_2_data_5_input.maxLength = "3"
-        row_2_data_5_input.min = '0'
-        row_2_data_5_input.max = '100'
-        row_2_data_5_input.placeholder = user_gradesheet[course].grade
-        row_2.appendChild(row_2_data_1);
-        row_2.appendChild(row_2_data_2);
-        row_2.appendChild(row_2_data_3);
-        row_2.appendChild(row_2_data_4);
-        row_2.appendChild(row_2_data_5);
-        row_2_data_5.appendChild(row_2_data_5_input)
-        tbody.appendChild(row_2);
+        add_table_record(course, tbody)
     }
 }
 
@@ -169,4 +189,50 @@ function calc_GPA() {
 function setup_page(username) {
     login_function()
     set_gradesheet_table()
+}
+
+
+function add_course() {
+    let course_inputs = document.getElementById("course_inputs");
+    course_inputs.style.display = "flex";
+}
+
+function is_number(number) {
+    for (let i = 0; i < number.length; i++) {
+        if (!(number[i] >= "0" && number[i] <= "9"))
+            return false;
+    }
+    return true;
+}
+
+function is_valid_course_number(course_num) {
+    console.log(course_num);
+    let fragments = course_num.split('.')
+    return fragments.length == 3 && fragments[0].length == 3 && is_number(fragments[0]) && fragments[1].length == 1 && is_number(fragments[1]) && fragments[2].length == 4 && is_number(fragments[2])
+}
+
+function add_course_to_table() {
+    let tbody = document.getElementById("gradesheet").getElementsByTagName('tbody')[0];
+    let course_num = document.getElementById("course_num").value;
+    let course_name = document.getElementById("course_name").value;
+    let course_credit = document.getElementById("course_credit").value;
+    let course_grade = document.getElementById("course_grade").value;
+    if (!is_valid_course_number(course_num)) {
+        alert("מספר קורס אינו חוקי!")
+        return false;
+    }
+    console.log(course_grade);
+    if (!is_valid_grade(course_grade)) {
+        alert("ציון קורס אינו חוקי!")
+        return false;
+    }
+    data = {
+        name: course_name,
+        credit_points: Number.parseInt(course_credit),
+        grade: Number.parseInt(course_grade)
+    }
+    console.log(data);
+    user_gradesheet[course_num] = data
+    add_table_record(course_num, tbody)
+    alert("קורס נוסף בהצלחה!")
 }
