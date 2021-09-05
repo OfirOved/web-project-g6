@@ -221,7 +221,10 @@ function add_course_to_table() {
         alert("מספר קורס אינו חוקי!")
         return false;
     }
-    console.log(course_grade);
+    if (course_num in user_gradesheet) {
+        alert("הקורס כבר נמצא בגליון הציונים!")
+        return false;
+    }
     if (!is_valid_grade(course_grade)) {
         alert("ציון קורס אינו חוקי!")
         return false;
