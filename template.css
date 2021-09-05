@@ -46,7 +46,7 @@ li {
 }
 
 .down li {
-    color: white;
+    color: var(--white);
 }
 
 .navi ul li ul li {
@@ -118,7 +118,7 @@ ul li:hover ul li {
 
 .footer {
     grid-area: footer;
-    background: white url(footer.jpg) top center repeat-y;
+    background: var(--white) url(footer.jpg) top center repeat-y;
     background-size: 100%;
     position: fixed;
     bottom: 0;
@@ -145,8 +145,18 @@ ul li:hover ul li {
     /* border: solid 2px purple; */
     width: max-content;
     /* height: 10px; */
-    margin-inline: auto;
+    margin-inline: auto; 
+    display: flex;
 }
+
+.footerBar{
+    display: flex;
+}
+
+#aguda{
+    width: fit-content;
+}
+
 
 .grid-container-header {
     display: grid;

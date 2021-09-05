@@ -1,7 +1,36 @@
-#myMessages{
-    border: 5px solid palevioletred;
+.homePage-container{
+    display: grid;
+    grid-template-areas: 
+    'message message toDo toDo';
+    /* border: 5px solid purple; */
+    gap: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    justify-content: center;
 }
 
-#toDo{
+.myMessages{
+    border: 5px solid palevioletred;
+    grid-area: message;
+    width: 500px;
+    justify-content: center;
+}
+
+.messageHead{
+    text-align: center;
+}
+
+.news{
+    width: 100%;
+    display: flex;
+    border: 5px solid blue; 
+    text-align-last: center;
+    margin-top: 20px;
+    height: 200px;
+}
+
+.toDo{
     border: 5px solid red; 
+    grid-area: toDo;
+    width: 500px;
 }
