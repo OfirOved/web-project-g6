@@ -1,0 +1,54 @@
+.grid-container-main{
+    display: grid;
+    grid-template-areas: 
+    'top top top top top'
+    'data data data data data'
+    'rank rank rank rank rank'
+    'back back back back back';
+}
+
+.mainTop{
+    grid-area: top;
+    border: orange solid 2px;
+    padding-right: 80px;
+    padding-left: 80px;
+    display: grid;
+    grid-template-areas: 
+    'picture about about about about'
+}
+
+#picture{ /*this is the div*/
+    display: flex;
+    grid-area: picture;
+    /* border: greenyellow solid 2px; */
+    justify-content: center;
+}
+
+#mentorPic{/*this is the pic itself*/
+    border-radius: 50%;
+    border: solid 1px black;
+    width: 90px;
+    height: 90px;
+}
+
+#about{
+    border: rgb(255, 47, 175) solid 2px;  
+    border-radius: 10px; 
+    padding: 5px;
+    grid-area: about;
+}
+
+.data{
+    grid-area: data;
+    border: pink solid 2px;
+}
+
+.rankMentor{
+    grid-area: rank;
+    border: purple solid 2px;
+}
+
+.backToSearch{
+    grid-area: back;
+    border: blue solid 2px;
+}
