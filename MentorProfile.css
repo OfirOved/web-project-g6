@@ -1,7 +1,14 @@
+:root{
+    --light: #fff2e6;
+    --white: #ffffff;
+    --orange:  #ffb004;
+}
+
 .grid-container-main{
     display: grid;
     grid-template-areas: 
     'top top top top top'
+    'name name name name name'
     'data data data data data'
     'rank rank rank rank rank'
     'back back back back back';
@@ -9,12 +16,12 @@
 
 .mainTop{
     grid-area: top;
-    border: orange solid 2px;
-    padding-right: 80px;
+    /* border: orange solid 2px;  */
+    padding-right: 200px;
     padding-left: 80px;
     display: grid;
     grid-template-areas: 
-    'picture about about about about'
+    'picture about about about about';
 }
 
 #picture{ /*this is the div*/
@@ -29,26 +36,62 @@
     border: solid 1px black;
     width: 90px;
     height: 90px;
+    background-color: var(--white);
 }
 
 #about{
-    border: rgb(255, 47, 175) solid 2px;  
-    border-radius: 10px; 
+    border: black solid 2px;  
+    border-radius: 15px; 
     padding: 5px;
+    width: 70%;
     grid-area: about;
+    background-color: var(--light);
 }
 
-.data{
+#name{
+    grid-area: name;
+    /* border: plum solid 2px;  */
+    width: 55%;
+    margin-right: 270px;
+    margin-top: 15px;
+}
+
+#data{
     grid-area: data;
-    border: pink solid 2px;
+    border: black solid 2px;
+    margin-right: 270px;
+    margin-top: 15px;
+    width: 55%;
+    line-height: 30px;
+    padding-right: 20px;
+    font-weight: bold;
+    background-color: var(--light);
+    border-radius: 10px; 
 }
 
-.rankMentor{
+#rankMentor{
     grid-area: rank;
-    border: purple solid 2px;
+    border: black solid 2px;
+    margin-right: 270px;
+    margin-top: 30px;
+    width: 55%;
+    background-color: var(--light);
+    border-radius: 10px; 
 }
 
 .backToSearch{
     grid-area: back;
-    border: blue solid 2px;
+    /* border: blue solid 2px; */
+    text-align: left;
+    width: 55%;
+    margin-right: 270px;
+    margin-top: 30px;
+}
+
+#backTo{
+    width: 100px;
+    height: 35px;
+    background-color: var(--orange);
+    color: white;
+    font-size: 14px;
 }

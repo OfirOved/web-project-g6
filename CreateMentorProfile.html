@@ -1,12 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="he">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
     <link rel="stylesheet" href="template.css">
-    <link rel="stylesheet" href="MentorProfile.css">
-    <title id="pageTitle">פרופיל חונך</title>
+    <link rel="stylesheet" href="CreateMentorProfile.css">
+
+    <title id="pageTitle">פתיחת פרופיל חונך</title>
 </head>
 
 <body onload="set_user_name('galy')">
@@ -50,52 +51,30 @@
             </div>
         </div>
 
-        <div class="main" dir="rtl">
-            <div class="grid-container-main">
-                <div class="mainTop">
-                    <div id="picture">
-                        <img src="profilePic.png" alt="profile pic" id="mentorPic">
-                    </div>
-                    <div id="about">
-                        <h4>קצת עליי...</h4>
-                        <p>טקסט טקסט טקסט טקסט</p>
-                    </div>
-                </div>
-                <div id="name">
-                    <h2>ניר ברששת</h2>
-                </div>
-                <div id="data">
-                    <p>קורסים:</p>
-                    <p>זמינות: לא זמין כלל</p>
-                    <p>שיעורים פרטיים: כן</p>
-                    <p>מחיר: 80 שקל לשעה</p>
-                    <p>טלפון: 050-4302222</p>
-                </div>
-                <div id="rankMentor">
-                    <div id="starRank">
-                        <p>דירוג:</p>
-                    </div>
-                    <div id="comment_div">
-                        <lable>תגובה:</lable> <br>
-                        <textarea id="comment" cols= "30" rows= "3"></textarea>
-                    </div>
-                </div>
-                <div class="backToSearch">
-                    <button type="button" id="backTo">בחזרה לחיפוש</button>
-                </div>
-            </div>
-
+        <div class="main" dir="rtl">   
+            <form class ="g2">
+                <h3>פרופיל חונך</h1>
+                
+                <lable> מספר טלפון </lable><br>
+                <input> <br>
+                <lable> הוספת קורות חיים </lable><br>
+                <input type="file" name="file1"><br>
+                <lable> הוספת תמונה </lable><br>
+                <input type="image" name="image1" src="profilePic.png"><br>
+                <lable> קצת עלי </lable> <br>
+                <textarea cols= "40" rows= "5"></textarea> <br>
+                <input type="submit" name="submit1" value="פרסם">
+            </form>
         </div>
         <div class="footer">
             <div class="footerLogo">
                 <img src="footerLogo.png" alt="Logo">
             </div>
             <div class="down">
-                <ul class="footerBar" dir="rtl">
-                    <li><a>לאתר האוניברסיטה</a></li>
-                    <li id="aguda"><a>לאתר האגודה הסטודנטיאלית</a></li>
-                    <li><a>צור קשר</a></li>
-                    <li><a>מי אנחנו?</a></li>
+                <ul dir="rtl">
+                    <li><a class="activeClasses">צור קשר</a></li>
+                    <li><a class="grades">משוב</a></li>
+                    <li><a class="mentors">מי אנחנו?</a></li>
                 </ul>
             </div>
         </div>
