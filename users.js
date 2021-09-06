@@ -1,8 +1,13 @@
-let is_logged_in = false;
-let logged_user = 'galy'
+var is_logged_in = window.localStorage.getItem('logged_user')
+var logged_user = window.localStorage.getItem('logged_user')
 
-let users = {
-    'galy': "גלי אביב"
+var users = {
+    'galyaviv': "גלי אביב"
+}
+
+
+var users_db = {
+    'galyaviv': '1234'
 }
 
 function set_user_name(username) {
@@ -15,11 +20,32 @@ function set_user_name(username) {
     }
 }
 
+function login() {
+    let username = document.getElementById("login_username").value;
+    if (!username in users_db) {
+        alert('שם משתמש או סיסמה לא תקינים!')
+        return false;
+    }
+    let password = document.getElementById("login_password").value;
+    if (users_db[username] != password) {
+        alert('שם משתמש או סיסמה לא תקינים!')
+        return false;
+    }
+    logged_user = username;
+    window.localStorage.setItem('logged_user', username)
+    window.localStorage.getItem('is_logged_in', true)
+    set_user_name(username);
+    window.location.href = "grades.html";
+    // return true;
+}
 
 function login_function() {
-    if (is_logged_in)
+    if (is_logged_in) {
         is_logged_in = false;
-    else
-        is_logged_in = true;
+        logged_user = undefined;
+        window.localStorage.removeItem('logged_user')
+        window.localStorage.removeItem('is_logged_in')
+    }
+    window.location.href = "Login.html";
     set_user_name(logged_user)
 }

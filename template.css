@@ -152,6 +152,13 @@ ul li:hover ul li {
 
 .footerBar {
     display: flex;
+    /* border: solid 2px red; */
+}
+
+.footerBar li {
+    /* border: solid 2px blue; */
+    width: max-content;
+    margin-inline: 20px;
 }
 
 #aguda {

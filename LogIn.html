@@ -1,25 +1,90 @@
 ﻿<!DOCTYPE html>
+<html lang="he">
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
-    <link rel = "stylesheet" href="LogIn.css">
-    <title>LogIn</title>
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="LogIn.css">
+    <title id="pageTitle">Template</title>
 </head>
-<body>
-<h1>BGU Students</h1>
-<div class = "g1"> 
-<div class = "i1"><a href="active.html#active">דף הבית</a></div>
-<div class = "i2"><a href="active.html#active">אודות</a></div>
-<div class = "i3"><a href="https://in.bgu.ac.il/Pages/default.aspx">לאתר האוניברסיטה</a></div>
-</div>
-<div class = "g2"> 
-<h3>התחבר:</h3>
-<lable id="phone"> שם משתמש </lable>
-<input> <br>
-<lable> סימסא </lable>
-<input> <br>
-<button type="button" >אישור</button>
-</div>
+
+<body onload="set_user_name('galy')">
+    <div class="grid-container">
+        <div class="header">
+            <div class="grid-container-header">
+                <div class="logo">
+                    <img class="logoPic" src="mainLogo.png" alt="Logo">
+                </div>
+                <div class="navi" dir="rtl">
+                    <ul class="naviTable" dir="rtl">
+                        <li><a class="activeClasses">שנתונים פעילים</a>
+                            <ul>
+                                <li><a>תש"ף 2020 תבנית א'</a></li>
+                                <li><a>תש"ף 2020 תבנית ב'</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="grades" href="grades.html">גיליון ציונים</a></li>
+                        <li><a class="mentors" href="#">מאגר חונכים</a></li>
+                        <li><a class="marathons" href="#">מרתונים ועזרתונים</a>
+                            <ul>
+                                <li><a href="#">עזרתונים/מרתונים פעילים</a></li>
+                                <li><a href="#">פתיחת עזרתון/מרתון</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="Education">מפה</a></li>
+                    </ul>
+                </div>
+
+                <div class="pic">
+                    <div id="greeting">
+                        <a id="username"></a>
+                        <br>
+                        <button id="login_function" onclick="login_function()"></button>
+                    </div>
+                    <!-- <button style="width:100p></button> -->
+                    <div id="profile_pic_div">
+                        <img src="profilePic.png" id="profile_pic">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main" dir="rtl">
+            <!-- <form> -->
+            <div class="imgcontainer">
+                <img src="login_user.png" class="avatar">
+            </div>
+
+            <div class="login_container">
+                <div class="form_row">
+                    <div class="form_elem"><label for="uname"><b>שם משתמש</b></label></div>
+                    <div class="form_elem"><input type="text" placeholder="הכנס שם משתמש" id="login_username" required></div>
+                </div>
+                <div class="form_row">
+                    <div class="form_elem"><label for="psw"><b>סיסמה</b></label></div>
+                    <div class="form_elem"><input type="password" placeholder="הכנס סיסמה" id="login_password" required></div>
+                </div>
+
+                <button onclick="login()">התחבר</button>
+            </div>
+            <!-- </form> -->
+        </div>
+        <div class="footer">
+            <div class="footerLogo">
+                <img src="footerLogo.png" alt="Logo">
+            </div>
+            <div class="down">
+                <ul class="footerBar" dir="rtl">
+                    <li><a>לאתר האוניברסיטה</a></li>
+                    <li id="aguda"><a>לאתר האגודה הסטודנטיאלית</a></li>
+                    <li><a>צור קשר</a></li>
+                    <li><a>מי אנחנו?</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="users.js"></script>
 </body>
+
 </html>

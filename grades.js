@@ -1,5 +1,5 @@
 users_grades_original = {
-    'galy': {
+    'galyaviv': {
         '364.1.1291': {
             name: 'אמידה ומבחני השערות',
             credit_points: 3.5,
@@ -34,7 +34,7 @@ users_grades_original = {
 }
 
 users_grades = {
-    'galy': {
+    'galyaviv': {
         '364.1.1291': {
             name: 'אמידה ומבחני השערות',
             credit_points: 3.5,
@@ -181,8 +181,6 @@ function is_valid_grade(grade) {
 function calc_GPA() {
     let total_credit_points = calc_total_credit_points()
     let current_gpa = calc_current_GPA();
-    console.log(total_credit_points);
-    console.log(current_gpa);
     let sum = 0
     let table = document.getElementById("gradesheet")
     for (var i = 1, row; row = table.rows[i]; i++) {
@@ -222,8 +220,8 @@ function calc_GPA() {
 }
 
 
-function setup_page(username) {
-    login_function()
+function setup_page() {
+    set_user_name(logged_user)
     set_gradesheet_table()
 }
 
@@ -242,7 +240,6 @@ function is_number(number) {
 }
 
 function is_valid_course_number(course_num) {
-    console.log(course_num);
     let fragments = course_num.split('.')
     return fragments.length == 3 && fragments[0].length == 3 && is_number(fragments[0]) && fragments[1].length == 1 && is_number(fragments[1]) && fragments[2].length == 4 && is_number(fragments[2])
 }
@@ -270,7 +267,6 @@ function add_course_to_table() {
         credit_points: Number.parseInt(course_credit),
         grade: Number.parseInt(course_grade)
     }
-    console.log(data);
     user_gradesheet[course_num] = data
     add_table_record(course_num, tbody)
     alert("קורס נוסף בהצלחה!")
