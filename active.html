@@ -51,28 +51,39 @@
         </div>
 
         <div class="main" dir="rtl">
-          <div class ="g2">
-            <h3 id='titele1'> עזרתונים ומרתונים פעילים</h1>
-                <table class = "t2" border="1">
-              <tr >
-                <th>שם הקורס</th>
-                <th>מספר קורס</th>
-                <th>מתרגל</th>
-                <th>מקומות פנויים</th>
-                <th>סטטוס פעיל</th>
-                <th>מספר נרשמים</th>
-                <th>תאריך התחלה</th>
-              </tr>
-              <tr>
-                <td>אלגברה לינארית</td>
-                <td>364.1.1111</td>
-                <td><a href="LogIn.html#LogIn">שלום ברנע</a></td>
-                <td>1</td>
-                <td>פתוח להרשמה</td>
-                <td>15</td>
-                <th>12.9.2021</th>
-              </tr>
-            </table>
+            <div id="grid-container-main">
+                <h1> עזרתונים ומרתונים פעילים</h1>
+                <div id="searchMarathon">
+                    <span id="searching">
+                        <input id="input_search" type="text" placeholder="הכנס שם קורס" dir="rtl">
+                    </span>
+                    <span id="search_button">
+                        <img id="searchIcon" src="searchButton.png" onclick="search()"> 
+                    </span>
+                </div>
+
+                <div id="marathons_table">
+                    <table id="marathonsTable" dir="rtl" border="1">
+                            <tr >
+                              <th>שם הקורס</th>
+                              <th>מספר קורס</th>
+                              <th>מתרגל</th>
+                              <th>מקומות פנויים</th>
+                              <th>סטטוס פעיל</th>
+                              <th>מספר נרשמים</th>
+                              <th>תאריך התחלה</th>
+                            </tr>
+                            <tr>
+                              <td>אלגברה לינארית</td>
+                              <td>364.1.1111</td>
+                              <td><a href="LogIn.html#LogIn">שלום ברנע</a></td>
+                              <td>1</td>
+                              <td>פתוח להרשמה</td>
+                              <td>15</td>
+                              <th>12.9.2021</th>
+                            </tr>
+                    </table> 
+                </div>
             </div>
         </div>
         <div class="footer">
