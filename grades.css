@@ -84,3 +84,8 @@
     width: 150px;
     height: 25px;
 }
+
+#table_wrapper,
+#calc_gpa {
+    display: none;
+}
