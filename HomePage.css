@@ -1,36 +1,90 @@
 .homePage-container{
     display: grid;
-    grid-template-areas: 
-    'message message toDo toDo';
-    /* border: 5px solid purple; */
-    gap: 50px;
-    padding-right: 50px;
-    padding-left: 50px;
-    justify-content: center;
+    grid-template-rows: auto;
+    grid-template-columns: 5% 55% 30% 10%;
+    grid-template-areas: "x messages todo y";
+    width: 100%;
+}
+
+.sectionTitle{
+    padding: 5px;
+    border-bottom: 2px solid black;    
+    width: 100%;
 }
 
 .myMessages{
-    border: 5px solid palevioletred;
-    grid-area: message;
-    width: 500px;
+    grid-area: messages;
+    padding: 10px;
     justify-content: center;
-}
-
-.messageHead{
-    text-align: center;
-}
-
-.news{
     width: 100%;
-    display: flex;
-    border: 5px solid blue; 
-    text-align-last: center;
+}
+
+.messages{
+    display: block; 
     margin-top: 20px;
-    height: 200px;
+    width: 100%;
+}
+
+.message {
+    margin: 10px;
+    background-color: #fff2e6;
+    border-bottom: 3px solid #ddd;
+    border-radius: 25px 10px 10px 25px;
+}
+
+.msgTitle {
+    background-color: #ffb004;
+    padding-right: 5px;
+    text-align: right;
+    font-size: 21px;
+    border-radius: 25px 10px 0px 0px;
+}
+
+.from {
+    padding-right: 3px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 16px;
+    color: grey;
+}
+
+.msgContent {
+    padding-right: 3px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.date {
+    text-align: left;
+    font-size: 18px;
+    padding-left: 15px;
+    padding-bottom: 5px;
 }
 
 .toDo{
-    border: 5px solid red; 
-    grid-area: toDo;
-    width: 500px;
+    grid-area: todo;
+    padding: 10px 30px 10px 10px;
+    width: 100%;
+}
+
+.todoTable {
+    padding-top: 25px;
+    width: 100%;
+}
+
+.taskHeader, .dueDateHeader {
+    background-color: #ffb004;
+}
+
+.todoRow, .taskCol, .dueDateCol {
+    padding: 5px;
+    border-bottom: 3px solid #ddd;
+}
+
+
+.smallButton {
+    padding: 5px;
+    font-size: 16px;
+    background-color: #fff2e6;
+    border-radius: 10px;
 }
