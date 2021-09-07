@@ -10,9 +10,9 @@ var users_db = {
     'galyaviv': '1234'
 }
 
-function set_user_name(username) {
+function set_user_name() {
     if (is_logged_in) {
-        document.getElementById("username").innerText = `!היי, ${users[username]}`
+        document.getElementById("username").innerText = `!היי, ${users[logged_user]}`
         document.getElementById("login_function").innerText = `התנתק`
     } else {
         document.getElementById("username").innerText = `!היי, אורח`

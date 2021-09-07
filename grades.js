@@ -221,7 +221,7 @@ function calc_GPA() {
 
 
 function setup_page() {
-    set_user_name(logged_user)
+    set_user_name()
     if (logged_user) {
         document.getElementById("table_wrapper").style.display = 'block'
         document.getElementById("calc_gpa").style.display = 'block'
