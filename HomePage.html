@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="HomePage.css">
     <title id="pageTitle">BGU Students</title>
 </head>
-
-<body onload="set_user_name('galy')">
+<body onload="init()">
     <div class="grid-container">
         <div class="header">
             <div class="grid-container-header">
@@ -53,13 +52,13 @@
         <div class="main" dir="rtl">
             <div class="homePage-container">
                 <div class="myMessages">
-                    <h3 class="messageHead">ההודעות שלי</h3>
-                    <div class="news">
-                        <marquee behavior="scroll" direction="up" scrollamount="1">Here is some scrolling text... going up!</marquee>
+                    <h3 class="sectionTitle">ההודעות שלי</h3>
+                    <div class="messages" id="messagesSection" dir="rtl">
                     </div>
                 </div>
                 <div class="toDo">
-                    luli
+                    <h3 class="sectionTitle">משימות</h3>
+                    <div class="todos" id="todosSection" dir="rtl"> </div>
                 </div>
             </div>
         </div>
@@ -77,7 +76,7 @@
             </div>
         </div>
     </div>
-    <script src="users.js"></script>
+    <script src="homePage.js"></script>
 </body>
 
 </html>
