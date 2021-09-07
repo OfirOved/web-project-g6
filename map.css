@@ -1,0 +1,10 @@
+#map_holder {
+    /* border: solid 2px red; */
+    width: max-content;
+    margin-inline: auto;
+}
+
+#map_holder h1 {
+    text-align: center;
+    line-height: 60px;
+}
