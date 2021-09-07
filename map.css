@@ -1,5 +1,5 @@
 #map_holder {
-    /* border: solid 2px red; */
+    border: solid 2px red;
     width: max-content;
     margin-inline: auto;
 }

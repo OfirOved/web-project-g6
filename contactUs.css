@@ -16,8 +16,16 @@ h2 {
 }
 
 .row_elem {
-    width: 150px;
+    /* position: absolute; */
+    width: 100px;
     height: 40px;
+    float: left;
+    /* display: inline-table; */
+    /* vertical-align: middle; */
+    /* align-items: center; */
+    /* padding-top: 5px; */
+    /* vertical-align: center; */
+    /* border: solid 2px red; */
 }
 
 .form_row {
@@ -31,6 +39,7 @@ h2 {
     margin-inline: auto;
     background-color: #ffb004;
     color: white;
+    float: left;
 }
 
 #content {
