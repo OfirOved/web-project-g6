@@ -1,2 +1,59 @@
-﻿
+﻿:root{
+    --grey: #ccc;
+    --orange: #ffb004;
+    --darker: #f86c04;
+    --white: #f2f2f2;
+}
+
+h1{
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+label{
+    font-size: 19px;
+    text-align: right;
+    justify-content: right;
+    justify-self: right;
+}
+
+.openProfile{
+    border: 2px solid red;
+}
+
+#first,#last,#aboutMe,#aviable, #tutor, #myPrice, #phoneNum, #myPic{
+    text-align: center;
+}
+
+input[type=text], select, textarea {
+    width: 60%; 
+    padding: 12px;  
+    border: 1px solid var(--grey);
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    margin: auto;
+    display: block;
+    width: 130px;
+    height: 35px;
+    background-color: var(--orange);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: var(--darker);
+  }
+  
+  .regForm {
+    border-radius: 5px;
+    background-color: var(--white);
+    border: 2px solid red;
+  }
 
