@@ -1,17 +1,66 @@
 ﻿
-.g2{
-text-align: center;
-
-background-image: url('r1.JPG');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  color: MintCream;
-
+#grid-container-main{
+  display: grid;
+  grid-template-areas:
+  'title title title'
+  'search search search'
+  'table table table';
 }
 
-.t2{
-text-align: center;
-
+h1{
+  grid-area: title;
+  text-align: center;
+  padding-bottom: 20px;
 }
+
+#searchMarathon {
+  grid-area: search;
+  /* border: solid 5px blue;  */
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+#searching{
+  padding-top: 7px;
+}
+
+#input_search{
+  /* border: solid 5px palevioletred;  */
+  height: 30px;
+  width: 250px;
+  font-size: 17px;
+  -moz-box-sizing: content-box; 
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+#searchIcon{
+  height: 50px;
+  width: 115px;
+  /* border: solid 5px rgb(216, 188, 27);    */
+  vertical-align: top;
+  -moz-box-sizing: content-box; 
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+#marathons_table{
+  grid-area: table;
+  display: flex;
+  /* border: solid 5px blue;  */
+  justify-content: center;
+}
+
+#marathonsTable{
+  align-self: center;
+}
+
+
+
+
+
+
 

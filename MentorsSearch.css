@@ -4,6 +4,7 @@
     grid-template-areas:
     'search search search'
     'sort sort sort'
+    'buttons buttons buttons'
     'table table table';
 }
 
@@ -47,6 +48,22 @@
     padding-bottom: 50px;
     /* border: solid 5px green;  */
 }
+
+#buttons{
+    grid-area: buttons;
+}
+
+#openNewMentor, #editYourProfile{
+    margin: auto;
+    display: block;
+    width: 130px;
+    height: 35px;
+    background-color: #ffb004;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
 
 #mentors_table{
     grid-area: table;
