@@ -9,7 +9,7 @@
     <title id="pageTitle">מאגר חונכים</title>
 </head>
 
-<body onload="set_user_name('galy')">
+<body onload="set_user_name('galy'); init();">
     <div class="grid-container">
         <div class="header">
             <div class="grid-container-header">
@@ -49,58 +49,36 @@
             </div>
         </div>
         <div class="main" dir="rtl">
-            <div id="grid-container-main">
-                <div id="searchMentor">
-                    <span id="searching">
-                        <input id="input_search" type="text" placeholder="הכנס שם קורס/חונך" dir="rtl">
-                    </span>
-                    <span id="search_button">
-                        <img id="searchIcon" src="searchButton.png" onclick="search()"> 
-                    </span>
-                </div>
-                <div id="sortBy" dir="rtl">
-                    <form>
-                        <label>חיפוש לפי:</label>
-                        <input type="radio" id="course" name="sort" value="course">
-                        <label for="course">קורס</label>
-                        <input type="radio" id="name" name="sort" value="name">
-                        <label for="name">שם</label>
-                    </form>
-                </div>
-                <div id="buttons">
-                    <div id="openNew">
-                        <button id="openNewMentor">פתיחת פרופיל חונך</button>
+            <div class = "mentorSearchContainer">
+                <div class = "search">
+                    <div class = "searchOptions">
+                        <div class = "searchValue">
+                            <input class = "searchInput" type="text" placeholder="הכנס שם קורס/חונך" dir="rtl">
+                        </div>
+                        <div class = "searchButton">
+                            <img class="searchIcon" src="searchButton.png" onclick="search()"> 
+                        </div>                            
                     </div>
-                    <div id="edit">
-                        <button id="editYourProfile">עריכת פרופיל קיים</button>
+                    <div class = "searchSortBy" dir="rtl">
+                        <form>
+                            <label>חיפוש לפי:</label>
+                            <input type="radio" id="course" name="sort" value="course">
+                            <label for="course">קורס</label>
+                            <input type="radio" id="name" name="sort" value="name">
+                            <label for="name">שם</label>
+                        </form>
                     </div>
+                </div>
+                <div id="mentorsSection" class = "mentorsResults">
                 </div>
 
-             
-                <div id="mentors_table">
-                    <table id="mentorsTable" dir="rtl">
-                        <tr>
-                            <th>שם פרטי</th>
-                            <th>שם משפחה</th>
-                            <th>קורס</th>
-                            <th>שיעורים פרטיים</th>
-                            <th>פלאפון</th>
-                        </tr>
-                        <tr>
-                            <td>נירת</td>
-                            <td>ברששת</td>
-                            <td>אלגברה לינארית</td>
-                            <td>כן</td>
-                            <td>054-2221111</td>
-                        </tr>
-                        <tr>
-                            <td>אורי</td>
-                            <td>ברק</td>
-                            <td>פיזיקה 1ב</td>
-                            <td>כן</td>
-                            <td>054-2221111</td>
-                        </tr>
-                    </table>
+                <div class = "searchBottomBar">
+                    <div>
+                        <button class="smallButton" onclick="openMyMentorProfie()">פתיחת פרופיל חונך</button>
+                    </div>
+                    <div>
+                        <button class="smallButton" onclick="editMyMentorProfile()">עריכת פרופיל קיים</button>
+                    </div>
                 </div>
             </div>
            
@@ -119,6 +97,7 @@
             </div>
         </div>
     </div>
+    <script src="MentorsSearch.js"></script>
     <script src="users.js"></script>
 </body>
 </html>

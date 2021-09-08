@@ -1,82 +1,95 @@
 
-#grid-container-main{
+.mentorSearchContainer{
     display: grid;
-    grid-template-areas:
-    'search search search'
-    'sort sort sort'
-    'buttons buttons buttons'
-    'table table table';
+    grid-template-areas: 'search' 'mentors' 'searchBottomBar';
+    overflow-y: auto;
 }
 
-#searchMentor {
+.search {
     grid-area: search;
-    /* border: solid 5px blue; */
-    text-align: center;
-    vertical-align: middle;
+    width: 100%;
+    padding: 10px;
+}
+
+.searchOptions {
     display: flex;
+    align-items:center;
     justify-content: center;
 }
 
-#searching{
-    padding-top: 7px;
+.searchValue {
+    font-size: 18px;
 }
 
-#input_search{
-    /* border: solid 5px palevioletred;  */
-    height: 30px;
+.searchInput {
+    font-size: 18px;
     width: 250px;
-    font-size: 17px;
-    -moz-box-sizing: content-box; 
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
+    line-height: 30px;
 }
 
-#searchIcon{
+.searchButton {
+    padding-top: 6px;
+}
+
+.searchIcon {
     height: 50px;
-    width: 115px;
-    /* border: solid 5px rgb(216, 188, 27);   */
-    vertical-align: top;
-    -moz-box-sizing: content-box; 
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
 }
 
-#sortBy{
-    grid-area: sort;  
+.searchSortBy {
+    font-size: 18px;
     text-align: center;
-    padding-left: 220px;
-    padding-bottom: 50px;
-    /* border: solid 5px green;  */
 }
 
-#buttons{
-    grid-area: buttons;
+.mentorsResults {
+    grid-area: mentors;
+    margin-top: 30px;
+    padding: 5px;
+    width: 100%;
 }
 
-#openNewMentor, #editYourProfile{
-    margin: auto;
-    display: block;
-    width: 130px;
-    height: 35px;
+.mentorsTable{
+    padding: 0px 25px 10px 25px;
+    width: 100%;
+}
+
+.mentorsHeader {
     background-color: #ffb004;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
 }
 
+.mentorRow:hover {
+    background-color: #fff2e6;
+}
 
-#mentors_table{
-    grid-area: table;
+.mentorCol {
+    padding: 5px;
+    border-bottom: 3px solid #ddd;
+}
+
+.course {
+    display: list-item;
+    list-style-type: disc;
+    text-align: right;
+}
+
+.courses {
+    width: 100%;
+    list-style-position: inside;
+}
+
+.searchBottomBar {
+    grid-area: searchBottomBar;
     display: flex;
-    /* border: solid 5px blue; */
     justify-content: center;
+    width: 100%;
 }
 
-#mentorsTable{
-    align-self: center;
+.smallButton {
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #fcdd97; 
+    border-radius: 10px;
 }
-
-
 
 
 
