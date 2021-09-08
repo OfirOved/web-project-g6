@@ -1,0 +1,78 @@
+#azraton_data {
+    background-color: #ffb004;
+    align-items: center;
+    /* border: solid 2px purple; */
+    display: flex;
+    width: max-content;
+    /* height: 30px; */
+    margin-inline: auto;
+    margin-block: 20px;
+    font-size: 20px;
+}
+
+.data_attribute {
+    border-inline: solid 1px white;
+    text-align: center;
+    width: 200px;
+}
+
+.buttons {
+    margin-inline: auto;
+    width: max-content;
+    /* border: solid 2px purple; */
+}
+
+.buttons button {
+    margin-inline: 20px;
+    /* display: bl  ock; */
+    width: 130px;
+    height: 25px;
+    background-color: #ffb004;
+    color: white;
+    font-size: 18px;
+}
+
+#add_student {
+    display: none;
+    /* border: solid 2px red; */
+    width: max-content;
+    margin-inline: auto;
+    margin-block: 5px;
+}
+
+#add_student button {
+    background-color: #ffb004;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-size: 24px;
+    color: white;
+}
+
+#registered_students td,
+#registered_students th,
+#waiting_list_students td,
+#waiting_list_students th {
+    /* width: 20px; */
+    /* margin: 20px; */
+    /* border: solid 2px red; */
+    text-align: center;
+    font-size: 18px;
+}
+
+#registered_students,
+#waiting_list_students {
+    margin-right: 10px;
+    /* margin-inline: auto; */
+    width: 50%;
+    border-collapse: separate;
+    border-spacing: 0 1em;
+    /* border: solid 2px blue; */
+}
+
+#registered_container {
+    margin-block: 20px;
+    /* border: solid 2px red; */
+}

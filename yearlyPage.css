@@ -1,17 +1,20 @@
 :root {
     --grey: #ccc;
 }
-h1{
+
+h1 {
     padding-top: 30px;
     text-align: center;
 }
+
 h2 {
     padding-bottom: 20px;
     text-align: right;
 }
 
 .contactForm {
-    margin-inline: auto;
+    margin-right: 40px;
+    /* margin-inline: auto; */
     /* justify-content: space-evenly; */
     text-align: right;
     /* border: 2px solid red; */
@@ -34,23 +37,28 @@ h2 {
     margin-inline: auto;
     background-color: #ffb004;
     color: white;
+    float: left;
+    margin-left: 230px;
 }
 
 .otherButtons button {
-    width: 100px;
-    height: 35px;
+    width: 140px;
+    height: 45px;
     margin-inline: auto;
     background-color: #ffb004;
     color: white;
+    margin-inline: 20px;
 }
 
 .otherButtons {
     margin-inline: auto;
-    justify-content: space-evenly; 
-    object-position: left;
-    text-align: left;
-    /* border: 2px solid red; */
-    width: max-content;
+    padding-top: 20px;
+    /* justify-content: space-evenly; */
+    /* object-position: left; */
+    /* text-align: left; */
+    /* border: 2px solid purple; */
+    /* width: 300px; */
+    /* display: flex; */
 }
 
 #yearly {
@@ -70,6 +78,7 @@ textarea {
 
 
 /* Chat containers */
+
 .container {
     width: 120%;
     border: 2px solid #dedede;
@@ -77,45 +86,67 @@ textarea {
     border-radius: 3px;
     padding: 6px;
     margin: 6px 0;
-  }
-  
-  /* Darker chat container */
-  .darker {
+}
+
+
+/* Darker chat container */
+
+.darker {
     border-color: #ccc;
     background-color: #ddd;
-  }
-  
-  /* Clear floats */
-  .container::after {
+}
+
+
+/* Clear floats */
+
+.container::after {
     content: "";
     clear: both;
     display: table;
-  }
-  
-  /* Style images */
-  .container img {
+}
+
+
+/* Style images */
+
+.container img {
     float: left;
     max-width: 60px;
     width: 50%;
     margin-right: 20px;
     border-radius: 50%;
-  }
-  
-  /* Style the right image */
-  .container img.right {
+}
+
+
+/* Style the right image */
+
+.container img.right {
     float: right;
     margin-left: 20px;
-    margin-right:0;
-  }
-  
-  /* Style time text */
-  .time-right {
+    margin-right: 0;
+}
+
+
+/* Style time text */
+
+.time-right {
     float: right;
     color: #aaa;
-  }
-  
-  /* Style time text */
-  .time-left {
+}
+
+
+/* Style time text */
+
+.time-left {
     float: left;
     color: #999;
-  }
+}
+
+#top_content {
+    display: flex;
+}
+
+#important_msg {
+    margin-right: 40px;
+    /* border: solid 2px blue; */
+    width: 40%;
+}

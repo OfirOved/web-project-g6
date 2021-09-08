@@ -52,40 +52,48 @@
 
         <div class="main" dir="rtl">
             <h1>שנתון 2019- תבנית א'</h1> <br><br>
-                   <div class="otherButtons" dir="ltr">
-                    <button type="button" onclick="f1()">לפורום שיעורי בית</button> <br><br>
-                    <button type="button" onclick="f1()">סיכומים ומסמכים</button>
+            <div id="top_content">
+                <div id="important_msg">
+                    <h2> הודעות חשובות:</h2>
+                    <div class="container">
+                        <p>תזכורת הרשמה לקורסים! ב10.10 נפתחת שנת תשפ"ב.</p>
+                        <span class="time-right">13:00 05/09/2021</span>
+                    </div>
+
+                    <div class="container darker">
+                        <p>נהליי קורונה לשנת הלימודים תשפ"ב</p>
+                        <span class="time-right">12:07  09/09/2021</span>
+                    </div>
+
+                    <br><br>
                 </div>
-                <div id="yearly" dir="rtl">   
-                <h2> הודעות חשובות:</h2>
-                <div class="container">
-                    <p>תזכורת הרשמה לקורסים! ב10.10 נפתחת שנת תשפ"ב.</p>
-                    <span class="time-right">13:00 05/09/2021</span>
-                </div>
-                
-                <div class="container darker">
-                    <p>נהליי קורונה לשנת הלימודים תשפ"ב</p>
-                    <span class="time-right">12:07  09/09/2021</span>
+                <div class="otherButtons" dir="ltr">
+                    <button type="button">לפורום שיעורי בית</button> <br><br>
+                    <button type="button">סיכומים ומסמכים</button>
                 </div>
 
-                <br><br>
+            </div>
+            <div id="yearly" dir="rtl">
+
                 <div class="contactForm">
                     <form action="/todo">
                         <h2> טופס פנייה לועד:</h2>
                         <div class="form_row">
-                            <div class="row_elem"><lable>נושא:</lable></div>
-                            <div class="row_elem"><input class="row_elem_input" style="width:250px;" type="text"></div><br>    
+                            <div class="row_elem">
+                                <lable>נושא:</lable>
+                            </div>
+                            <div class="row_elem"><input class="row_elem_input" style="width:250px;" type="text"></div><br>
                         </div>
                         <lable>תוכן ההודעה:</lable> <br>
-                        <textarea id="content" cols= "100" rows= "10"></textarea> <br>
-                        <button type="button" onclick="f1()">שלח</button>
+                        <textarea id="content" cols="100" rows="10"></textarea> <br>
+                        <button type="button">שלח</button>
                         <br><br><br>
                     </form>
 
-                <br><br>
+                    <br><br>
+                </div>
             </div>
         </div>
-
 
 
         <div class="footer">
