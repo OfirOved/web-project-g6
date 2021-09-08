@@ -57,7 +57,7 @@ h1{
 
 .courseInsertSection {
   display: grid;
-  grid-template-columns: 10% 65% 25%;
+  grid-template-columns: 15% 65% 25%;
   grid-template-areas: "courseLabel courseInput courseButton";
  
 }
@@ -128,6 +128,7 @@ h1{
   font-size: 21px;
   background-color: #ffb004;
   border-radius: 10px;
+  color: white;
 }
 
 .inputImage {

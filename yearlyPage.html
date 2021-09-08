@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
     <link rel="stylesheet" href="template.css">
-    <link rel="stylesheet" href="contactUs.css">
+    <link rel="stylesheet" href="yearlyPage.css">
     <title id="pageTitle"> דף שנתון</title>
 </head>
 
@@ -51,48 +51,43 @@
         </div>
 
         <div class="main" dir="rtl">
-            <div id="contact">
-                <h2>פורום שיעורי בית</h2>
-                <div class="ForumHomeWork">
+            <h1>שנתון 2019- תבנית א'</h1> <br><br>
+                   <div class="otherButtons" dir="ltr">
+                    <button type="button" onclick="f1()">לפורום שיעורי בית</button> <br><br>
+                    <button type="button" onclick="f1()">סיכומים ומסמכים</button>
+                </div>
+                <div id="yearly" dir="rtl">   
+                <h2> הודעות חשובות:</h2>
+                <div class="container">
+                    <p>תזכורת הרשמה לקורסים! ב10.10 נפתחת שנת תשפ"ב.</p>
+                    <span class="time-right">13:00 05/09/2021</span>
+                </div>
+                
+                <div class="container darker">
+                    <p>נהליי קורונה לשנת הלימודים תשפ"ב</p>
+                    <span class="time-right">12:07  09/09/2021</span>
+                </div>
+
+                <br><br>
+                <div class="contactForm">
                     <form action="/todo">
-                        <div class="form_row">
-                            <div class="row_elem"> <label for="year"> בחר את שנת הלימודים הרצויה: </label></div> 
-                            <div class="row_elem"> 
-                                <select name="year" id="years">
-                                    <option value="A">בחר</option>
-                                    <option value="A">שנה א'</option>
-                                    <option value="B">שנה ב'</option>
-                                    <option value="C">שנה ג'</option>
-                                    <option value="D">שנה ד'</option>
-                                    </select>      
-                            </div>  
-                        </div>
-                        <div class="form_row">
-                            <div class="row_elem"><label for="group">תבנית: </label> </div>
-                               <div class="row_elem"> 
-                                <select name="group" id="groups">
-                                <option value="A">בחר</option>
-                                <option value="A">תבנית א'</option>
-                                <option value="B">תבנית ב'</option>
-                                <option value="C">בין תבניות</option>
-                                </select>
-                               </div>      
-                        </div>
-                        <div class="form_row">
-                            <div class="row_elem"><lable>קורס:</lable></div>
-                            <div class="row_elem"><input class="row_elem_input" style="width:250px;" type="text"></div> <br>    
-                        </div>
+                        <h2> טופס פנייה לועד:</h2>
                         <div class="form_row">
                             <div class="row_elem"><lable>נושא:</lable></div>
                             <div class="row_elem"><input class="row_elem_input" style="width:250px;" type="text"></div><br>    
                         </div>
-                        <lable>תוכן השאלה:</lable> <br>
+                        <lable>תוכן ההודעה:</lable> <br>
                         <textarea id="content" cols= "100" rows= "10"></textarea> <br>
-                        <button type="button"onclick="f1()">שלח</button>
+                        <button type="button" onclick="f1()">שלח</button>
+                        <br><br><br>
                     </form>
-                </div>
+
+                <br><br>
             </div>
         </div>
+
+
+
         <div class="footer">
             <div class="footerLogo">
                 <img src="footerLogo.png" alt="Logo">
