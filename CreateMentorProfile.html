@@ -54,49 +54,99 @@
         <div class="main" dir="rtl">
             <div class="regForm">
                 <h1>פתיחת פרופיל חונכ/ת</h1>
-                <form class="openProfile" action="/todo">
-                    <div id="first">
-                        <label for="fname">שם פרטי</label><br>
-                        <input type="text" id="fname" name="firstname"><br>
+                <form action="#" onsubmit="">
+                    <div class="profileAttribute">
+                        <div class = "attributeName">
+                            <text>שם פרטי</text>
+                        </div>
+                        <div class = "attributeValue">
+                            <input type="text" id="fname" class="inputText"><br>
+                        </div>
                     </div>
-                    <div id="last">
-                        <label for="lname">שם משפחה</label><br>
-                        <input type="text" id="lname" name="lastname"><br>
+                    <div class="profileAttribute">
+                        <div class = "attributeName">
+                            <text>שם משפחה</text>
+                        </div>
+                        <div class = "attributeValue">
+                            <input type="text" id="lname" class="inputText"><br>
+                        </div>
                     </div>
-                    <div id="aboutMe">
-                        <label for="about">קצת עליי</label><br>
-                        <textarea id="about" name="about" style="height:200px"></textarea><br>
+                    <div class="profileAttribute">
+                        <div class = "attributeName">
+                            <text>קצת עליי</text>
+                        </div>
+                        <div class = "attributeValue">
+                            <textarea id="about" class="inputText" style="height:200px"></textarea><br>
+                        </div>
+                        
                     </div>
-                    <div id="available">
-                        <label for="availability">זמינות</label><br>
-                        <select id="availability" name="availability"><br>
-                          <option value="notAvailable">לא זמינ/ה כלל</option>
-                          <option value="weekly">מפגש בשבוע</option>
-                          <option value="twoWeek">מפגש בשבועיים</option>
-                          <option value="high">גבוהה מאוד</option>
-                        </select><br>
+                    <div class="profileAttribute">
+                        <div class = "attributeName">
+                            <text>קורסים</text>
+                        </div>
+                        <div class = "attributeValue">
+                            <div class="courseInsertSection">
+                                <label for="course" class="insertCouseLabel">הכנס קורס:</label>
+                                <input type="text" id="course" name="course" class="insertCouseInput"></input><br>
+                                <div class="insertCouseButtonWrapper">
+                                    <button type='button' class="insertCouseButton" onclick="onInsertCourse()"> בחר</button>
+                                </div>
+                            </div>
+                            <div id="courses" class="coursesView">
+
+                            </div>
+                        </div>
                     </div>
-                    <div id="tutor">
-                        <label for="private">שיעורים פרטיים</label><br>
-                        <select id="private" name="private"><br>
-                          <option value="yes">כן</option>
-                          <option value="no">לא</option>
-                        </select><br>
+                    <div class="profileAttribute">
+                        <div class = "attributeName">
+                            <text>זמינות</text>
+                        </div>
+                        <div class = "attributeValue">
+                            <select class = "inputSelect"><br>
+                                <option value="notAvailable">לא זמינ/ה כלל</option>
+                                <option value="weekly">מפגש בשבוע</option>
+                                <option value="twoWeek">מפגש בשבועיים</option>
+                                <option value="high">גבוהה מאוד</option>
+                            </select><br>
+                        </div>
                     </div>
-                    <div id="myPrice">
-                        <label for="price">מחיר</label><br>
-                        <input type="text" id="price" name="price"><br>
+                    <div class="profileAttribute">
+                        <div class = "attributeName">
+                            <text>שיעורים פרטיים</text>
+                        </div>
+                        <div class = "attributeValue">
+                            <select class = "inputSelect"><br>
+                                <option value="yes">כן</option>
+                                <option value="no">לא</option>
+                            </select><br>
+                        </div>
                     </div>
-                    <div id="phoneNum">
-                        <label for="phone">פלאפון</label><br>
-                        <input type="text" id="phone" name="phone"><br>
+                    <div class="profileAttribute">
+                        <div class = "attributeName">
+                            <text>מחיר</text>
+                        </div>
+                        <div class = "attributeValue">
+                            <input type="text" id="price" class="inputText"><br>
+                        </div>
                     </div>
-                    <div id="myPic">
-                        <lable>תמונת פרופיל</lable><br>
-                        <input type="image" name="image" src="profilePic.png"><br>
+                    <div class="profileAttribute">
+                        <div class = "attributeName">
+                            <text>פלאפון</text>
+                        </div>
+                        <div class = "attributeValue">
+                            <input type="text" id="phone" class="inputText"><br>
+                        </div>
                     </div>
-                    <div id="submit">
-                        <input type="submit" value="שלח">  
+                    <div class="profileAttribute">
+                        <div class = "attributeName">
+                            <text>תמונת פרופיל</text>
+                        </div>
+                        <div class = "attributeValue">
+                            <input type="file" id="image" class="inputImage" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="buttonWrapper">
+                        <input type="submit" class="smallButton" value="שלח" ><br>
                     </div>
                 </form>
               </div>   
@@ -114,6 +164,7 @@
             </div>
         </div>
     </div>
+    <script src="CreateMentorProfile.js"></script>
     <script src="users.js"></script>
 </body>
 

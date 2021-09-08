@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="aboutUs.css">
+    <title id="pageTitle" dir="rtl">מי אנחנו? </title>
+</head>
+
+<body onload="set_user_name('galy')">
+    <div class="grid-container">
+        <div class="header">
+            <div class="grid-container-header">
+                <div class="logo">
+                    <img class="logoPic" src="mainLogo.png" alt="Logo">
+                </div>
+                <div class="navi" dir="rtl">
+                    <ul class="naviTable" dir="rtl">
+                        <li><a class="activeClasses">שנתונים פעילים</a>
+                            <ul>
+                                <li><a>תש"ף 2020 תבנית א'</a></li>
+                                <li><a>תש"ף 2020 תבנית ב'</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="grades" href="grades.html">גיליון ציונים</a></li>
+                        <li><a class="mentors" href="#">מאגר חונכים</a></li>
+                        <li><a class="marathons" href="#">מרתונים ועזרתונים</a>
+                            <ul>
+                                <li><a href="#">עזרתונים/מרתונים פעילים</a></li>
+                                <li><a href="#">פתיחת עזרתון/מרתון</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="Education">מפה</a></li>
+                    </ul>
+                </div>
+
+                <div class="pic">
+                    <div id="greeting">
+                        <a id="username"></a>
+                        <br>
+                        <button id="login_function" onclick="login_function()"></button>
+                    </div>
+                    <!-- <button style="width:100p></button> -->
+                    <div id="profile_pic_div">
+                        <img src="profilePic.png" id="profile_pic">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main" dir="rtl">
+            <div class="aboutUs-container">
+                <h1>קצת עלינו</h1>
+                <div id="story" dir="rtl">
+                    <p>אנחנו גלי, אופיר, לידייז והדס, ארבע סטודנטיות במחלקה להנדסת תעשייה וניהול באוניברסיטת בן גוריון.</p>
+                    <p>כחלק מקורס בחירה בתואר - בניית מערכות ממוחשבות מבוססות Web , הקמנו את אתר זה.</p>
+                    <p> כסטודנטים, אנו מוצאים את עצמנו מוקפים בהמון מידע, בין אם אקדמי או בירוקרטי. לעיתים עלינו לנווט בתוך מידע זה על מנת להוציא את המידע הדרוש לנו באותו רגע.</p>
+                    <p>לכולנו מוכרות קבוצות הוואטסאפ השונות לכל קורס, פתיחת עזרתונים ומרתונים, Drive Google שיש לכל שנתון וכיו"ב.</p>
+                    <p> הרעיון לאתר נבע מהצורך שלנו כסטודנטיות לפלטפורמה אחת מסודרת לצרכים הסטודנטיאליים שלנו תוך שמירה על ההיבט החברתי שבתקווה יחליף את הצורך בקבוצות וואטסאפ פרטניות ו-  Google Drives העוברים משנתון לשנתון. האתר מיועד לכלל הסטודנטים באוניברסיטת בן גוריון.</p>
+                    <p id="aproach">מקוות שתמצאו את האתר מועיל, שימושי ונוח. מוזמנים לפנות אלינו בלשונית צור קשר!</p>
+                </div>
+                <div id="us">
+                    <img src="groupPhoto.jpg" alt="aboutUs pic">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerLogo">
+                <img src="footerLogo.png" alt="Logo">
+            </div>
+            <div class="down">
+                <ul class="footerBar" dir="rtl">
+                    <li><a>לאתר האוניברסיטה</a></li>
+                    <li id="aguda"><a>לאתר האגודה הסטודנטיאלית</a></li>
+                    <li><a>צור קשר</a></li>
+                    <li><a>מי אנחנו?</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="users.js"></script>
+
+</body>
+
+</html>

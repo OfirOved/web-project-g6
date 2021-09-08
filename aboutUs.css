@@ -1,0 +1,35 @@
+.main{
+    padding: 20px;
+}
+
+.aboutUs-container{
+    grid-template-areas: 
+    'head head head head head'
+    'about about about pic pic';
+    display: grid;
+}
+
+h1{
+    grid-area: head;
+    text-align: center;
+}
+
+#story{
+    grid-area: about;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 27px;
+    border: 2px solid red;  
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+#aproach{
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+#us{
+    grid-area: pic;
+    border: 2px solid blue;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="contactUs.css">
+    <title id="pageTitle"> דף שנתון</title>
+</head>
+
+<body onload="set_user_name('galy')">
+    <div class="grid-container">
+        <div class="header">
+            <div class="grid-container-header">
+                <div class="logo">
+                    <img class="logoPic" src="mainLogo.png" alt="Logo">
+                </div>
+                <div class="navi" dir="rtl">
+                    <ul class="naviTable" dir="rtl">
+                        <li><a class="activeClasses">שנתונים פעילים</a>
+                            <ul>
+                                <li><a>תש"ף 2020 תבנית א'</a></li>
+                                <li><a>תש"ף 2020 תבנית ב'</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="grades" href="grades.html">גיליון ציונים</a></li>
+                        <li><a class="mentors" href="#">מאגר חונכים</a></li>
+                        <li><a class="marathons" href="#">מרתונים ועזרתונים</a>
+                            <ul>
+                                <li><a href="#">עזרתונים/מרתונים פעילים</a></li>
+                                <li><a href="#">פתיחת עזרתון/מרתון</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="Education">מפה</a></li>
+                    </ul>
+                </div>
+
+                <div class="pic">
+                    <div id="greeting">
+                        <a id="username"></a>
+                        <br>
+                        <button id="login_function" onclick="login_function()"></button>
+                    </div>
+                    <!-- <button style="width:100p></button> -->
+                    <div id="profile_pic_div">
+                        <img src="profilePic.png" id="profile_pic">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main" dir="rtl">
+            <div id="contact">
+                <h2>פורום שיעורי בית</h2>
+                <div class="ForumHomeWork">
+                    <form action="/todo">
+                        <div class="form_row">
+                            <div class="row_elem"> <label for="year"> בחר את שנת הלימודים הרצויה: </label></div> 
+                            <div class="row_elem"> 
+                                <select name="year" id="years">
+                                    <option value="A">בחר</option>
+                                    <option value="A">שנה א'</option>
+                                    <option value="B">שנה ב'</option>
+                                    <option value="C">שנה ג'</option>
+                                    <option value="D">שנה ד'</option>
+                                    </select>      
+                            </div>  
+                        </div>
+                        <div class="form_row">
+                            <div class="row_elem"><label for="group">תבנית: </label> </div>
+                               <div class="row_elem"> 
+                                <select name="group" id="groups">
+                                <option value="A">בחר</option>
+                                <option value="A">תבנית א'</option>
+                                <option value="B">תבנית ב'</option>
+                                <option value="C">בין תבניות</option>
+                                </select>
+                               </div>      
+                        </div>
+                        <div class="form_row">
+                            <div class="row_elem"><lable>קורס:</lable></div>
+                            <div class="row_elem"><input class="row_elem_input" style="width:250px;" type="text"></div> <br>    
+                        </div>
+                        <div class="form_row">
+                            <div class="row_elem"><lable>נושא:</lable></div>
+                            <div class="row_elem"><input class="row_elem_input" style="width:250px;" type="text"></div><br>    
+                        </div>
+                        <lable>תוכן השאלה:</lable> <br>
+                        <textarea id="content" cols= "100" rows= "10"></textarea> <br>
+                        <button type="button"onclick="f1()">שלח</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerLogo">
+                <img src="footerLogo.png" alt="Logo">
+            </div>
+            <div class="down">
+                <ul class="footerBar" dir="rtl">
+                    <li><a>לאתר האוניברסיטה</a></li>
+                    <li id="aguda"><a>לאתר האגודה הסטודנטיאלית</a></li>
+                    <li><a>צור קשר</a></li>
+                    <li><a>מי אנחנו?</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="users.js"></script>
+</body>
+
+</html>
