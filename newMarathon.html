@@ -48,29 +48,49 @@
         <div class="main" dir="rtl">
             <div class="marathonForm">
                 <h1>פתיחת עזרתון/מרתון</h1>
-                <form class="openMarathon" action="/todo">
+                <form class="openMarathon" action="#" onsubmit="sendRequestforOpenMarathon()">
                     <div id="courseNum">
-                        <label for="course_num">מספר קורס</label><br>
-                        <input type="text" id="course_num" name="course_num"><br>
+                        <div id="courseNumLable">
+                            <label for="course_num">מספר קורס</label><br>
+                        </div>
+                        <div id="courseNumInput">
+                            <input type="text" id="course_num" name="course_num"><br>
+                        </div>
                     </div>
                     <div id="courseName">
-                        <label for="course_name">שם הקורס</label><br>
-                        <input type="text" id="course_name" name="course_name"><br>
+                        <div id="courseNameLabel">
+                            <label for="course_name">שם הקורס</label><br>
+                        </div>
+                        <div id="courseNameInput">
+                            <input type="text" id="course_name" name="course_name"><br>
+                        </div>
                     </div>
                     <div id="type">
-                        <lable>סוג</lable>
-                        <select name="sessionType">
-                            <option value="marathon">מרתון</option>
-                            <option value="azraton">עזרתון</option>
-                        </select > <br>
+                        <div id="typeLabel">
+                            <lable>סוג</lable>
+                        </div>
+                        <div id="typeInput">
+                            <select name="sessionType">
+                                <option value="marathon">מרתון</option>
+                                <option value="azraton">עזרתון</option>
+                            </select > <br>
+                        </div>
                     </div>
                     <div id="tutor">
-                        <label for="mentor">מתרגל</label><br>
-                        <input type="text" id="mentor" name="mentor"><br>
+                        <div id="tutorLabel">
+                            <label for="mentor">מתרגל</label><br>
+                        </div>
+                        <div id="tutorInput">
+                            <input type="text" id="mentor" name="mentor"><br>
+                        </div>
                     </div>
                     <div id="price">
-                        <label for="marathonPrice">מחיר</label><br>
-                        <input type="text" id="marathonPrice" name="marathonPrice"><br>
+                        <div id="priceLabel">
+                            <label for="marathonPrice">מחיר</label><br>
+                        </div>
+                        <div id="priceInput">
+                            <input type="text" id="marathonPrice" name="marathonPrice"><br>
+                        </div>
                     </div>
                     <div id="submit">
                         <input type="submit" value="שלח">  
@@ -92,6 +112,7 @@
             </div>
         </div>
     </div>
+    <script src="newMarathon.js"></script>
     <script src="users.js"></script>
 </body>
 
