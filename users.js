@@ -1,6 +1,8 @@
 var is_logged_in = window.localStorage.getItem('logged_user')
 var logged_user = window.localStorage.getItem('logged_user')
-
+var current_year = {
+    value: null
+};
 var users = {
     'galyaviv': "גלי אביב"
 }
@@ -17,17 +19,28 @@ var classes = {
     }
 }
 
+function change_yearly_value(value) {
+    // console.log(value);
+    current_year.value = value;
+}
+
 function set_active_classes() {
     let active_yearly = document.getElementById('activeYearly');
-    console.log(active_yearly);
+    // console.log(active_yearly);
     for (yearly in classes[logged_user]) {
         let li = document.createElement('li');
         let a = document.createElement('a');
         li.appendChild(a);
         active_yearly.appendChild(li);
         a.innerText = classes[logged_user][yearly];
+        a.href = 'yearlyPage.html'
+        a.setAttribute('id', yearly)
+        let reference = document.getElementById(yearly)
+        reference.onclick = change_yearly_value(classes[logged_user][yearly])
     }
 }
+
+
 
 function set_user_name() {
     if (is_logged_in) {

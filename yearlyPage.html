@@ -6,10 +6,13 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="template.css">
     <link rel="stylesheet" href="yearlyPage.css">
+    <script src="users.js"></script>
+
+    <script src="yearlyPage.js"></script>
     <title id="pageTitle"> דף שנתון</title>
 </head>
 
-<body onload="set_user_name('galy')">
+<body onload="setup_page()">
     <div class="grid-container">
         <div class="header">
             <div class="grid-container-header">
@@ -47,7 +50,7 @@
         </div>
 
         <div class="main" dir="rtl">
-            <h1>שנתון 2019- תבנית א'</h1> <br><br>
+            <h1 id="year_title">'</h1> <br><br>
             <div id="top_content">
                 <div id="important_msg">
                     <h2> הודעות חשובות:</h2>
@@ -106,7 +109,6 @@
             </div>
         </div>
     </div>
-    <script src="users.js"></script>
 </body>
 
 </html>
