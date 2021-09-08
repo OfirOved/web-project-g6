@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
     <link rel="stylesheet" href="template.css">
-    <link rel="stylesheet" href="manageAzraton.css">
-    <title id="pageTitle">ניהול עזרתון</title>
-    <script src="manageAzraton.js"></script>
+    <link rel="stylesheet" href="committee.css">
+    <script src="committee.js"></script>
+    <title id="pageTitle">Template</title>
 </head>
 
-<body onload="setup_page('364.1.1291')">
+<body onload="setup_page()">
     <div class="grid-container">
         <div class="header">
             <div class="grid-container-header">
                 <div class="logo">
-                    <a href="HomePage.html"><img class="logoPic" src="mainLogo.png" alt="Logo"></a>
+                    <img class="logoPic" src="mainLogo.png" alt="Logo">
                 </div>
                 <div class="navi" dir="rtl">
                     <ul class="naviTable" dir="rtl">
@@ -33,7 +33,7 @@
                                 <li><a href="#">פתיחת עזרתון/מרתון</a></li>
                             </ul>
                         </li>
-                        <li><a class="Education" href="map.htmlw">מפה</a></li>
+                        <li><a class="Education">מפה</a></li>
                     </ul>
                 </div>
 
@@ -52,36 +52,15 @@
         </div>
 
         <div class="main" dir="rtl">
-            <div id="azraton_data">
-                <div id="course_name" class="data_attribute"></div>
-                <div id="course_num" class="data_attribute"></div>
-                <div id="payed" class="data_attribute"></div>
-                <div id="registered" class="data_attribute"></div>
-            </div>
-            <div class="buttons">
-                <button onclick="display_add_student()">הוספת סטודנט</button>
-                <!-- <button>הסרת סטודנט</button> -->
-                <button>שליחה לדיקנאט</button>
-                <button>שליחת תזכורת</button>
-                <button>נעילת עזרתון</button>
-                <button>ביטול עזרתון</button>
-            </div>
-            <div id="add_student">
-                <label>שם הסטודנט</label>
-                <input id="student_name">
-                <label>ת"ז</label>
-                <input id="student_id">
-                <button onclick="add_student_to_azraton()">+</button>
-            </div>
-            <div id="registered_container">
-                <br>
-                <h3>סטודנטים רשומים:</h3>
-                <table id="registered_students"></table>
-            </div>
-            <div id="waiting_list_container">
-                <br>
-                <h3>רשימת המתנה:</h3>
-                <table id="waiting_list_students"></table>
+            <div id="page_container">
+                <div id="student_msg">
+                    <h3>הודעות שהתקבלו:</h3>
+                </div>
+                <div id="msg_container">
+                    <h3>שליחת הודעה</h3>
+                    <textarea rows="15" cols="80"></textarea><br>
+                    <button>שלח</button>
+                </div>
             </div>
         </div>
         <div class="footer">

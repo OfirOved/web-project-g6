@@ -1,0 +1,30 @@
+#page_container {
+    display: flex;
+}
+
+#student_msg {
+    width: 50%;
+    padding-inline: 10px;
+    /* border: solid 2px blue; */
+}
+
+#msg_container {
+    width: 50%;
+    padding-inline: 10px;
+    /* margin-inline: auto; */
+}
+
+#msg_container h3,
+#student_msg h3 {
+    /* border: solid 2px red; */
+    line-height: 60px;
+}
+
+#msg_container button {
+    width: 80px;
+    height: 35px;
+    margin-inline: auto;
+    background-color: #ffb004;
+    color: white;
+    float: left;
+}
