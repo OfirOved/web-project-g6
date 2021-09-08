@@ -48,47 +48,25 @@
         </div>
 
         <div class="main" dir="rtl">
-            <div id="grid-container-main">
+            <div class="activeAzrathonContainer">
                 <h1> עזרתונים ומרתונים פעילים</h1>
-                <div id="searchMarathon">
-                    <span id="searching">
-                        <input id="input_search" type="text" placeholder="הכנס מספר קורס" dir="rtl">
-                    </span>
-                    <span id="search_button">
-                        <img id="searchIcon" src="searchButton.png" onclick="search()"> 
-                    </span>
+                <div class="search">
+                    <div class="searchOptions">
+                        <div class="searchValue">
+                            <input id="input_search" type="text" placeholder="הכנס מספר קורס" dir="rtl">
+                        </div>
+                        <div class="searchButton">
+                            <img class="searchIcon" src="searchButton.png" onclick="search()">
+                        </div>
+                    </div>
+                </div>
+                <div id="marathonsSection" class="marathonsResults">
                 </div>
 
-                <div id="marathons_table">
-                    <table id="marathonsTable"></table>
-                </div>
-
-                <div id="marathons_table">
-                    <table id="marathonsTable" dir="rtl" border="1">
-                        <tr>
-                            <th></th>
-                            <th>מספר קורס</th>
-                            <th>שם הקורס</th>
-                            <th>סוג</th>
-                            <th>מתרגל</th>
-                            <th>מקומות פנויים</th>
-                            <th>מספר נרשמים</th>
-                            <th>תאריך התחלה</th>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>364.1.1111</td>
-                            <td>לינארית</td>
-                            <td>מרתון</td>
-                            <td><a href="#">שלום ברנע</a></td>
-                            <td>1</td>
-                            <td>15</td>
-                            <th>12.9.2021</th>
-                        </tr>
-                    </table>
-                </div>
-                <div id="signUp">
-                    <button id="sign">הרשמה</button>
+                <div class="searchBottomBar">
+                    <div class="signUp">
+                        <button id="sign">הרשמה</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,7 +84,9 @@
             </div>
         </div>
     </div>
+    <script src="activeAzraton.js"></script>
     <script src="users.js"></script>
+   
 </body>
 
 </html>
