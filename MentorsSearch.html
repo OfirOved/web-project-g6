@@ -18,23 +18,24 @@
                 </div>
                 <div class="navi" dir="rtl">
                     <ul class="naviTable" dir="rtl">
-                        <li><a class="activeClasses">שנתונים פעילים</a>
+                        <li><a id="activeYearly" class="activeClasses">שנתונים פעילים</a>
                             <ul>
                                 <li><a>תש"ף 2020 תבנית א'</a></li>
                                 <li><a>תש"ף 2020 תבנית ב'</a></li>
                             </ul>
                         </li>
-                        <li><a class="grades" href="#">גיליון ציונים</a></li>
+                        <li><a class="grades" href="grades.html">גיליון ציונים</a></li>
                         <li><a class="mentors" href="#">מאגר חונכים</a></li>
                         <li><a class="marathons" href="#">מרתונים ועזרתונים</a>
                             <ul>
-                                <li><a href="#">עזרתונים/מרתונים פעילים</a></li>
-                                <li><a href="#">פתיחת עזרתון/מרתון</a></li>
+                                <li><a href="activeAzraton.html">עזרתונים/מרתונים פעילים</a></li>
+                                <li><a href="newMarathon.html">פתיחת עזרתון/מרתון</a></li>
                             </ul>
                         </li>
-                        <li><a class="Education">מפה</a></li>
+                        <li><a class="Education" href="map.html">מפה</a></li>
                     </ul>
                 </div>
+
                 <div class="pic">
                     <div id="greeting">
                         <a id="username"></a>
@@ -49,17 +50,17 @@
             </div>
         </div>
         <div class="main" dir="rtl">
-            <div class = "mentorSearchContainer">
-                <div class = "search">
-                    <div class = "searchOptions">
-                        <div class = "searchValue">
-                            <input class = "searchInput" type="text" placeholder="הכנס שם קורס/חונך" dir="rtl">
+            <div class="mentorSearchContainer">
+                <div class="search">
+                    <div class="searchOptions">
+                        <div class="searchValue">
+                            <input class="searchInput" type="text" placeholder="הכנס שם קורס/חונך" dir="rtl">
                         </div>
-                        <div class = "searchButton">
-                            <img class="searchIcon" src="searchButton.png" onclick="search()"> 
-                        </div>                            
+                        <div class="searchButton">
+                            <img class="searchIcon" src="searchButton.png" onclick="search()">
+                        </div>
                     </div>
-                    <div class = "searchSortBy" dir="rtl">
+                    <div class="searchSortBy" dir="rtl">
                         <form>
                             <label>חיפוש לפי:</label>
                             <input type="radio" id="course" name="sort" value="course">
@@ -69,10 +70,10 @@
                         </form>
                     </div>
                 </div>
-                <div id="mentorsSection" class = "mentorsResults">
+                <div id="mentorsSection" class="mentorsResults">
                 </div>
 
-                <div class = "searchBottomBar">
+                <div class="searchBottomBar">
                     <div>
                         <button class="smallButton" onclick="openMyMentorProfie()">פתיחת פרופיל חונך</button>
                     </div>
@@ -81,7 +82,7 @@
                     </div>
                 </div>
             </div>
-           
+
         </div>
         <div class="footer">
             <div class="footerLogo">
@@ -100,4 +101,5 @@
     <script src="MentorsSearch.js"></script>
     <script src="users.js"></script>
 </body>
+
 </html>

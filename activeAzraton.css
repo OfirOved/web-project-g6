@@ -1,0 +1,86 @@
+﻿:root{
+  --orange:  #ffb004;
+}
+
+#grid-container-main{
+  display: grid;
+  grid-template-areas:
+  'title title title'
+  'search search search'
+  'table table table'
+  'button button button';
+}
+
+h1{
+  grid-area: title;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#searchMarathon {
+  grid-area: search;
+  /* border: solid 5px blue;  */
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+#searching{
+  padding-top: 7px;
+}
+
+#input_search{
+  /* border: solid 5px palevioletred;  */
+  height: 30px;
+  width: 250px;
+  font-size: 17px;
+  -moz-box-sizing: content-box; 
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+#searchIcon{
+  height: 50px;
+  width: 115px;
+  /* border: solid 5px rgb(216, 188, 27);    */
+  vertical-align: top;
+  -moz-box-sizing: content-box; 
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+#marathons_table{/*this is the div that wraps the table*/
+  grid-area: table;
+  display: flex;
+  /* border: solid 5px blue;  */
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+#marathonsTable{
+  align-self: center;
+}
+
+#signUp{
+  grid-area: button;
+  text-align: center;
+}
+
+#sign{
+    margin: auto;
+    display: block;
+    width: 70px;
+    height: 35px;
+    background-color: var(--orange);
+    color: white;
+    font-size: 14px;
+}
+
+
+
+
+
+
+

@@ -19,21 +19,21 @@
                 </div>
                 <div class="navi" dir="rtl">
                     <ul class="naviTable" dir="rtl">
-                        <li><a class="activeClasses">שנתונים פעילים</a>
+                        <li><a id="activeYearly" class="activeClasses">שנתונים פעילים</a>
                             <ul>
                                 <li><a>תש"ף 2020 תבנית א'</a></li>
                                 <li><a>תש"ף 2020 תבנית ב'</a></li>
                             </ul>
                         </li>
-                        <li><a class="grades" href="#">גיליון ציונים</a></li>
+                        <li><a class="grades" href="grades.html">גיליון ציונים</a></li>
                         <li><a class="mentors" href="#">מאגר חונכים</a></li>
                         <li><a class="marathons" href="#">מרתונים ועזרתונים</a>
                             <ul>
-                                <li><a href="#">עזרתונים/מרתונים פעילים</a></li>
-                                <li><a href="#">פתיחת עזרתון/מרתון</a></li>
+                                <li><a href="activeAzraton.html">עזרתונים/מרתונים פעילים</a></li>
+                                <li><a href="newMarathon.html">פתיחת עזרתון/מרתון</a></li>
                             </ul>
                         </li>
-                        <li><a class="Education">מפה</a></li>
+                        <li><a class="Education" href="map.html">מפה</a></li>
                     </ul>
                 </div>
 
@@ -56,35 +56,35 @@
                 <h1>פתיחת פרופיל חונכ/ת</h1>
                 <form action="#" onsubmit="">
                     <div class="profileAttribute">
-                        <div class = "attributeName">
+                        <div class="attributeName">
                             <text>שם פרטי</text>
                         </div>
-                        <div class = "attributeValue">
+                        <div class="attributeValue">
                             <input type="text" id="fname" class="inputText"><br>
                         </div>
                     </div>
                     <div class="profileAttribute">
-                        <div class = "attributeName">
+                        <div class="attributeName">
                             <text>שם משפחה</text>
                         </div>
-                        <div class = "attributeValue">
+                        <div class="attributeValue">
                             <input type="text" id="lname" class="inputText"><br>
                         </div>
                     </div>
                     <div class="profileAttribute">
-                        <div class = "attributeName">
+                        <div class="attributeName">
                             <text>קצת עליי</text>
                         </div>
-                        <div class = "attributeValue">
+                        <div class="attributeValue">
                             <textarea id="about" class="inputText" style="height:200px"></textarea><br>
                         </div>
-                        
+
                     </div>
                     <div class="profileAttribute">
-                        <div class = "attributeName">
+                        <div class="attributeName">
                             <text>קורסים</text>
                         </div>
-                        <div class = "attributeValue">
+                        <div class="attributeValue">
                             <div class="courseInsertSection">
                                 <label for="course" class="insertCouseLabel">הכנס קורס:</label>
                                 <input type="text" id="course" name="course" class="insertCouseInput"></input><br>
@@ -98,11 +98,11 @@
                         </div>
                     </div>
                     <div class="profileAttribute">
-                        <div class = "attributeName">
+                        <div class="attributeName">
                             <text>זמינות</text>
                         </div>
-                        <div class = "attributeValue">
-                            <select class = "inputSelect"><br>
+                        <div class="attributeValue">
+                            <select class="inputSelect"><br>
                                 <option value="notAvailable">לא זמינ/ה כלל</option>
                                 <option value="weekly">מפגש בשבוע</option>
                                 <option value="twoWeek">מפגש בשבועיים</option>
@@ -111,45 +111,45 @@
                         </div>
                     </div>
                     <div class="profileAttribute">
-                        <div class = "attributeName">
+                        <div class="attributeName">
                             <text>שיעורים פרטיים</text>
                         </div>
-                        <div class = "attributeValue">
-                            <select class = "inputSelect"><br>
+                        <div class="attributeValue">
+                            <select class="inputSelect"><br>
                                 <option value="yes">כן</option>
                                 <option value="no">לא</option>
                             </select><br>
                         </div>
                     </div>
                     <div class="profileAttribute">
-                        <div class = "attributeName">
+                        <div class="attributeName">
                             <text>מחיר</text>
                         </div>
-                        <div class = "attributeValue">
+                        <div class="attributeValue">
                             <input type="text" id="price" class="inputText"><br>
                         </div>
                     </div>
                     <div class="profileAttribute">
-                        <div class = "attributeName">
+                        <div class="attributeName">
                             <text>פלאפון</text>
                         </div>
-                        <div class = "attributeValue">
+                        <div class="attributeValue">
                             <input type="text" id="phone" class="inputText"><br>
                         </div>
                     </div>
                     <div class="profileAttribute">
-                        <div class = "attributeName">
+                        <div class="attributeName">
                             <text>תמונת פרופיל</text>
                         </div>
-                        <div class = "attributeValue">
+                        <div class="attributeValue">
                             <input type="file" id="image" class="inputImage" accept="image/*">
                         </div>
                     </div>
                     <div class="buttonWrapper">
-                        <input type="submit" class="smallButton" value="שלח" ><br>
+                        <input type="submit" class="smallButton" value="שלח"><br>
                     </div>
                 </form>
-              </div>   
+            </div>
         </div>
         <div class="footer">
             <div class="footerLogo">
