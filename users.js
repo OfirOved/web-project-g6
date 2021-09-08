@@ -18,16 +18,13 @@ var classes = {
 }
 
 function set_active_classes() {
-    console.log('here');
     let active_yearly = document.getElementById('activeYearly');
-    let ul = document.createElement('ul');
-    active_yearly.appendChild(ul);
-    console.log('here2');
+    console.log(active_yearly);
     for (yearly in classes[logged_user]) {
         let li = document.createElement('li');
         let a = document.createElement('a');
         li.appendChild(a);
-        ul.appendChild(li);
+        active_yearly.appendChild(li);
         a.innerText = classes[logged_user][yearly];
     }
 }
