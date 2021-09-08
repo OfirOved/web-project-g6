@@ -35,7 +35,7 @@ function login() {
     window.localStorage.setItem('logged_user', username)
     window.localStorage.getItem('is_logged_in', true)
     set_user_name(username);
-    window.location.href = "grades.html";
+    window.location.href = "HomePage.html";
     // return true;
 }
 

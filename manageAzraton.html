@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="manageAzrtaon.css">
+    <title id="pageTitle">ניהול עזרתון</title>
+    <script src="manageAzraton.js"></script>
+</head>
+
+<body onload="setup_page('364.1.1291')">
+    <div class="grid-container">
+        <div class="header">
+            <div class="grid-container-header">
+                <div class="logo">
+                    <a href="HomePage.html"><img class="logoPic" src="mainLogo.png" alt="Logo"></a>
+                </div>
+                <div class="navi" dir="rtl">
+                    <ul class="naviTable" dir="rtl">
+                        <li><a class="activeClasses">שנתונים פעילים</a>
+                            <ul>
+                                <li><a>תש"ף 2020 תבנית א'</a></li>
+                                <li><a>תש"ף 2020 תבנית ב'</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="grades" href="#">גיליון ציונים</a></li>
+                        <li><a class="mentors" href="#">מאגר חונכים</a></li>
+                        <li><a class="marathons" href="#">מרתונים ועזרתונים</a>
+                            <ul>
+                                <li><a href="#">עזרתונים/מרתונים פעילים</a></li>
+                                <li><a href="#">פתיחת עזרתון/מרתון</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="Education">מפה</a></li>
+                    </ul>
+                </div>
+
+                <div class="pic">
+                    <div id="greeting">
+                        <a id="username"></a>
+                        <br>
+                        <button id="login_function" onclick="login_function()"></button>
+                    </div>
+                    <!-- <button style="width:100p></button> -->
+                    <div id="profile_pic_div">
+                        <img src="profilePic.png" id="profile_pic">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main" dir="rtl">
+            <div id="azraton_data">
+                <div id="course_name" class="data_attribute"></div>
+                <div id="course_num" class="data_attribute"></div>
+                <div id="payed" class="data_attribute"></div>
+                <div id="registered" class="data_attribute"></div>
+            </div>
+            <div class="buttons">
+                <button onclick="display_add_student()">הוספת סטודנט</button>
+                <!-- <button>הסרת סטודנט</button> -->
+                <button>שליחה לדיקנאט</button>
+                <button>שליחת תזכורת</button>
+                <button>נעילת עזרתון</button>
+                <button>ביטול עזרתון</button>
+            </div>
+            <div id="add_student">
+                <label>שם הסטודנט</label>
+                <input id="student_name">
+                <label>ת"ז</label>
+                <input id="student_id">
+                <button onclick="add_student_to_azraton()">+</button>
+            </div>
+            <div id="registered_container">
+                <br>
+                <h3>סטודנטים רשומים:</h3>
+                <table id="registered_students"></table>
+            </div>
+            <div id="waiting_list_container">
+                <br>
+                <h3>רשימת המתנה:</h3>
+                <table id="waiting_list_students"></table>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerLogo">
+                <img src="footerLogo.png" alt="Logo">
+            </div>
+            <div class="down">
+                <ul class="footerBar" dir="rtl">
+                    <li><a>לאתר האוניברסיטה</a></li>
+                    <li id="aguda"><a>לאתר האגודה הסטודנטיאלית</a></li>
+                    <li><a>צור קשר</a></li>
+                    <li><a>מי אנחנו?</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="users.js"></script>
+</body>
+
+</html>
