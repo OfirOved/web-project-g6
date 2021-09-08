@@ -4,94 +4,139 @@
     --orange:  #ffb004;
 }
 
-.grid-container-main{
+.attributesBorder {
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 3px solid black;
+    background-color: #fff2e6;
+}
+
+.attributeProfile {
     display: grid;
-    grid-template-areas: 
-    'top top top top top'
-    'name name name name name'
-    'data data data data data'
-    'rank rank rank rank rank'
-    'back back back back back';
-}
-
-.mainTop{
-    grid-area: top;
-    /* border: orange solid 2px;  */
-    padding-right: 200px;
-    padding-left: 80px;
-    display: grid;
-    grid-template-areas: 
-    'picture about about about about';
-}
-
-#picture{ /*this is the div*/
-    display: flex;
-    grid-area: picture;
-    /* border: greenyellow solid 2px; */
-    justify-content: center;
-}
-
-#mentorPic{/*this is the pic itself*/
-    border-radius: 50%;
-    border: solid 1px black;
-    width: 90px;
-    height: 90px;
-    background-color: var(--white);
-}
-
-#about{
-    border: black solid 2px;  
-    border-radius: 15px; 
+    grid-template-columns: 10% 15% auto 10%;
+    grid-template-areas: 'x attributeName attributeValue y';
     padding: 5px;
-    width: 70%;
-    grid-area: about;
-    background-color: var(--light);
+    width: 100%;
 }
 
-#name{
-    grid-area: name;
-    /* border: plum solid 2px;  */
-    width: 55%;
-    margin-right: 270px;
-    margin-top: 15px;
+.attribute {
+    display: grid;
+    grid-template-columns: 15% auto 5%;
+    grid-template-areas: 'attributeName attributeValue y';
+    padding: 5px;
+    width: 100%;
 }
 
-#data{
-    grid-area: data;
-    border: black solid 2px;
-    margin-right: 270px;
-    margin-top: 15px;
-    width: 55%;
-    line-height: 30px;
-    padding-right: 20px;
-    font-weight: bold;
-    background-color: var(--light);
-    border-radius: 10px; 
+.attributeName {
+    grid-area: attributeName;
+    padding: 5px;
+    width: 100%;
 }
 
-#rankMentor{
-    grid-area: rank;
-    border: black solid 2px;
-    margin-right: 270px;
-    margin-top: 30px;
-    width: 55%;
-    background-color: var(--light);
-    border-radius: 10px; 
+.attributeValueWithColor {
+    grid-area: attributeValue;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid black;
+    background-color: #fff2e6;
 }
 
-.backToSearch{
-    grid-area: back;
-    /* border: blue solid 2px; */
+.attributeValue {
+    grid-area: attributeValue;
+    padding: 5px;
+    width: 100%;
+}
+
+.attributeText {
+    text-align: right;
+}
+
+
+.mentorCoursesLi {
+    display: list-item;
+    list-style-type: disc;
+    text-align: right;
+}
+
+.mentorCoursesUl {
+    width: 100%;
+    list-style-position: inside;
+}
+
+.smallButton {
+    padding: 5px;
+    background-color: var(--orange);
+    color: black;
+    font-size: 16px;
+}
+
+.textInput {
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;  
+}
+
+.textareaInput {
+    padding: 5px;
+    font-size: 16px;
+    height: 100px;
+    width: 100%;  
+}
+
+.emptyStar {
+    color: lightgray;
+    font-size: 35px;
+}
+
+.fullStar {
+    color:  var(--orange);
+    font-size: 36px;
+}
+
+.review {
+    padding: 0px 10px 5px 10px;
+    display: grid;
+    grid-template-areas: 'reviewStar' 'reviewFrom' 'reviewDate' 'reviewContent';
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.reviewStar {
+    grid-area: reviewStar;
     text-align: left;
-    width: 55%;
-    margin-right: 270px;
-    margin-top: 30px;
+}
+
+.reviewFrom {
+    grid-area: reviewFrom;
+    text-align: right;
+}
+
+.reviewDate {
+    grid-area: reviewDate;
+    text-align: right;
+    color: grey;
+}
+
+.reviewContent {
+    grid-area: reviewContent;
+    text-align: right;
+    color:  var(--orange);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.bottomBar {
+    text-align: center;
 }
 
 #backTo{
-    width: 100px;
-    height: 35px;
+    padding: 5px;
     background-color: var(--orange);
-    color: white;
-    font-size: 14px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
 }

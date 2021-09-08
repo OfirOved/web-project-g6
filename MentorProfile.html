@@ -9,27 +9,30 @@
     <title id="pageTitle">פרופיל חונך</title>
 </head>
 
-<body onload="set_user_name('galy')">
+<body onload="set_user_name('galy'); init();">
     <div class="grid-container">
         <div class="header">
             <div class="grid-container-header">
                 <div class="logo">
-                    <a href="HomePage.html"><img class="logoPic" src="mainLogo.png" alt="Logo"></a>
+                    <img class="logoPic" src="mainLogo.png" alt="Logo">
                 </div>
                 <div class="navi" dir="rtl">
                     <ul class="naviTable" dir="rtl">
                         <li><a class="activeClasses">שנתונים פעילים</a>
-                            <ul id="activeYearly"></ul>
+                            <ul>
+                                <li><a>תש"ף 2020 תבנית א'</a></li>
+                                <li><a>תש"ף 2020 תבנית ב'</a></li>
+                            </ul>
                         </li>
-                        <li><a class="grades" href="grades.html">גיליון ציונים</a></li>
+                        <li><a class="grades" href="#">גיליון ציונים</a></li>
                         <li><a class="mentors" href="#">מאגר חונכים</a></li>
                         <li><a class="marathons" href="#">מרתונים ועזרתונים</a>
                             <ul>
-                                <li><a href="activeAzraton.html">עזרתונים/מרתונים פעילים</a></li>
-                                <li><a href="newMarathon.html">פתיחת עזרתון/מרתון</a></li>
+                                <li><a href="#">עזרתונים/מרתונים פעילים</a></li>
+                                <li><a href="#">פתיחת עזרתון/מרתון</a></li>
                             </ul>
                         </li>
-                        <li><a class="Education" href="map.html">מפה</a></li>
+                        <li><a class="Education">מפה</a></li>
                     </ul>
                 </div>
 
@@ -39,43 +42,104 @@
                         <br>
                         <button id="login_function" onclick="login_function()"></button>
                     </div>
+                    <!-- <button style="width:100p></button> -->
                     <div id="profile_pic_div">
                         <img src="profilePic.png" id="profile_pic">
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="main" dir="rtl">
-            <div class="grid-container-main">
-                <div class="mainTop">
-                    <div id="picture">
-                        <img src="profilePic.png" alt="profile pic" id="mentorPic">
+            <div>
+                <div class="mentor">
+                    <div class="attributeProfile">
+                        <div class="attributeName">
+                            <div id="mentorPic">
+                            </div>
+                            <div id="mentorName">
+                            </div>
+                        </div>
+                        <div class="attributeValueWithColor">
+                            <h3> קצת עלי... </h3>
+                            <div id="mentorAbout" >
+                            </div>
+                        </div>
                     </div>
-                    <div id="about">
-                        <h4>קצת עליי...</h4>
-                        <p>טקסט טקסט טקסט טקסט</p>
+                    <div class="attributesBorder">
+                        <div class="attribute">
+                            <div class="attributeName">
+                                <h3> קורסים </h3>
+                            </div>
+                            <div id="mentorCourses" class="attributeValue">
+                            </div>
+                        </div>
+                        <div class="attribute">
+                            <div class="attributeName">
+                                <h3> זמינות </h3>
+                            </div>
+                            <div id="mentorAvailability" class="attributeValue">
+                            </div>
+                        </div>
+                        <div class="attribute">
+                            <div class="attributeName">
+                                <h3> שיעורים פרטיים </h3>
+                            </div>
+                            <div id="mentorPrivateLessons" class="attributeValue">
+                            </div>
+                        </div>
+                        <div class="attribute">
+                            <div class="attributeName">
+                                <h3> מחיר לשעה </h3>
+                            </div>
+                            <div id="mentorPricePerHour" class="attributeValue">
+                            </div>
+                        </div>
+                        <div class="attribute">
+                            <div class="attributeName">
+                                <h3> טלפון </h3>
+                            </div>
+                            <div id="mentorPhone" class="attributeValue">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="name">
-                    <h2>ניר ברששת</h2>
-                </div>
-                <div id="data">
-                    <p>קורסים:</p>
-                    <p>זמינות: לא זמין כלל</p>
-                    <p>שיעורים פרטיים: כן</p>
-                    <p>מחיר: 80 שקל לשעה</p>
-                    <p>טלפון: 050-4302222</p>
-                </div>
-                <div id="rankMentor">
-                    <div id="starRank">
-                        <p>דירוג:</p>
+                <div id="addReview" class="attributesBorder">
+                    <h3 style="padding-right: 10px; padding-top: 10px;"> הוספת תגובה </h3>
+                    <div class="attribute">
+                        <div class="attributeName">
+                            <h3>שם הכותב</h3>
+                        </div>
+                        <div class="attributeValue">
+                            <input type="text" class="textInput" id="writer"/>
+                        </div>
                     </div>
-                    <div id="comment_div">
-                        <lable>תגובה:</lable> <br>
-                        <textarea id="comment" cols="30" rows="3"></textarea>
+                    <div class="attribute">
+                        <div class="attributeName">
+                            <h3>תוכן</h3>
+                        </div>
+                        <div class="attributeValue">
+                            <textarea id="comment" class="textareaInput"></textarea>
+                        </div>
+                    </div>
+                    <div class="attribute">
+                        <div class="attributeName">
+                            <h3>דירוג</h3>
+                        </div>
+                        <div id="stars"> </div>
+                    </div>
+                    <div style="text-align: left; padding: 15px;">
+                        <button type="button" class = "smallButton" onclick="onAddReview()">הוסף</button>
                     </div>
                 </div>
-                <div class="backToSearch">
+                <div class="attributesBorder">
+                    <div class="attributeName">
+                        <h2> תגובות </h2>
+                    </div>
+                    <div id="reviews">
+                    </div>
+                </div>                
+                <div class="bottomBar">
                     <button type="button" id="backTo">בחזרה לחיפוש</button>
                 </div>
             </div>
@@ -95,6 +159,8 @@
             </div>
         </div>
     </div>
+
+    <script src="MentorProfile.js"></script>
     <script src="users.js"></script>
 </body>
 
