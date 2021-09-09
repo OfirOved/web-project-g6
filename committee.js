@@ -58,3 +58,7 @@ function setup_page() {
     set_user_name();
     set_messages()
 }
+
+function sendMessage() {
+    alert("הודעה פורסמה בהצלחה!");
+}
