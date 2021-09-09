@@ -1,82 +1,90 @@
-﻿:root{
+﻿
+:root{
   --orange:  #ffb004;
 }
 
-#grid-container-main{
+.main{
+  /* border: 2px solid red; */
+  padding: 0;
+
+}
+
+.activeAzrathonContainer{
   display: grid;
-  grid-template-areas:
-  'title title title'
-  'search search search'
-  'table table table'
-  'button button button';
+  grid-template-areas: 'search' 'marathons' 'signUpBar';
+  overflow-y: auto;
+  /* border: 2px solid red; */
 }
 
 h1{
-  grid-area: title;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
-#searchMarathon {
+.search {
   grid-area: search;
-  /* border: solid 5px blue;  */
-  text-align: center;
-  vertical-align: middle;
+  width: 100%;
+  padding: 10px;
+}
+
+.searchOptions {
   display: flex;
+  align-items:center;
   justify-content: center;
-  padding-bottom: 20px;
 }
 
-#searching{
-  padding-top: 7px;
+.searchValue {
+  font-size: 18px;
 }
 
-#input_search{
-  /* border: solid 5px palevioletred;  */
-  height: 30px;
+.searchInput {
+  font-size: 18px;
   width: 250px;
-  font-size: 17px;
-  -moz-box-sizing: content-box; 
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+  line-height: 30px;
 }
 
-#searchIcon{
+.searchButton {
+  padding-top: 6px;
+}
+
+.searchIcon {
   height: 50px;
-  width: 115px;
-  /* border: solid 5px rgb(216, 188, 27);    */
-  vertical-align: top;
-  -moz-box-sizing: content-box; 
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
 }
 
-#marathons_table{/*this is the div that wraps the table*/
-  grid-area: table;
+.marathonsResults {
+  grid-area: marathons;
+  margin-top: 30px;
+  padding: 5px;
+  width: 100%;
+}
+
+.marathonsTable{
+  padding: 0px 25px 10px 25px;
+  width: 100%;
+}
+
+.marathonsHeader {
+  background-color: #ffb004;
+}
+
+.mmarathonRow:hover {
+  background-color: #fff2e6;
+}
+
+.marathonCol {
+  padding: 5px;
+  border-bottom: 3px solid #ddd;
+}
+
+.signUpBar {
+  grid-area: signUpBar;
   display: flex;
-  /* border: solid 5px blue;  */
   justify-content: center;
-  padding-bottom: 20px;
+  width: 100%;
 }
 
-#marathonsTable{
-  align-self: center;
-}
 
-#signUp{
-  grid-area: button;
-  text-align: center;
-}
 
-#sign{
-    margin: auto;
-    display: block;
-    width: 70px;
-    height: 35px;
-    background-color: var(--orange);
-    color: white;
-    font-size: 14px;
-}
 
 
 

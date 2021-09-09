@@ -6,11 +6,10 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="template.css">
     <link rel="stylesheet" href="activeAzraton.css">
-    <script src="activeAzraton.js"></script>
     <title id="pageTitle">עזרתונים ומרתונים פעילים</title>
 </head>
 
-<body onload="set_user_name('galy')">
+<body onload="set_user_name('galy'); init();">
     <div class="grid-container">
         <div class="header">
             <div class="grid-container-header">
@@ -49,11 +48,11 @@
 
         <div class="main" dir="rtl">
             <div class="activeAzrathonContainer">
-                <h1> עזרתונים ומרתונים פעילים</h1>
                 <div class="search">
+                    <h1>עזרתונים ומרתונים פעילים</h1>
                     <div class="searchOptions">
                         <div class="searchValue">
-                            <input id="input_search" type="text" placeholder="הכנס מספר קורס" dir="rtl">
+                            <input class="searchInput" id="input_search" type="text" placeholder="הכנס מספר קורס" dir="rtl">
                         </div>
                         <div class="searchButton">
                             <img class="searchIcon" src="searchButton.png" onclick="search()">
@@ -63,9 +62,9 @@
                 <div id="marathonsSection" class="marathonsResults">
                 </div>
 
-                <div class="searchBottomBar">
+                <div class="signUpBar">
                     <div class="signUp">
-                        <button id="sign">הרשמה</button>
+                        <button id="sign" onclick="sendRequestforReg()">הרשמה</button>
                     </div>
                 </div>
             </div>
