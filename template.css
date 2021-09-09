@@ -21,6 +21,11 @@ body {
     font-family: assistant;
 }
 
+.down a{
+    text-decoration: none;
+    color: var(--white);
+}
+
 .navi a {
     text-decoration: none;
     color: var(--orange);
