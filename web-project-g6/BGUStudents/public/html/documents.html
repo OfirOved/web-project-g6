@@ -53,7 +53,7 @@
             <div id="yearly" dir="rtl">
                 <h2>שיתוף סיכומים ומבחנים:</h2>
 
-                <form action method="post">
+                <form action="" onsubmit="uploadFile()">
 
                     <div class="form-group">
                         <label for="title">שם וכותרת הקובץ- <span>על מנת לקבל תוצאות מדויקות</span></label>
@@ -63,12 +63,11 @@
                         <label for="caption">תיאור הקובץ- <span>על מנת לקבל מידע נוסף על הקובץ</span></label>
                         <input type="text" name="caption" id="caption" class="form-controll" />
                     </div>
-                    <form action="/todo">
+                    <form action="">
                         <div class="attributeValue">
-                            <input type="file" id="image" class="inputImage" accept="image/*">
+                            <input type="file" id="image" class="inputImage">
                         </div>
-                        <!-- <input type="file\" id="myFile" name="filename"> -->
-                        <input type="submit">
+                        <input type="submit" id="send">
                     </form>
                     <br><br>
 
@@ -91,6 +90,7 @@
         </div>
     </div>
     <script src="../javascripts/users.js"></script>
+    <script src="../javascripts/documents.js"></script>
 </body>
 
 </html>

@@ -55,7 +55,7 @@ h2 {
 }
 
 .contactForm button {
-    width: 80px;
+    width: 90px;
     height: 35px;
     margin-inline: auto;
     background-color: var(--orange);
@@ -64,7 +64,15 @@ h2 {
 
 #yearly {
     margin-right: 200px;
-    /* border: solid 2px red; */
+}
+
+#send{
+    width: 80px;
+    height: 35px;
+    margin-inline: auto;
+    background-color: var(--orange);
+    color: white;
+    margin-top: 20px;
 }
 
 .otherButtons button {
