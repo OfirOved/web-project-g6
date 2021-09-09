@@ -1,6 +1,5 @@
-function set_yearly_data() {
-    console.log(current_year);
-    document.getElementById('year_title').innerHTML = current_year.value
+function sendQuestion(){
+    alert('פנייתך התקבלה!');
 }
 
 function setup_page() {
