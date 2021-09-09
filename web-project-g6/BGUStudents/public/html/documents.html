@@ -46,35 +46,33 @@
 
         <div class="main" dir="rtl">
             <h1>שנתון 2019- תבנית א'</h1> <br><br>
-                <div class="otherButtons" dir="ltr">
-                    <button type="button">לפורום שיעורי בית</button> <br><br>
-                    <button type="button" onclick="">סיכומים ומסמכים</button>
-                </div>
-                <div id="yearly" dir="rtl">   
+            <div class="otherButtons" dir="ltr">
+                <button type="button" onclick=" window.location.href = 'HWforum.html';">לפורום שיעורי בית</button> <br><br>
+                <button type="button" onclick=" window.location.href = 'YearlyPage.html';">לדף השנתון</button>
+            </div>
+            <div id="yearly" dir="rtl">
                 <h2>שיתוף סיכומים ומבחנים:</h2>
-               
-                <form action method="post">
-                   
-                    <div class="form-group">
-                      <label for="title">שם וכותרת הקובץ- <span>על מנת לקבל תוצאות מדויקות</span></label>
-                      <input type="text" name="title" id="title" class="form-controll"/>
-                    </div>
-                    <div class="form-group">
-                      <label for="caption">תיאור הקובץ- <span>על מנת לקבל מידע נוסף על הקובץ</span></label>
-                      <input type="text" name="caption" id="caption" class="form-controll"/>
-                    </div>
-                        <form action="/todo">
-                        <input type="file" id="myFile" name="filename">
-                        <input type="submit">
-                          </form>
-                             <br><br>
-                            <div class="listFiles">
-                                <textarea class="listFilesInput" style=" resize: none" readonly >The list is empty</textarea>
 
-                            </div>
-                      </div>                     
+                <form action method="post">
+
+                    <div class="form-group">
+                        <label for="title">שם וכותרת הקובץ- <span>על מנת לקבל תוצאות מדויקות</span></label>
+                        <input type="text" name="title" id="title" class="form-controll" />
                     </div>
-                  </form>
+                    <div class="form-group">
+                        <label for="caption">תיאור הקובץ- <span>על מנת לקבל מידע נוסף על הקובץ</span></label>
+                        <input type="text" name="caption" id="caption" class="form-controll" />
+                    </div>
+                    <form action="/todo">
+                        <div class="attributeValue">
+                            <input type="file" id="image" class="inputImage" accept="image/*">
+                        </div>
+                        <!-- <input type="file\" id="myFile" name="filename"> -->
+                        <input type="submit">
+                    </form>
+                    <br><br>
+
+                </form>
             </div>
         </div>
 
