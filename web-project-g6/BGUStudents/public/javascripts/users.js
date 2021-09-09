@@ -50,10 +50,11 @@ function set_user_name() {
         document.getElementById("username").innerText = `!היי, אורח`
         document.getElementById("login_function").innerText = `התחבר`
     }
-    set_active_classes()
+    // set_active_classes()
 }
 
 function login() {
+    console.log('here');
     let username = document.getElementById("login_username").value;
     if (!username in users_db) {
         alert('שם משתמש או סיסמה לא תקינים!')
@@ -68,7 +69,7 @@ function login() {
     window.localStorage.setItem('logged_user', username)
     window.localStorage.getItem('is_logged_in', true)
     set_user_name();
-    set_active_classes()
+    // set_active_classes()
     window.location.href = "HomePage.html";
     // return true;
 }
