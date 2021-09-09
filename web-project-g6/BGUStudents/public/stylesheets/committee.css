@@ -1,0 +1,31 @@
+:root{
+    --orange: #ffb004;
+}
+
+#page_container {
+    display: flex;
+}
+
+#student_msg {
+    width: 50%;
+    padding-inline: 10px;
+}
+
+#msg_container {
+    width: 50%;
+    padding-inline: 10px;
+}
+
+#msg_container h3,
+#student_msg h3 {
+    line-height: 60px;
+}
+
+#msg_container button {
+    width: 80px;
+    height: 35px;
+    margin-inline: auto;
+    background-color: var(--orange);
+    color: white;
+    float: left;
+}

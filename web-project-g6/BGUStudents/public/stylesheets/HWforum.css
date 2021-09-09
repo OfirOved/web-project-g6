@@ -1,0 +1,51 @@
+:root{
+    --orange: #ffb004;
+}
+
+.main{
+    padding: 0;
+}
+
+.HWforumContainer{
+    display: grid;
+    grid-template-areas: 'choose' 'forums';
+    overflow-y: auto;
+}
+
+h1{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+
+.search {
+    grid-area: choose;
+    width: 100%;
+    padding: 10px;
+}
+  
+.chooseCourse {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+#choosing{
+    padding-left: 12px;
+}
+
+#course{
+    font-size: 16px;
+    width: 250px;
+    line-height: 30px;
+}
+
+#presentButton{
+    width: 55px;
+    height: 35px;
+    margin-inline: auto;
+    background-color: var(--orange);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}

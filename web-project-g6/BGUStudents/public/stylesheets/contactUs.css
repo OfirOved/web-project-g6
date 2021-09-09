@@ -1,0 +1,50 @@
+﻿:root {
+    --grey: #ccc;
+    --orange: #ffb004;
+}
+
+h2 {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.contactForm {
+    margin-inline: auto;
+    text-align: right;
+    width: max-content;
+}
+
+.row_elem {
+    width: 100px;
+    height: 40px;
+    float: left;
+}
+
+.form_row {
+    display: flex;
+    margin-block: 10px;
+}
+
+.contactForm button {
+    width: 80px;
+    height: 35px;
+    margin-inline: auto;
+    background-color: var(--orange);
+    color: white;
+    float: left;
+}
+
+#content {
+    width: 400px;
+}
+
+input[type=text],
+textarea {
+    width: 30%;
+    padding: 5px;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}

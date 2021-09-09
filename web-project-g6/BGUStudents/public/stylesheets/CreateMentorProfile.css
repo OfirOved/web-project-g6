@@ -1,0 +1,152 @@
+﻿:root{
+  --grey: #ccc;
+  --orange: #ffb004;
+  --darker: #f86c04;
+  --white: #f2f2f2;
+  --light: #fff2e6;
+}
+
+h1{
+  padding-top: 5px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+.regForm {
+  border-radius: 5px;
+  background-color: var(--white);
+}
+
+.profileAttribute {
+  margin-bottom: 5px;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-areas: "xPrefix attributeName xSuffix" "yPrefix attributeValue ySuffix";
+  flex-direction: column;
+}
+
+.attributeName {
+  grid-area: attributeName;
+  text-align: right;
+  font-size: 18px;
+}
+
+.attributeValue {
+  grid-area: attributeValue; 
+}
+
+.inputText {
+  padding: 12px;  
+  border: 1px solid var(--grey);
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.inputSelect {
+  padding: 7px;
+  font-size: 18px;
+  border: 1px solid var(--grey);
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.courseInsertSection {
+  display: grid;
+  grid-template-columns: 15% 65% 25%;
+  grid-template-areas: "courseLabel courseInput courseButton";
+ 
+}
+
+.insertCouseLabel {
+  grid-area: courseLabel;
+  padding-top: 15px;
+  font-size: 18px;
+  
+}
+
+.insertCouseInput {
+  margin-right: 5px;
+  grid-area: courseInput;
+  font-size: 16px;
+  padding: 12px;  
+  border: 1px solid var(--grey);
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px;
+}
+
+.insertCouseButtonWrapper {
+  grid-area: courseButton;
+  padding-top: 15px;
+  padding-right: 5px;
+}
+
+.insertCouseButton {
+  font-size: 16px;
+  padding: 5px 10px 5px 10px;
+  background-color: var(--light);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.coursesViewUl {
+  padding-right: 5px;
+  width: 100%;
+  list-style-position: inside;
+}
+
+.coursesViewLi {
+  margin-top: 5px;
+  text-align: right;
+  display: list-item;
+  list-style-type: disc;
+}
+
+.courseRemoveButton {
+  margin-right: 5px;
+  font-size: 14px;
+  padding: 5px;
+  background-color: var(--light);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+
+.buttonWrapper {
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+}
+
+.smallButton {
+  padding: 5px;
+  font-size: 21px;
+  background-color: var(--orange);
+  border-radius: 10px;
+  color: white;
+}
+
+.inputImage {
+  padding: 10px 0px 10px 0px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.inputImage::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.inputImage::before {
+  content: "בחר תמונה";
+  padding: 5px 10px 5px 10px;
+  font-size: 16px;
+  background-color: var(--light);
+  border: 1px solid black;
+  border-radius: 5px;
+}

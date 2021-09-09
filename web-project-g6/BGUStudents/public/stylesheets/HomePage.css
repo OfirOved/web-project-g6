@@ -1,0 +1,96 @@
+:root{
+    --light: #fff2e6;
+    --grey: #ddd;
+    --orange: #ffb004;
+}
+
+.homePage-container{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 5% 55% 30% 10%;
+    grid-template-areas: "x messages todo y";
+    width: 100%;
+}
+
+.sectionTitle{
+    padding: 5px;
+    border-bottom: 2px solid black;    
+    width: 100%;
+}
+
+.myMessages{
+    grid-area: messages;
+    padding: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.messages{
+    display: block; 
+    margin-top: 20px;
+    width: 100%;
+}
+
+.message {
+    margin: 10px;
+    background-color: var(--grey);
+    border-bottom: 3px solid ;
+    border-radius: 25px 10px 10px 25px;
+}
+
+.msgTitle {
+    background-color: var(--orange);
+    padding-right: 5px;
+    text-align: right;
+    font-size: 21px;
+    border-radius: 25px 10px 0px 0px;
+}
+
+.from {
+    padding-right: 3px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 16px;
+    color: grey;
+}
+
+.msgContent {
+    padding-right: 3px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.date {
+    text-align: left;
+    font-size: 18px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+.toDo{
+    grid-area: todo;
+    padding: 10px 30px 10px 10px;
+    width: 100%;
+}
+
+.todoTable {
+    padding-top: 25px;
+    width: 100%;
+}
+
+.taskHeader, .dueDateHeader {
+    background-color: var(--orange);
+}
+
+.todoRow, .taskCol, .dueDateCol {
+    padding: 5px;
+    border-bottom: 3px solid var(--grey);
+}
+
+
+.smallButton {
+    padding: 5px;
+    font-size: 16px;
+    background-color: var(--light);
+    border-radius: 10px;
+}

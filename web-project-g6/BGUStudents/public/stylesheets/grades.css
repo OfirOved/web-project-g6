@@ -1,0 +1,84 @@
+:root {
+    --white: #ffffff;
+    --orange: #ff6600;
+    --shadow: rgba(114, 114, 114, 0.1);
+    --login: #535353;
+    --hi: #858585;
+    --mandarin: #ffb004;
+}
+
+#gradesheet td,
+#gradesheet th {
+    text-align: center;
+    font-size: 18px;
+}
+
+#gradesheet {
+    margin-inline: auto;
+    width: 50%;
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+
+#calc_gpa button {
+    margin: auto;
+    display: block;
+    width: 130px;
+    height: 35px;
+    background-color: var(--mandarin);
+    color: white;
+    font-size: 18px;
+}
+
+#gpa_diff {
+    width: max-content;
+    margin-inline: auto;
+    display: none;
+    font-size: 18px;
+}
+
+#gpa_diff p {
+    margin-block: 10px;
+}
+
+#add_course {
+    width: 60%;
+    margin: auto;
+}
+
+#add_course button {
+    width: 100px;
+    height: 35px;
+    font-size: 16px;
+    background-color: var(--mandarin);
+    color: white;
+}
+
+#course_inputs {
+    display: flex;
+    margin-top: 10px;
+    display: none;
+}
+
+#course_inputs button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.course_input {
+    margin-inline: 5px;
+}
+
+.course_input input {
+    width: 150px;
+    height: 25px;
+}
+
+#table_wrapper,
+#calc_gpa {
+    display: none;
+}
