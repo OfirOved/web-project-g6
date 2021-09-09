@@ -53,7 +53,7 @@ function initMarathons() {
 
     // build rows
     marathons.forEach(marathon => {
-        elements.push(buildCustomMentor(marathon));
+        elements.push(buildCustomMarathon(marathon));
     });
 
     // build table

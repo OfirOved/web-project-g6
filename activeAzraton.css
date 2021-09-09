@@ -83,6 +83,15 @@ h1{
   width: 100%;
 }
 
+#sign{
+  width: 80px;
+  height: 35px;
+  margin-inline: auto;
+  background-color: #ffb004;
+  color: white;
+  float: left;
+}
+
 
 
 
