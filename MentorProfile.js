@@ -80,9 +80,9 @@ function buildAvailability(availability) {
 }
 
 function buildPrivateLessons(teachingPrivateLessons) {
-    let text = "זמין";
+    let text = "כן";
     if(!teachingPrivateLessons) {
-        text = "לא זמין";
+        text = "לא";
     }
     let textChild = buildText(text);
     let child = buildChild("div", "attributeText", [textChild]);

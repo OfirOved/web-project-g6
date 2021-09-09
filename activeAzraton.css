@@ -1,6 +1,8 @@
 ﻿
 :root{
   --orange:  #ffb004;
+  --white: #fff2e6;
+  --grey: #ddd;
 }
 
 .main{
@@ -64,16 +66,16 @@ h1{
 }
 
 .marathonsHeader {
-  background-color: #ffb004;
+  background-color: var(--orange);
 }
 
 .mmarathonRow:hover {
-  background-color: #fff2e6;
+  background-color: var(--white);
 }
 
 .marathonCol {
   padding: 5px;
-  border-bottom: 3px solid #ddd;
+  border-bottom: 3px solid var(--grey);
 }
 
 .signUpBar {
@@ -87,7 +89,7 @@ h1{
   width: 80px;
   height: 35px;
   margin-inline: auto;
-  background-color: #ffb004;
+  background-color: var(--orange);
   color: white;
   float: left;
 }
