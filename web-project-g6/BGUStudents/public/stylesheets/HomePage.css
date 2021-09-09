@@ -33,7 +33,7 @@
 
 .message {
     margin: 10px;
-    background-color: var(--grey);
+    background-color: var(--light);
     border-bottom: 3px solid ;
     border-radius: 25px 10px 10px 25px;
 }

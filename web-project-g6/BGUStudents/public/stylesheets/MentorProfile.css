@@ -70,7 +70,7 @@
 .smallButton {
     padding: 5px;
     background-color: var(--orange);
-    color: black;
+    color: var(--white);
     font-size: 16px;
 }
 
@@ -136,7 +136,7 @@
 #backTo{
     padding: 5px;
     background-color: var(--orange);
-    color: black;
+    color: var(--white);
     font-size: 16px;
     font-weight: bold;
 }

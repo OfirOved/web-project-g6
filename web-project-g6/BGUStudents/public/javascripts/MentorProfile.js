@@ -5,7 +5,7 @@ var reviews = [
 
 var nirCourses = ["אלגברה לינארית", "פיזיקה"];
 var nirAbout = "היי אני ניר ברששת, החונך הכי טוב בדיקנט! 100 קל!!"
-var mentor = createMentor('ניר', 'ברששת', nirCourses, true, '050-333-4444', 'לא זמינ/ה בכלל', "profilePic.png", nirAbout, 100);
+var mentor = createMentor('ניר', 'ברששת', nirCourses, true, '050-333-4444', 'לא זמינ/ה בכלל', "../images/profilePic.png", nirAbout, 100);
 
 var stars = [ false, false, false, false, false];
 

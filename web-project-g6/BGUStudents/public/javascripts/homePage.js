@@ -87,8 +87,8 @@ function buildAddTodo() {
     let addCol = buildChild("td", null, [addButton]);
     let output = buildChild("tr", "todoRow", [taskCol, dueDatekCol, addCol]);
     addButton.onclick = () => {
-        let task = taskInput.innerHTML;
-        let date = dueDateInput.innerHTML;
+        let task = taskInput.value;
+        let date = dueDateInput.value;
         let todo = createTodo(task, date);
         let elemntToAdd = buildCustomeTodo(todo);
         output.parentNode.appendChild(elemntToAdd);
