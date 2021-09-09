@@ -8,8 +8,12 @@
 
 .HWforumContainer{
     display: grid;
-    grid-template-areas: 'choose' 'forums';
+    grid-template-areas: 'title' 'choose' 'forums';
     overflow-y: auto;
+}
+
+.headline{
+    grid-area: title;
 }
 
 h1{
@@ -17,27 +21,36 @@ h1{
     padding-bottom: 30px;
 }
 
-
-.search {
+.choose {
     grid-area: choose;
+    display: grid;
+    grid-template-areas: 'chooseCourse present';
     width: 100%;
     padding: 10px;
+    justify-content: center;
 }
   
 .chooseCourse {
+    grid-area: chooseCourse;
     display: flex;
-    align-items:center;
-    justify-content: center;
+    width: 100%;
 }
 
 #choosing{
     padding-left: 12px;
+    padding-top: 6px;
 }
 
 #course{
     font-size: 16px;
     width: 250px;
     line-height: 30px;
+    margin-left: 20px;
+}
+
+.present{
+    grid-area: present;
+
 }
 
 #presentButton{
@@ -48,4 +61,46 @@ h1{
     color: white;
     font-size: 18px;
     font-weight: bold;
+}
+
+#forum {
+    margin-inline: auto;
+    text-align: right;
+    width: max-content;
+    margin-bottom: 50px;
+}
+
+.row_elem {
+    width: 100px;
+    height: 40px;
+    float: left;
+}
+
+.form_row {
+    display: flex;
+    margin-block: 10px;
+}
+
+#forum button {
+    width: 80px;
+    height: 35px;
+    margin-inline: auto;
+    background-color: var(--orange);
+    color: white;
+    float: left;
+}
+
+#content {
+    width: 400px;
+}
+
+input[type=text],
+textarea {
+    width: 30%;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
 }

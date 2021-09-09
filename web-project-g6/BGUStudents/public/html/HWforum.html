@@ -6,10 +6,11 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../stylesheets/template.css">
     <link rel="stylesheet" href="../stylesheets/HWforum.css">
+    <script src="../javascripts/HWforum.js"></script>
     <title id="pageTitle">פורום שיעורי בית</title>
 </head>
 
-<body onload="set_user_name()">
+<body onload="set_user_name(); hide()">
     <div class="grid-container">
         <div class="header">
             <div class="grid-container-header">
@@ -46,8 +47,10 @@
 
         <div class="main" dir="rtl">
             <div class="HWforumContainer">
-                <div class="choose">
+                <div class="headline">
                     <h1>פורום שיעורי בית</h1>
+                </div>
+                <div class="choose">
                     <div class="chooseCourse">
                         <label id="choosing">בחירת קורס:</label>
                         <select id="course" name="course"><br>
@@ -56,8 +59,19 @@
                         </select><br>
                     </div>
                     <div class="present">
-                        <button id="presentButton">הצג</button>
+                        <button id="presentButton" onclick="show()">הצג</button>
                     </div>
+                </div>
+                <div id="forum">
+                    <form action="/todo">
+                        <div class="form_row">
+                            <div class="row_elem"><lable>נושא:</lable></div>
+                            <div class="row_elem"><input class="row_elem_input" style="width:250px;" type="text"></div><br>    
+                        </div>
+                        <lable>תוכן:</lable> <br>
+                        <textarea id="content" cols= "100" rows= "10"></textarea> <br>
+                        <button type="button"onclick="upload()">שלח</button>
+                    </form>
                 </div>
             </div>
         </div>
