@@ -1,9 +1,10 @@
 :root {
     --white: #ffffff;
-    --orange: #ff6600;
+    --darkOrange: #ff6600;
     --shadow: rgba(114, 114, 114, 0.1);
     --login: #535353;
     --hi: #858585;
+    --light: #fff2e6;
 }
 
 @font-face {
@@ -28,7 +29,7 @@ body {
 
 .navi a {
     text-decoration: none;
-    color: var(--orange);
+    color: var(--darkOrange);
 }
 
 ul a:hover {
@@ -44,7 +45,7 @@ li {
 }
 
 .navi li {
-    color: var(--orange);
+    color: var(--darkOrange);
 }
 
 .down li {
@@ -60,7 +61,7 @@ li {
     position: relative;
     display: none;
     text-decoration: none;
-    color: var(--orange);
+    color: var(--darkOrange);
 }
 
 .navi ul li ul {
@@ -68,13 +69,12 @@ li {
     z-index: 100;
     width: auto;
     text-decoration: none;
-    color: var(--orange);
+    color: var(--darkOrange);
 }
 
 ul li:hover ul li {
     display: block;
-    background-color: burlywood;
-    opacity: .9;
+    background-color: white;
     width: 150px;
 }
 
@@ -185,7 +185,7 @@ ul li:hover ul li {
 
 .naviTable {
     display: flex;
-    color: var(--orange);
+    color: var(--darkOrange);
     text-decoration: none;
 }
 
