@@ -275,3 +275,8 @@ function add_course_to_table() {
     add_table_record(course_num, tbody)
     alert("קורס נוסף בהצלחה!")
 }
+
+
+window.onload = function() {
+    setup_page()
+}
