@@ -1,0 +1,51 @@
+meta(name="viewport", content="width=device-width,initial-scale=1")
+meta(charset="utf-8")
+link(rel="stylesheet", href="../stylesheets/template.css")
+title#pageTitle Template
+.grid-container
+  .header
+    .grid-container-header
+      .logo
+        a(href="HomePage.html")
+          img.logoPic(src="../images/mainLogo.png", alt="Logo")
+      .navi(dir="rtl")
+        ul.naviTable(dir="rtl")
+          li
+            a.activeClasses(href="yearlyPage.html") שנתונים פעילים
+          li
+            a.grades(href="grades.html") גיליון ציונים
+          li
+            a.mentors(href="MentorsSearch.html") מאגר חונכים
+          li
+            a.marathons(href="#") מרתונים ועזרתונים
+            ul
+              li
+                a(href="activeAzraton.html") עזרתונים/מרתונים פעילים
+              li
+                a(href="newMarathon.html") פתיחת עזרתון/מרתון
+          li
+            a.Education(href="map.html") מפה
+      .pic
+        #greeting
+          a#username
+          br
+          button#login_function(onclick="login_function()")
+        #profile_pic_div
+          img#profile_pic(src="../images/profilePic.png")
+  .main(dir="rtl").
+    
+    
+  .footer
+    .footerLogo
+      img(src="../images/footerLogo.png", alt="Logo")
+    .down
+      ul.footerBar(dir="rtl")
+        li
+          a(href="https://in.bgu.ac.il/Pages/default.aspx", target="_blank") לאתר האוניברסיטה
+        li#aguda
+          a(href="https://bgu4u.co.il/", target="_blank") לאתר האגודה הסטודנטיאלית
+        li
+          a(href="contactUs.html") צור קשר
+        li
+          a(href="aboutUs.html") מי אנחנו?
+script(src="../javascripts/users.js")

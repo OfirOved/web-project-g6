@@ -1,0 +1,77 @@
+﻿meta(name="viewport", content="width=device-width,initial-scale=1")
+meta(charset="utf-8")
+link(rel="stylesheet", href="../stylesheets/template.css")
+link(rel="stylesheet", href="../stylesheets/contactUs.css")
+title#pageTitle צור קשר
+.grid-container
+  .header
+    .grid-container-header
+      .logo
+        a(href="HomePage.html")
+          img.logoPic(src="../images/mainLogo.png", alt="Logo")
+      .navi(dir="rtl")
+        ul.naviTable(dir="rtl")
+          li
+            a.activeClasses(href="yearlyPage.html") שנתונים פעילים
+          li
+            a.grades(href="grades.html") גיליון ציונים
+          li
+            a.mentors(href="MentorsSearch.html") מאגר חונכים
+          li
+            a.marathons(href="#") מרתונים ועזרתונים
+            ul
+              li
+                a(href="activeAzraton.html") עזרתונים/מרתונים פעילים
+              li
+                a(href="newMarathon.html") פתיחת עזרתון/מרתון
+          li
+            a.Education(href="map.html") מפה
+      .pic
+        #greeting
+          a#username
+          br
+          button#login_function(onclick="login_function()")
+        #profile_pic_div
+          img#profile_pic(src="../images/profilePic.png")
+  .main(dir="rtl")
+    #contact
+      h2 נשמח לשמוע מכם!
+      .contactForm
+        form(action="/todo")
+          .form_row
+            .row_elem
+              label שם:
+            .row_elem
+              input.row_elem_input(style="width:250px;", type="text")
+            br
+          .form_row
+            .row_elem
+              lable אימייל:
+            .row_elem
+              input.row_elem_input(style="width:250px;", type="text")
+            br
+          .form_row
+            .row_elem
+              lable נושא הפניה:
+            .row_elem
+              input.row_elem_input(style="width:250px;", type="text")
+            br
+          lable תוכן ההודעה:
+          br
+          textarea#content(cols="100", rows="10")
+          br
+          button(type="button") שלח
+  .footer
+    .footerLogo
+      img(src="../images/footerLogo.png", alt="Logo")
+    .down
+      ul.footerBar(dir="rtl")
+        li
+          a(href="https://in.bgu.ac.il/Pages/default.aspx", target="_blank") לאתר האוניברסיטה
+        li#aguda
+          a(href="https://bgu4u.co.il/", target="_blank") לאתר האגודה הסטודנטיאלית
+        li
+          a(href="contactUs.html") צור קשר
+        li
+          a(href="aboutUs.html") מי אנחנו?
+script(src="../javascripts/users.js")
