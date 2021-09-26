@@ -4,8 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const PORT = 3000;
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -32,7 +30,7 @@ app.get('/login', function(req, res, next) {
     res.render('LogIn');
 });
 
-app.get('/aboutus', function(req, res, next) {
+app.get('/about', function(req, res, next) {
     res.render('aboutUs');
 });
 

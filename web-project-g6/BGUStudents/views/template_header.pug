@@ -1,0 +1,29 @@
+.header
+  .grid-container-header
+    .logo
+      a(href="/")
+        img.logoPic(src="../images/mainLogo.png", alt="Logo")
+    .navi(dir="rtl")
+      ul.naviTable(dir="rtl")
+        li
+          a.activeClasses(href="/yearly") שנתונים פעילים
+        li
+          a.grades(href="/grades") גיליון ציונים
+        li
+          a.mentors(href="/mentors/search") מאגר חונכים
+        li
+          a.marathons(href="") מרתונים ועזרתונים
+          ul
+            li
+              a(href="/azraton/active") עזרתונים/מרתונים פעילים
+            li
+              a(href="/marathon/new") פתיחת עזרתון/מרתון
+        li
+          a.Education(href="/map") מפה
+    .pic
+      #greeting
+        a#username
+        br
+        button#login_function(onclick="login_function()")
+      #profile_pic_div
+        img#profile_pic(src="../images/profilePic.png")

@@ -33,7 +33,7 @@ function set_active_classes() {
         li.appendChild(a);
         active_yearly.appendChild(li);
         a.innerText = classes[logged_user][yearly];
-        a.href = 'yearlyPage.html'
+        a.href = '/yearly'
         a.setAttribute('id', yearly)
         let reference = document.getElementById(yearly)
         reference.onclick = change_yearly_value(classes[logged_user][yearly])
@@ -70,17 +70,23 @@ function login() {
     window.localStorage.getItem('is_logged_in', true)
     set_user_name();
     // set_active_classes()
-    window.location.href = "HomePage.html";
+    window.location.href = "/";
     // return true;
 }
 
 function login_function() {
+    console.log('log');
     if (is_logged_in) {
         is_logged_in = false;
         logged_user = undefined;
         window.localStorage.removeItem('logged_user')
         window.localStorage.removeItem('is_logged_in')
     }
-    window.location.href = "Login.html";
+    window.location.href = "/login";
     set_user_name(logged_user)
+}
+
+window.onload = function() {
+    set_user_name()
+    set_active_classes()
 }
