@@ -1,16 +1,9 @@
-var is_logged_in = window.localStorage.getItem('logged_user')
+var is_logged_in = window.localStorage.getItem('is_logged_in')
 var logged_user = window.localStorage.getItem('logged_user')
+var logged_user_full_name = window.localStorage.getItem('logged_user_full_name')
 var current_year = {
     value: null
 };
-var users = {
-    'galyaviv': "גלי אביב"
-}
-
-
-var users_db = {
-    'galyaviv': '1234'
-}
 
 var classes = {
     'galyaviv': {
@@ -20,13 +13,11 @@ var classes = {
 }
 
 function change_yearly_value(value) {
-    // console.log(value);
     current_year.value = value;
 }
 
 function set_active_classes() {
     let active_yearly = document.getElementById('activeYearly');
-    // console.log(active_yearly);
     for (yearly in classes[logged_user]) {
         let li = document.createElement('li');
         let a = document.createElement('a');
@@ -40,11 +31,9 @@ function set_active_classes() {
     }
 }
 
-
-
 function set_user_name() {
     if (is_logged_in) {
-        document.getElementById("username").innerText = `!היי, ${users[logged_user]}`
+        document.getElementById("username").innerText = `!היי, ${logged_user_full_name}`
         document.getElementById("login_function").innerText = `התנתק`
     } else {
         document.getElementById("username").innerText = `!היי, אורח`
@@ -54,24 +43,29 @@ function set_user_name() {
 }
 
 function login() {
-    console.log('here');
     let username = document.getElementById("login_username").value;
-    if (!username in users_db) {
-        alert('שם משתמש או סיסמה לא תקינים!')
-        return false;
-    }
     let password = document.getElementById("login_password").value;
-    if (users_db[username] != password) {
-        alert('שם משתמש או סיסמה לא תקינים!')
-        return false;
-    }
-    logged_user = username;
-    window.localStorage.setItem('logged_user', username)
-    window.localStorage.getItem('is_logged_in', true)
-    set_user_name();
-    // set_active_classes()
-    window.location.href = "/";
-    // return true;
+    let query = `query=SELECT * FROM Users WHERE username='${username}' and password='${password}'`
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/db/api', true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send(query)
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let result = this.responseText.substring(1, this.responseText.length - 1);
+            if (result.length == 0) {
+                alert('שם משתמש או סיסמה לא תקינים!')
+                return false;
+            }
+            let json_result = JSON.parse(result);
+            logged_user = username;
+            window.localStorage.setItem('logged_user', username)
+            window.localStorage.setItem('is_logged_in', true)
+            window.localStorage.setItem('logged_user_full_name', json_result.fullname)
+            set_user_name();
+            window.location.href = "/";
+        }
+    };
 }
 
 function login_function() {
@@ -86,7 +80,7 @@ function login_function() {
     set_user_name(logged_user)
 }
 
-window.onload = function() {
+document.body.onload = function() {
     set_user_name()
     set_active_classes()
 }

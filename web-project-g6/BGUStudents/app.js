@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const db_api = require('./DB/db.js');
+const { rejects } = require('assert');
+const { resolve } = require('path');
 const PORT = 3000;
 
 var app = express();
@@ -83,10 +86,24 @@ app.get('/yearly', function(req, res, next) {
     res.render('yearlyPage');
 });
 
+app.post('/db/api', function(req, res, next) {
+    db_api.query(`${req.body.query}`, function(err, result) {
+        if (result == undefined) {
+            res.status(400).send('Data not found');
+        } else {
+            res.status(200).send(result)
+        }
+    })
+
+
+});
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {

@@ -215,8 +215,6 @@ function calc_GPA() {
         notice.innerText = "אין שינוי בממוצע " + String.fromCodePoint(128517);
         gpa_change.innerText = ''
     }
-
-
 }
 
 
