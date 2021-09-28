@@ -8,19 +8,20 @@ title#pageTitle התחברות
   .main(dir="rtl")
     .imgcontainer
       img.avatar(src="../images/login_user.png")
-    .login_container
-      .form_row
-        .form_elem
-          label(for="uname")
-            b שם משתמש
-        .form_elem
-          input#login_username(type="text", placeholder="הכנס שם משתמש", required)
-      .form_row
-        .form_elem
-          label(for="psw")
-            b סיסמה
-        .form_elem
-          input#login_password(type="password", placeholder="הכנס סיסמה", required)
-      button(onclick="login()") התחבר
+    form(method="GET" action="/") 
+      .login_container
+        .form_row
+          .form_elem
+            label(for="uname")
+              b שם משתמש
+          .form_elem
+            input#login_username(type="text", placeholder="הכנס שם משתמש", required)
+        .form_row
+          .form_elem
+            label(for="psw")
+              b סיסמה
+          .form_elem
+            input#login_password(type="password", placeholder="הכנס סיסמה", required)
+        button(onclick="login()") התחבר
   include template_footer  
 script(src="../javascripts/users.js")

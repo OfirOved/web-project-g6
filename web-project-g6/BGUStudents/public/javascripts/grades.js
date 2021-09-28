@@ -1,73 +1,5 @@
-users_grades_original = {
-    'galyaviv': {
-        '364.1.1291': {
-            name: 'אמידה ומבחני השערות',
-            credit_points: 3.5,
-            grade: 85
-        },
-        '203.1.1391': {
-            name: 'פיסיקה 1ב',
-            credit_points: 3.5,
-            grade: 91
-        },
-        '201.1.9321': {
-            name: 'אלגברה לינארית',
-            credit_points: 4.5,
-            grade: 88
-        },
-        '364.1.1421': {
-            name: 'פיתוח תוכנה מונחה עצמים',
-            credit_points: 3.5,
-            grade: 83
-        },
-        '202.1.9031': {
-            name: 'מבוא לתכנות בJava',
-            credit_points: 4,
-            grade: 86
-        },
-        '364.1.1901': {
-            name: 'בסיסי נתונים',
-            credit_points: 3.5,
-            grade: 95
-        }
-    }
-}
-
-users_grades = {
-    'galyaviv': {
-        '364.1.1291': {
-            name: 'אמידה ומבחני השערות',
-            credit_points: 3.5,
-            grade: 85
-        },
-        '203.1.1391': {
-            name: 'פיסיקה 1ב',
-            credit_points: 3.5,
-            grade: 91
-        },
-        '201.1.9321': {
-            name: 'אלגברה לינארית',
-            credit_points: 4.5,
-            grade: 88
-        },
-        '364.1.1421': {
-            name: 'פיתוח תוכנה מונחה עצמים',
-            credit_points: 3.5,
-            grade: 83
-        },
-        '202.1.9031': {
-            name: 'מבוא לתכנות בJava',
-            credit_points: 4,
-            grade: 86
-        },
-        '364.1.1901': {
-            name: 'בסיסי נתונים',
-            credit_points: 3.5,
-            grade: 95
-        }
-    }
-}
-
+var users_grades = {};
+var users_grades_original = {};
 
 
 function calc_total_credit_points() {
@@ -224,7 +156,33 @@ function setup_page() {
         document.getElementById("table_wrapper").style.display = 'block'
         document.getElementById("calc_gpa").style.display = 'block'
     }
-    set_gradesheet_table()
+    let query = `query=SELECT * FROM Grades WHERE username='${logged_user}'`
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/db/api', true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send(query)
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let result = this.responseText;
+            // let courses = result.split(',')
+            let json_result = JSON.parse(result);
+            console.log(json_result);
+            let courses = {}
+            json_result.map((course) => {
+                courses[course.course_id] = {
+                    name: course.course_name,
+                    credit_points: course.credit,
+                    grade: course.grade
+                }
+            })
+            users_grades[logged_user] = courses;
+            users_grades_original[logged_user] = courses;
+            loaded_from_db = true;
+            console.log(users_grades, users_grades_original);
+            set_gradesheet_table()
+        }
+    };
+
 }
 
 
