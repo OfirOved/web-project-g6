@@ -4,7 +4,6 @@ function write_request_to_db(course_id, course_name, type, tutor, price) {
     xhr.open('POST', '/db/api', true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send(query)
-    console.log('sent query');
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200)
             alert("מרתון/עזרתון נפתח בהצלחה!");

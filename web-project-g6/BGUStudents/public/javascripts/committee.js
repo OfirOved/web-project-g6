@@ -30,18 +30,11 @@ function set_messages() {
         name_div.style.width = '50%';
         date_div.style.width = '50%';
         date.style.float = 'left';
-        // name_div.style.backgroundColor = 'blue'
-        // date_div.style.backgroundColor = 'blue'
-        // name.style.marginLeft = '40px';
         let content = document.createElement('p');
         content.innerText = msg.content;
         div.style.marginBlock = '30px'
         div.style.width = '70%'
         div.style.marginInline = 'auto'
-            // div.style.borderInlineColor = 'red'
-            // top_div.style.border = 'soild'
-            // top_div.style.borderWidth = '2px';
-            // top_div.style.borderColor = 'red'
         let student_msg_div = document.getElementById('student_msg')
         name_div.appendChild(name);
         date_div.appendChild(date)

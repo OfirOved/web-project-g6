@@ -1,4 +1,3 @@
-
 var mentors = [];
 var nirCourses = ["אלגברה לינארית", "פיזיקה"];
 mentors.push(createMentor('ניר', 'ברששת', nirCourses, true, '050-333-4444', 'לא זמינ/ה בכלל'));
@@ -42,11 +41,11 @@ function initMentors() {
     var elements = [];
     // build headers
     var firstNameHeader = buildHeader(OrderBy.firstName, "שם פרטי");
-    var lastNameHeader = buildHeader(OrderBy.lastName, "שם משפחה"); 
+    var lastNameHeader = buildHeader(OrderBy.lastName, "שם משפחה");
     var corusesHeader = buildHeader(OrderBy.courses, "קורסים");
     var privateLessonsHeader = buildHeader(OrderBy.privateLesssons, "שיעורים פרטיים");
-    var availabilityHeader = buildHeader(OrderBy.availability, "זמינות");   
-    var phnoeHeader =   buildHeader(OrderBy.phoneNumber, "טלפון");
+    var availabilityHeader = buildHeader(OrderBy.availability, "זמינות");
+    var phnoeHeader = buildHeader(OrderBy.phoneNumber, "טלפון");
     var headeres = buildChild("tr", "mentorsHeaders", [firstNameHeader, lastNameHeader, corusesHeader, privateLessonsHeader, availabilityHeader, phnoeHeader]);
     elements.push(headeres);
 
@@ -62,12 +61,11 @@ function initMentors() {
 
 function buildHeader(orderBy, headerText) {
     let element = null;
-    if(orderBy == selectedOrderBy) {
+    if (orderBy == selectedOrderBy) {
         let orderByTypeElement = buildOrderType(selectedOrderType);
         let textHeader = buildText(headerText);
-        element = buildChild("th", "mentorsHeader", [textHeader, orderByTypeElement]);   
-    }
-    else {
+        element = buildChild("th", "mentorsHeader", [textHeader, orderByTypeElement]);
+    } else {
         element = buildChildWithText("th", "mentorsHeader", headerText);
     }
     element.onclick = () => onChangeOrderBy(orderBy);
@@ -76,7 +74,7 @@ function buildHeader(orderBy, headerText) {
 
 function buildOrderType(orderType) {
     let text = '↑';
-    if(orderType == OrderType.ascending) {
+    if (orderType == OrderType.ascending) {
         text = '↓';
     }
     let child = buildText(text);
@@ -89,16 +87,16 @@ function buildCustomMentor(mentor) {
     var lastName = buildChildWithText("td", "mentorCol", mentor.lastName);
     var coruses = buildMentorCourses(mentor.courses);
     var privateLessons = buildMentorPrivateLeason(mentor.teachingPrivateLessons);
-    var availability = buildChildWithText("th", "mentorCol", mentor.availability);   
+    var availability = buildChildWithText("th", "mentorCol", mentor.availability);
     var phnoe = buildChildWithText("td", "mentorCol", mentor.phoneNumber);
     var row = buildChild("tr", "mentorRow", [firstName, lastName, coruses, privateLessons, availability, phnoe]);
-    row.onclick = ()=>openMentorProfile(mentor);
+    row.onclick = () => openMentorProfile(mentor);
     return row;
 }
 
 function buildMentorCourses(courses) {
     let elements = [];
-    courses.forEach( course => {
+    courses.forEach(course => {
         let element = buildChildWithText("li", "course", course);
         elements.push(element);
     });
@@ -107,8 +105,8 @@ function buildMentorCourses(courses) {
 }
 
 function buildMentorPrivateLeason(teachingPrivateLessons) {
-    let text = "לא"; 
-    if(teachingPrivateLessons) {
+    let text = "לא";
+    if (teachingPrivateLessons) {
         text = "כן";
     }
     return buildChildWithText("td", "mentorCol", text);
@@ -135,26 +133,25 @@ function buildText(text) {
 }
 
 function openMyMentorProfie() {
-    location.href = "CreateMentorProfile.html";
+    location.href = "/mentors/profile";
 }
 
 function editMyMentorProfile() {
-    let content = 'לא נמצא פרופיל קיים!'; 
+    let content = 'לא נמצא פרופיל קיים!';
     alert(content);
 }
 
 function openMentorProfile(mentor) {
-    window.location = "MentorProfile.html";
+    window.location = "/mentors/profile";
     console.log(mentor);
 }
 
 function onChangeOrderBy(orderBy) {
     console.log(orderBy);
-    if(orderBy != selectedOrderBy) {
+    if (orderBy != selectedOrderBy) {
         selectedOrderBy = orderBy;
-        selectedOrderType = OrderType.ascending;    
-    }
-    else {
+        selectedOrderType = OrderType.ascending;
+    } else {
         selectedOrderType = flipOrderType(selectedOrderType);
     }
     mentorsOrderBy(selectedOrderBy, selectedOrderType);
@@ -164,22 +161,35 @@ function onChangeOrderBy(orderBy) {
 }
 
 function flipOrderType(orderType) {
-    if(orderType == OrderType.descending) {
+    if (orderType == OrderType.descending) {
         return OrderType.ascending;
     }
     return OrderType.descending;
 }
 
 function mentorsOrderBy(orderBy, orderByType) {
-   switch(orderBy) {
-        case OrderBy.firstName: mentorsOrderByFirstName(orderByType); break;
-        case OrderBy.lastName: mentorsOrderByLastName(orderByType); break;
-        case OrderBy.courses: mentorsOrderByCourses(orderByType); break;
-        case OrderBy.privateLesssons: mentorsOrderByPrivateLessons(orderByType); break;
-        case OrderBy.phoneNumber: mentorsOrderByPhoneNummber(orderByType); break;
-        case OrderBy.availability: mentorsOrderByAvailability(orderByType); break;
-        default: break;
-   }
+    switch (orderBy) {
+        case OrderBy.firstName:
+            mentorsOrderByFirstName(orderByType);
+            break;
+        case OrderBy.lastName:
+            mentorsOrderByLastName(orderByType);
+            break;
+        case OrderBy.courses:
+            mentorsOrderByCourses(orderByType);
+            break;
+        case OrderBy.privateLesssons:
+            mentorsOrderByPrivateLessons(orderByType);
+            break;
+        case OrderBy.phoneNumber:
+            mentorsOrderByPhoneNummber(orderByType);
+            break;
+        case OrderBy.availability:
+            mentorsOrderByAvailability(orderByType);
+            break;
+        default:
+            break;
+    }
 }
 
 function mentorsOrderByFirstName(orderByType) {
@@ -220,9 +230,8 @@ function mentorsOrderByAvailability(orderByType) {
 }
 
 function getCompareFunc(comapareFunc, orderByType) {
-    if(orderByType == OrderType.descending) {
+    if (orderByType == OrderType.descending) {
         return (current, next) => -comapareFunc(current, next);
     }
     return comapareFunc;
 }
-
