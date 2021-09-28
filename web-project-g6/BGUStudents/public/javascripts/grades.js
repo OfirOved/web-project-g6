@@ -164,9 +164,7 @@ function setup_page() {
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let result = this.responseText;
-            // let courses = result.split(',')
             let json_result = JSON.parse(result);
-            console.log(json_result);
             let courses = {}
             json_result.map((course) => {
                 courses[course.course_id] = {
@@ -177,8 +175,6 @@ function setup_page() {
             })
             users_grades[logged_user] = courses;
             users_grades_original[logged_user] = courses;
-            loaded_from_db = true;
-            console.log(users_grades, users_grades_original);
             set_gradesheet_table()
         }
     };
