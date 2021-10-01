@@ -8,7 +8,7 @@ title#pageTitle פתיחת פרופיל חונך
   .main(dir="rtl")
     .regForm
       h1 פתיחת פרופיל חונכ/ת
-      form(action="#", onsubmit="sendRequestforOpenMentorProfile()")
+      form(action="#")
         .profileAttribute
           .attributeName
             text שם פרטי
@@ -44,7 +44,7 @@ title#pageTitle פתיחת פרופיל חונך
           .attributeName
             text זמינות
           .attributeValue
-            select.inputSelect
+            select#availability.inputSelect
               option(value="notAvailable") לא זמינ/ה כלל
               option(value="weekly") מפגש בשבוע
               option(value="twoWeek") מפגש בשבועיים
@@ -54,7 +54,7 @@ title#pageTitle פתיחת פרופיל חונך
           .attributeName
             text שיעורים פרטיים
           .attributeValue
-            select.inputSelect
+            select#teachingPrivateLessons.inputSelect
               option(value="yes") כן
               option(value="no") לא
             br
@@ -70,13 +70,8 @@ title#pageTitle פתיחת פרופיל חונך
           .attributeValue
             input#phone.inputText(type="text")
             br
-        .profileAttribute
-          .attributeName
-            text תמונת פרופיל
-          .attributeValue
-            input#image.inputImage(type="file", accept="image/*")
         .buttonWrapper
-          input.smallButton(type="submit", value="שלח")
+          input.smallButton(type="button", value="שלח", onclick="sendRequestforOpenMentorProfile()")
           br
   include template_footer
 script(src="../javascripts/users.js")

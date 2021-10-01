@@ -8,6 +8,8 @@ const { rejects } = require('assert');
 const { resolve } = require('path');
 const PORT = 3000;
 
+const mentorsCRUD = require("./CRUD functions/mentors");
+
 var app = express();
 
 // set port, listen for requests
@@ -69,14 +71,23 @@ app.get('/map', function(req, res, next) {
     res.render('map');
 });
 
+// ---------------------------- mentors ------------------------------------
+
+app.get('/mentors/create', function(req, res, next) {
+    res.render('CreateMentorProfile');
+});
+
+app.get('/mentors/profile', function(req, res, next) {
+    res.render('MentorProfile');
+});
+
 app.get('/mentors/search', function(req, res, next) {
     res.render('MentorsSearch');
 });
 
-app.get('/mentors/profile', function(req, res, next) {
-    res.render('mentorProfile');
-});
+app.post('/mentors', mentorsCRUD.createMentor);
 
+// ---------------------------- ? ------------------------------------
 
 app.get('/marathon/new', function(req, res, next) {
     res.render('newMarathon');
@@ -97,7 +108,6 @@ app.post('/db/api', function(req, res, next) {
 
 
 });
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
