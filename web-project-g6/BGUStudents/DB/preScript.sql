@@ -23,9 +23,9 @@ CREATE TABLE MentorsCourses(
 CREATE TABLE MentorsReviews(
     id INT AUTO_INCREMENT PRIMARY KEY,
     mentorPhoneNumber VARCHAR(10),
-    date DATETIME NOT NULL,
+    date VARCHAR(255) NOT NULL,
     stars INT NOT NULL,
-    reviewer VARCHAR(255) NOT NULL,
+    `from` VARCHAR(255) NOT NULL,
     content VARCHAR(255) NOT NULL
 );
 

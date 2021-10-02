@@ -22,10 +22,22 @@ export const buildSearchReq = function(firstName, courseName) {
     };
 }
 
+export const buildMentorReview = function(date, stars, from, content, mentorPhoneNumber) {
+    return {date: date, from: from, content: content, stars: stars, mentorPhoneNumber: mentorPhoneNumber};
+}
+
 export const sendCreateMentor = function(mentor, onSuccess = null, onFail = null) {
     POST('/mentors', mentor, onSuccess, onFail);
 }
 
 export const sendGetMentors = function(onSuccess, searchReq = null, onFail = null) {
     GET('/mentors', searchReq, onSuccess);
+}
+
+export const sendGetMentor = function(phoneNumber, onSuccess) {
+    GET(`/mentors/${phoneNumber}`, null, onSuccess);
+}
+
+export const sendCreateMentorReview = function(review, onSucces) {
+    POST('/mentors/reviews', review, onSucces);
 }

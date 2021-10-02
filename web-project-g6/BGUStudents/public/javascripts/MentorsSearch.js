@@ -159,7 +159,8 @@ function buildText(text) {
 }
 
 function openMyMentorProfie() {
-    location.href = "/mentors/profile";
+    editMyMentorProfile();
+    //location.href = "/mentors/profile";
 }
 
 function editMyMentorProfile() {
@@ -168,6 +169,7 @@ function editMyMentorProfile() {
 }
 
 function openMentorProfile(mentor) {
+    window.localStorage.mentorPhoneNumber = mentor.phoneNumber;
     window.location = "/mentors/profile";
     console.log(mentor);
 }

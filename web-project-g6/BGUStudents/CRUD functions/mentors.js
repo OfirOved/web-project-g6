@@ -7,8 +7,7 @@ const createMentor = function(req, res) {
         res.status(400).send({message: "error in creating mentor got undifend"});
     }
 
-    let insertMentor = 
-        `INSERT INTO Mentors (phoneNumber, firstName, lastName, about, availability, teachingPrivateLessons, pricePerHour) 
+    let insertMentor = `INSERT INTO Mentors (phoneNumber, firstName, lastName, about, availability, teachingPrivateLessons, pricePerHour) 
         VALUES ('${mentor.phoneNumber}', '${mentor.firstName}', '${mentor.lastName}', '${mentor.about}','${mentor.availability}', ${mentor.teachingPrivateLessons}, ${mentor.pricePerHour});`;
     
     sql.query(insertMentor, (err, sqlRes) => {
@@ -42,34 +41,27 @@ const createMentor = function(req, res) {
 }
 
 const getMentor = function(req, res) {
-    let mentorPhoneNumber = req.query.phoneNumber;
+    let mentorPhoneNumber = req.params.phoneNumber;
     if(req == null) {
         res.status(400).send({message: "invalid request for get mentor"});
     }
 
-    let getQuert = 
-    `SELECT * FROM Mentors 
-    JOIN MentorsCourses 
-    ON Mentors.PhoneNumber = MentorsCourses.MentorPhoneNumber
-    JOIN MentorsReviews
-    ON Mentors.PhoneNumber = MentorsReviews.PhoneNumber`;
-
-    sql.query(getQuert, (err, sqlRes) => {
-        if (err) {
-            console.log("error: ", err);
-            res.status(400).send({message: "error in creating mentor: " + err});
-        }
-        else {
-            console.log(sqlRes);
-            res.status(200).send();
-        }
-    });
+    helperGetMentor(res, mentorPhoneNumber, (mentors) => {
+        let mentor = mentors[0];
+        helperGetMentorCourses(res, mentorPhoneNumber, (courses)=> {
+            console.log(courses);
+            mentor.courses = courses.map(x => x.Course);
+            helperGetMentorReviews(res, mentorPhoneNumber, (reviews) => {
+                mentor.reviews = reviews;
+                res.status(200).send(mentor);
+            });
+        });
+    });     
 }
 
 const getMentors = function(req, res) {
     
     let searchReq = req.query;
-    console.log(searchReq);
 
     let getQuery = 
     `SELECT * FROM Mentors 
@@ -85,8 +77,6 @@ const getMentors = function(req, res) {
         }
     }
 
-    console.log(getQuery);
-
     sql.query(getQuery, (err, sqlRes) => {
         if (err) {
             console.log("error: ", err);
@@ -95,6 +85,22 @@ const getMentors = function(req, res) {
         else {
             let output = buildMentorsContract(sqlRes);
             res.status(200).send(output);
+        }
+    });
+}
+
+const createMentorReview = function(req, res) {
+    let request = req.body;
+    let insertMentor = `INSERT INTO MentorsReviews (mentorPhoneNumber, date, stars, \`from\`, content) 
+    VALUES ('${request.mentorPhoneNumber}', '${request.date}', ${request.stars}, '${request.from}', '${request.content}');`;
+
+    sql.query(insertMentor, (err, sqlRes) => {
+        if (err) {
+            console.log("error: ", err);
+            res.status(400).send({message: "error in creating mentor: " + err});
+        }
+        else {
+            res.status(200).send();
         }
     });
 }
@@ -121,7 +127,46 @@ function buildMentorsContract(sqlRes) {
     return output;
 }
 
+function helperGetMentor(res, mentorPhoneNumber, promise) {
+    let getQueryMentor = `SELECT * FROM Mentors WHERE phoneNumber LIKE '${mentorPhoneNumber}';`
+    sql.query(getQueryMentor, (err, sqlRes) => {
+        if (err) {
+            console.log("error: ", err);
+            res.status(400).send({message: "error in creating mentor: " + err});
+        }
+        else {
+            promise(sqlRes);
+        }
+    });
+}
 
-module.exports = {createMentor, getMentor, getMentors}
+function helperGetMentorCourses(res, mentorPhoneNumber, promise) {
+    let getQueryCourses = `SELECT Course FROM MentorsCourses WHERE mentorPhoneNumber LIKE '${mentorPhoneNumber}';`
+    sql.query(getQueryCourses, (err, sqlRes) => {
+        if (err) {
+            console.log("error: ", err);
+            res.status(400).send({message: "error in creating mentor: " + err});
+        }
+        else {
+            promise(sqlRes);
+        }
+    });
+}
+
+function helperGetMentorReviews(res, mentorPhoneNumber, promise) {
+    let getQueryReviews = `SELECT * FROM MentorsReviews WHERE mentorPhoneNumber LIKE '${mentorPhoneNumber}';`
+
+    sql.query(getQueryReviews, (err, sqlRes) => {
+        if (err) {
+            console.log("error: ", err);
+            res.status(400).send({message: "error in creating mentor: " + err});
+        }
+        else {
+            promise(sqlRes);
+        }
+    });
+}
+
+module.exports = {createMentor, getMentor, getMentors,  createMentorReview}
 
 

@@ -1,40 +1,31 @@
-var reviews = [
+import { buildMentorReview, sendGetMentor, sendCreateMentorReview } from '../connectionHandlers/mentorsHandler.js'
+
+window.onload = () => init();
+window.onAddReview = onAddReview;
+
+/*var reviews = [
     createReview("6.9.2021", [ true, true, true, true, true], "קובי", "החונך הכי טוב בדיקנאט"),
     createReview("8.9.2021", [ true, true, true, true, false], "קובי", "קיבלתי בזכותו 90"),
 ];
-
-var nirCourses = ["אלגברה לינארית", "פיזיקה"];
-var nirAbout = "היי אני ניר ברששת, החונך הכי טוב בדיקנט! 100 קל!!"
-var mentor = createMentor('ניר', 'ברששת', nirCourses, true, '050-333-4444', 'לא זמינ/ה בכלל', "../images/profilePic.png", nirAbout, 100);
+*/
 
 var stars = [ false, false, false, false, false];
-
-function createReview(date, stars, from, content) {
-    return {date: date, from: from, content: content, stars: stars};
-}
-
-function createMentor(firstName, lastName, courses, teachingPrivateLessons, phoneNumber, availability, picLink, about, pricePerHour) {
-    return {
-        firstName: firstName,
-        lastName: lastName,
-        courses: courses,
-        teachingPrivateLessons: teachingPrivateLessons,
-        phoneNumber: phoneNumber,
-        availability: availability,
-        picLink: picLink,
-        about: about,
-        pricePerHour: pricePerHour,
-    };
-}
+var maxStars = 5;
 
 function init() {
-    initMentor();
     initStars();
-    initReviews();
+
+    let onSuccess = (mentor) => {
+        console.log(mentor);
+        initMentor(mentor);
+        initReviews(mentor.reviews);   
+    }
+    let phoneNumber = window.localStorage.mentorPhoneNumber;
+    sendGetMentor(phoneNumber, onSuccess);
 }
 
-function initMentor() {
-    buildPic(mentor.picLink);
+function initMentor(mentor) {
+    buildPic("../images/profilePic.png");
     buildName(mentor.firstName, mentor.lastName);
     buildAbout(mentor.about);
     buildCourses(mentor.courses);
@@ -132,7 +123,7 @@ function buildStar(star, index, onclick = true) {
     return element;
 }
 
-function initReviews() {
+function initReviews(reviews) {
     let children = [];
 
     reviews.forEach(review => {
@@ -154,8 +145,12 @@ function buildReview(review) {
     return buildChild("div","review",[contentChild, fromChild, dateChild, starChild]);
 }
 
-function buildStarsForReview(stars) {
+function buildStarsForReview(starsNum) {
     let children = [];
+    let stars = new Array(maxStars).fill(false);
+    for(let i=0; i < maxStars && i < starsNum; i++) {
+        stars[i] = true;
+    }
     stars.forEach(star => {
         children.push(buildStar(star, 0, false));
     });
@@ -203,9 +198,17 @@ function toggleStar(index) {
 function onAddReview() {
     let writer = document.getElementById("writer").value
     let comment = document.getElementById("comment").value;
-    let copyStars = [...stars];
+    
+    let copyStars = stars.reduce((acc, cur) => cur ? acc + 1 : acc, 0);
     let date = new Date().toString();
-    reviews.push(createReview(date, copyStars, writer, comment));
+    let phoneNumber = window.localStorage.mentorPhoneNumber;
 
-    initReviews();
+    let review = buildMentorReview(date, copyStars, writer, comment, phoneNumber);
+    let onSucces = () => {
+        alert('ביקורת נוספה בהצלחה.')
+        init();
+    }
+
+    sendCreateMentorReview(review, onSucces);
+
 }

@@ -7,51 +7,35 @@ title#pageTitle פרופיל חונך
   include template_header
   .main(dir="rtl")
     div
-      .mentor
-        .attributeProfile
-          .attributeName
-            #mentorPic.
-              
-              
-            #mentorName.
-              
-              
-          .attributeValueWithColor
+      div.mentor
+        div.attributeProfile
+          div.attributeName
+            div#mentorPic.
+            div#mentorName.
+          div.attributeValueWithColor
             h3 קצת עלי...
-            #mentorAbout.
-              
-              
+            div#mentorAbout.
         .attributesBorder
           .attribute
             .attributeName
               h3 קורסים
-            #mentorCourses.attributeValue.
-              
-              
+            div#mentorCourses.attributeValue.
           .attribute
             .attributeName
               h3 זמינות
-            #mentorAvailability.attributeValue.
-              
-              
+            div#mentorAvailability.attributeValue.
           .attribute
             .attributeName
               h3 שיעורים פרטיים
-            #mentorPrivateLessons.attributeValue.
-              
-              
+            div#mentorPrivateLessons.attributeValue.
           .attribute
             .attributeName
               h3 מחיר לשעה
-            #mentorPricePerHour.attributeValue.
-              
-              
+            div#mentorPricePerHour.attributeValue.
           .attribute
             .attributeName
               h3 טלפון
-            #mentorPhone.attributeValue.
-              
-              
+            div#mentorPhone.attributeValue.
       #addReview.attributesBorder
         h3(style="padding-right: 10px; padding-top: 10px;") הוספת תגובה
         .attribute
@@ -80,4 +64,4 @@ title#pageTitle פרופיל חונך
         button#backTo(type="button", onclick="window.location.href = \'MentorsSearch.html\';") בחזרה לחיפוש
   include template_footer
 script(src="../javascripts/users.js")
-script(src="../javascripts/MentorProfile.js")
+script(type = "module" src="../javascripts/MentorProfile.js")
