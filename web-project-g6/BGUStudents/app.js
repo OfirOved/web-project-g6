@@ -86,6 +86,9 @@ app.get('/mentors/search', function(req, res, next) {
 });
 
 app.post('/mentors', mentorsCRUD.createMentor);
+app.get('/mentors', mentorsCRUD.getMentors);
+app.get('/mentors/:phoneNumber', mentorsCRUD.getMentor);
+
 
 // ---------------------------- ? ------------------------------------
 

@@ -1,8 +1,37 @@
+import {sendGetMentors, buildSearchReq} from '../connectionHandlers/mentorsHandler.js'
+
+window.onload = () => initMentorsPage();
+window.openMyMentorProfie = openMyMentorProfie;
+window.editMyMentorProfile = editMyMentorProfile;
+window.search = () => {
+    let searchRequest = null;
+    let onName = document.getElementById("name").checked;
+    let onCourseName = document.getElementById("course").checked;
+    let searchvalue = document.getElementById("searchInput").value;
+    console.log(onName);
+    console.log(searchvalue);
+    
+    if(onName && searchvalue.length > 0) {
+        searchRequest = buildSearchReq(searchvalue, null);
+    }
+    else if(onCourseName && searchvalue.length > 0) {
+        searchRequest = buildSearchReq(null, searchvalue);
+    }
+
+    console.log(searchRequest);
+
+
+    let onSuccess = (result) =>  {
+        initMentors(result);
+    };
+    sendGetMentors(onSuccess, searchRequest);
+
+    var mentorSection = document.getElementById("mentorsSection");
+    mentorSection.removeChild(mentorSection.lastChild);
+
+};
+
 var mentors = [];
-var nirCourses = ["אלגברה לינארית", "פיזיקה"];
-mentors.push(createMentor('ניר', 'ברששת', nirCourses, true, '050-333-4444', 'לא זמינ/ה בכלל'));
-var oriCourses = ['פיזיקה 1 ב']
-mentors.push(createMentor('אורי', 'אורי', oriCourses, false, '050-333-4444', 'מפגש בשבוע'));
 
 const OrderBy = {
     none: 0,
@@ -22,22 +51,15 @@ const OrderType = {
 var selectedOrderBy = OrderBy.firstName;
 var selectedOrderType = OrderType.ascending;
 
-function createMentor(firstName, lastName, courses, teachingPrivateLessons, phoneNumber, availability) {
-    return {
-        firstName: firstName,
-        lastName: lastName,
-        courses: courses,
-        teachingPrivateLessons: teachingPrivateLessons,
-        phoneNumber: phoneNumber,
-        availability: availability
+function initMentorsPage() {
+    let onSuccess = (result) =>  {
+        initMentors(result);
     };
+    sendGetMentors(onSuccess);
 }
 
-function init() {
-    initMentors();
-}
-
-function initMentors() {
+function initMentors(mentorsList) {
+    mentors = mentorsList;
     var elements = [];
     // build headers
     var firstNameHeader = buildHeader(OrderBy.firstName, "שם פרטי");
@@ -50,9 +72,11 @@ function initMentors() {
     elements.push(headeres);
 
     // build rows
-    mentors.forEach(mentor => {
-        elements.push(buildCustomMentor(mentor));
-    });
+    if(mentors !== undefined && mentors.length > 0) {
+        mentors.forEach(mentor => {
+            elements.push(buildCustomMentor(mentor));
+        });
+    }
 
     // build table
     let table = buildChild("table", "mentorsTable", elements);
@@ -96,10 +120,12 @@ function buildCustomMentor(mentor) {
 
 function buildMentorCourses(courses) {
     let elements = [];
-    courses.forEach(course => {
-        let element = buildChildWithText("li", "course", course);
-        elements.push(element);
-    });
+    if(courses !== undefined) {
+        courses.forEach(course => {
+            let element = buildChildWithText("li", "course", course);
+            elements.push(element);
+        });
+    }
     let lst = buildChild("ul", "courses", elements);
     return buildChild("td", "mentorCol", [lst]);
 }
@@ -157,7 +183,7 @@ function onChangeOrderBy(orderBy) {
     mentorsOrderBy(selectedOrderBy, selectedOrderType);
     var mentorSection = document.getElementById("mentorsSection");
     mentorSection.removeChild(mentorSection.lastChild);
-    initMentors();
+    initMentors(mentors);
 }
 
 function flipOrderType(orderType) {

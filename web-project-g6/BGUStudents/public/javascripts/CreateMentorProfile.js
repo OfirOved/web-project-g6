@@ -1,21 +1,10 @@
+import { buildMentor, sendCreateMentor} from '../connectionHandlers/mentorsHandler.js';
+
+// add global window functions
+window.sendRequestforOpenMentorProfile = sendRequestforOpenMentorProfile;
+window.onInsertCourse = onInsertCourse;
+
 var courses = {};
-
-function buildMentor(phone, firstName, lastName, about, courses, availability, teachingPrivateLessons, price) {
-    return { 
-        phoneNumber: phone, 
-        firstName: firstName,
-        lastName: lastName,
-        about: about,
-        courses: courses,
-        availability: availability,
-        teachingPrivateLessons: teachingPrivateLessons,
-        pricePerHour: price
-    };
-} 
-
-function sendCreateMentor(mentor, onSuccess = null, onFail = null) {
-    POST('/mentors', mentor, onSuccess, onFail);
-}
 
 function sendRequestforOpenMentorProfile() {
     let phone = document.getElementById("phone").value;
@@ -116,39 +105,4 @@ function buildText(text) {
 function deleteCourse(course) {
     delete courses[course];
     initCourses();
-}
-
-// Client Handler functions
-
-function buildHttpRequest() {
-    return httpRequest;
-}
-
-function GET(URL, obj, onSuccess = null, onFail = null) {
-    let body = JSON.stringify(obj);
-    let httpRequest = new XMLHttpRequest();
-    httpRequest.open('POST', URL, true);
-    httpRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    httpRequest.open('GET', URL, true);
-    httpRequest.send(body);
-    httpRequest.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200 && onSuccess != null) {
-            onSuccess();
-        }
-    };
-}
-
-function POST(URL, obj, onSuccess = null, onFail = null) {
-    let body = JSON.stringify(obj);
-    let httpRequest = new XMLHttpRequest();
-    httpRequest.open('POST', URL, true);
-    httpRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    httpRequest.send(body);
-    httpRequest.onreadystatechange = function() {
-        console.log(this.readyState);
-        console.log(this.status);
-        if (this.readyState == 4 && this.status == 200 && onSuccess != null) {
-            onSuccess();
-        }
-    };
 }

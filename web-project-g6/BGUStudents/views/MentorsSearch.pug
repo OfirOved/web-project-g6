@@ -11,7 +11,7 @@ title#pageTitle מאגר חונכים
         h1 מאגר חונכים
         .searchOptions
           .searchValue
-            input.searchInput(type="text", placeholder="הכנס שם קורס/חונך", dir="rtl")
+            input#searchInput.searchInput(type="text", placeholder="הכנס שם קורס/חונך", dir="rtl")
           .searchButton
             img.searchIcon(src="../images/searchButton.png", onclick="search()")
         .searchSortBy(dir="rtl")
@@ -31,4 +31,4 @@ title#pageTitle מאגר חונכים
           button.smallButton(onclick="editMyMentorProfile()") עריכת פרופיל קיים
   include template_footer
 script(src="../javascripts/users.js")
-script(src="../javascripts/MentorsSearch.js")
+script(type = "module" src="../javascripts/MentorsSearch.js")

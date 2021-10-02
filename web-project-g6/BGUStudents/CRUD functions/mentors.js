@@ -2,10 +2,13 @@ const sql = require('../DB/db.js');
 
 const createMentor = function(req, res) {
     let mentor = req.body;
-    console.log(mentor); 
-    
+
+    if(mentor === undefined) {
+        res.status(400).send({message: "error in creating mentor got undifend"});
+    }
+
     let insertMentor = 
-        `INSERT INTO Mentors (PhoneNumber, FirstName, LastName, About, Availability, TeachingPrivateLessons, PricePerHour) 
+        `INSERT INTO Mentors (phoneNumber, firstName, lastName, about, availability, teachingPrivateLessons, pricePerHour) 
         VALUES ('${mentor.phoneNumber}', '${mentor.firstName}', '${mentor.lastName}', '${mentor.about}','${mentor.availability}', ${mentor.teachingPrivateLessons}, ${mentor.pricePerHour});`;
     
     sql.query(insertMentor, (err, sqlRes) => {
@@ -18,37 +21,107 @@ const createMentor = function(req, res) {
         }
     });
 
-    let insertMentorCourses = "";
-    if(mentor.courses != null && mentor.courses.length != 0) {
-        insertMentorCourses = `INSERT INTO MentorsCourses (MentorPhoneNumber, Course) VALUES `;
+    if(mentor.courses != undefined && mentor.courses.length != 0) {
+        let insertMentorCourses = `INSERT INTO MentorsCourses (MentorPhoneNumber, Course) VALUES `;
         mentor.courses.forEach(course => {
             insertMentorCourses += `('${mentor.phoneNumber}', '${course}'), `    
         });
         insertMentorCourses = insertMentorCourses.slice(0, -2);
         insertMentorCourses += ";"
+    
+        sql.query(insertMentorCourses, (err, sqlRes) => {
+            if (err) {
+                console.log("error: ", err);
+                res.status(400).send({message: "error in creating mentor: " + err});
+            }
+            else {
+                res.status(200).send();
+            }
+        });
+    }
+}
+
+const getMentor = function(req, res) {
+    let mentorPhoneNumber = req.query.phoneNumber;
+    if(req == null) {
+        res.status(400).send({message: "invalid request for get mentor"});
     }
 
-    sql.query(insertMentorCourses, (err, sqlRes) => {
+    let getQuert = 
+    `SELECT * FROM Mentors 
+    JOIN MentorsCourses 
+    ON Mentors.PhoneNumber = MentorsCourses.MentorPhoneNumber
+    JOIN MentorsReviews
+    ON Mentors.PhoneNumber = MentorsReviews.PhoneNumber`;
+
+    sql.query(getQuert, (err, sqlRes) => {
         if (err) {
             console.log("error: ", err);
             res.status(400).send({message: "error in creating mentor: " + err});
         }
         else {
+            console.log(sqlRes);
             res.status(200).send();
         }
     });
-
 }
 
-function getMentor() {
+const getMentors = function(req, res) {
+    
+    let searchReq = req.query;
+    console.log(searchReq);
 
+    let getQuery = 
+    `SELECT * FROM Mentors 
+    LEFT JOIN MentorsCourses 
+    ON Mentors.PhoneNumber = MentorsCourses.MentorPhoneNumber`
+
+    if(searchReq != undefined) {
+        if(searchReq.firstName != null) {
+            getQuery += ` WHERE Mentors.FirstName = '${searchReq.firstName}';`;
+        }
+        else if(searchReq.courseName != null) {
+            getQuery += ` WHERE MentorsCourses.course = '${searchReq.courseName}';`;
+        }
+    }
+
+    console.log(getQuery);
+
+    sql.query(getQuery, (err, sqlRes) => {
+        if (err) {
+            console.log("error: ", err);
+            res.status(400).send({message: "error in creating mentor: " + err});
+        }
+        else {
+            let output = buildMentorsContract(sqlRes);
+            res.status(200).send(output);
+        }
+    });
 }
 
-function searchMentor() {
+function buildMentorsContract(sqlRes) {
+    let coursesPerMentor = {};
+    sqlRes.forEach(row => {
+        if(coursesPerMentor[row.phoneNumber] == undefined ) {
+            coursesPerMentor[row.phoneNumber] = [];
+        }
+        if(row.course != null) {
+            coursesPerMentor[row.phoneNumber].push(row.course);
+        }
+    });
 
+    let output = [];
+    sqlRes.forEach( row => {
+        if(!output.some(x => x.phoneNumber == row.phoneNumber)) {
+            row.courses = coursesPerMentor[row.phoneNumber];
+            delete row.course; 
+            output.push(row);
+        }
+    });
+    return output;
 }
 
-module.exports = {createMentor}
 
+module.exports = {createMentor, getMentor, getMentors}
 
 

@@ -6,27 +6,27 @@ CREATE DATABASE `web-project-g6`;
 USE `web-project-g6`;
 
 CREATE TABLE Mentors(
-    PhoneNumber VARCHAR(10) PRIMARY KEY,
-    FirstName VARCHAR(255) NOT NULL,
-    LastName VARCHAR(255) NOT NULL,
-    About VARCHAR(255), 
-    Availability VARCHAR(255) NOT NULL,
-    TeachingPrivateLessons BOOL NOT NULL,
-    PricePerHour INT
+    phoneNumber VARCHAR(10) PRIMARY KEY,
+    firstName VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
+    about VARCHAR(255), 
+    availability VARCHAR(255) NOT NULL,
+    teachingPrivateLessons BOOL NOT NULL,
+    pricePerHour INT
 );
 
 CREATE TABLE MentorsCourses(
-    MentorPhoneNumber VARCHAR(10),
-    Course VARCHAR(255)
+    mentorPhoneNumber VARCHAR(10),
+    course VARCHAR(255)
 );
 
 CREATE TABLE MentorsReviews(
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    MentorPhoneNumber VARCHAR(10),
-    Date DATETIME NOT NULL,
-    Stars INT NOT NULL,
-    Reviewer VARCHAR(255) NOT NULL,
-    Content VARCHAR(255) NOT NULL
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    mentorPhoneNumber VARCHAR(10),
+    date DATETIME NOT NULL,
+    stars INT NOT NULL,
+    reviewer VARCHAR(255) NOT NULL,
+    content VARCHAR(255) NOT NULL
 );
 
 
