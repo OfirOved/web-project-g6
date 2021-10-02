@@ -1,29 +1,38 @@
-var myMessages = [];
-myMessages.push(createMessage('6.9.2021', 'ועד שנתון 2019', 'פנייתך התקבלה', 'מס פנייה 20202013'));
-myMessages.push(createMessage('6.9.2021', 'ועד שנתון 2019', 'פקטור בקורס חקבץ מועד א', 'קיבלנו פקטור במועד א מן הרמצה בסך 5 נקודות'));
-myMessages.push(createMessage('6.9.2021', 'ועד שנתון 2019', 'הנחה לכרטיסים לפנגויה', 'הזינו קוד קופון 123456789 בשביל לקבל הנחה לאפנגויה'));
+import { createTodo, sendGetTodos, sendCreateTodo, sendDeleteTodo} from '../connectionHandlers/usersHandler.js';
+import { createMessage, sendGetCommiteMessages} from '../connectionHandlers/commiteHandler.js';
 
 var todos = [];
-todos.push(createTodo("עבודה להגשה פיזיקה" , "26.9.2021"));
-todos.push(createTodo("לקרוא פרק 2 בסטיסטיקה", "5.10.2021"));
+var myMessages = [];
+
+window.onload = () => initPage();
+var userName = 'ofir oved'; // window.localStorage.getItem('logged_user')
 
 var taskInput;
 var dueDateInput;
 
-function createMessage(date, from, title, msg) {
-    return {date: date, from: from, title: title, msg: msg};
+function initPage() {
+    let onSuccessTodos = (todosList) => {
+        getTodos(todosList);
+    };
+    sendGetTodos(userName, onSuccessTodos);
+
+    getMessages(myMessages);
+
+    let onSuccessMessages = (messages) => {
+        console.log(messages);
+        getMessages(messages);
+    };
+    sendGetCommiteMessages(userName, onSuccessMessages);
 }
 
-function createTodo(task, dueDate) {
-    return {id: todos.length, task: task, dueDate: dueDate};
-}
+function getMessages(messagesList) {
+    myMessages = messagesList;
 
-function init() {
-    getMessages();
-    getTodos();
-}
+    let el = document.getElementById("messagesSection");
+    while (el.lastChild) {
+        el.removeChild(el.lastChild);
+    }
 
-function getMessages() {
     var elements = [];
     myMessages.forEach(myMessage => {
         elements.push(buildCustomeMessage(myMessage));
@@ -34,7 +43,13 @@ function getMessages() {
     });
 }
 
-function getTodos() {
+function getTodos(todosList) {
+    todos = todosList;
+    let el = document.getElementById("todosSection");
+    while (el.lastChild) {
+        el.removeChild(el.lastChild);
+    }
+
     var elements = [];
     // build headers
     var taskHeader = buildChildWithText("th", "taskHeader", "משימה");
@@ -74,7 +89,16 @@ function buildCustomeTodo(todo) {
         done(task);
         done(date);
     };
-    deleteButton.onclick = () => remove(output);
+
+    let onSuccess = () => {
+        alert('המשימה נמחקה בהצלחה');
+        initPage();
+    }
+    //deleteButton.onclick = () => remove(output);
+    deleteButton.onclick = () => {
+        sendDeleteTodo(todo.id, onSuccess);
+    };
+    
     return output;
 }
 
@@ -89,9 +113,14 @@ function buildAddTodo() {
     addButton.onclick = () => {
         let task = taskInput.value;
         let date = dueDateInput.value;
-        let todo = createTodo(task, date);
-        let elemntToAdd = buildCustomeTodo(todo);
-        output.parentNode.appendChild(elemntToAdd);
+        let todo = createTodo(task, date, userName);
+
+        let onSuccess = () => {
+            alert('המשימה נוספה בהצלחה');
+            initPage();
+        }
+
+        sendCreateTodo(todo, onSuccess);
     };
     return output;
 }

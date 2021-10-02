@@ -15,7 +15,7 @@ export const POST = function (URL, obj, onSuccess = null, onFail = null) {
     };
 }
 
-export const GET =  async function (URL, obj = null, onSuccess = null, onFail = null) {
+export const GET =  function (URL, obj = null, onSuccess = null, onFail = null) {
     let httpRequest = new XMLHttpRequest();
     console.log(URL + buildQueryParams(obj));
     httpRequest.open('GET', URL + buildQueryParams(obj), true);
@@ -25,6 +25,20 @@ export const GET =  async function (URL, obj = null, onSuccess = null, onFail = 
         if (this.readyState == 4 && this.status == 200 && onSuccess != null) {
             console.log(httpRequest.responseText);
             onSuccess(JSON.parse(httpRequest.responseText));
+        }
+    };
+}
+
+export const DELETE = function (URL, obj = null, onSuccess = null, onFail = null) {
+    let body = JSON.stringify(obj);
+    let httpRequest = new XMLHttpRequest();
+    console.log(URL);
+    httpRequest.open('DELETE', URL + buildQueryParams(obj), true);
+    httpRequest.setRequestHeader("Content-Type", "application/application/json;charset=UTF-8");
+    httpRequest.send(body);
+    httpRequest.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200 && onSuccess != null) {
+            onSuccess();
         }
     };
 }

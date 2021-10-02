@@ -8,7 +8,9 @@ const { rejects } = require('assert');
 const { resolve } = require('path');
 const PORT = 3000;
 
+const userCRUD = require("./CRUD functions/users");
 const mentorsCRUD = require("./CRUD functions/mentors");
+const commiteCRUD = require("./CRUD functions/commitee");
 
 var app = express();
 
@@ -26,18 +28,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/', function(req, res, next) {
-    res.render('HomePage');
-});
-
-app.get('/login', function(req, res, next) {
-    res.render('LogIn');
-});
-
-app.get('/about', function(req, res, next) {
-    res.render('aboutUs');
-});
 
 app.get('/azraton/active', function(req, res, next) {
     res.render('activeAzraton');
@@ -71,7 +61,30 @@ app.get('/map', function(req, res, next) {
     res.render('map');
 });
 
-// ---------------------------- mentors ------------------------------------
+// ---------------------------- Home pages ------------------------------------
+
+app.get('/', function(req, res, next) {
+    res.render('HomePage');
+});
+
+app.get('/login', function(req, res, next) {
+    res.render('LogIn');
+});
+
+app.get('/about', function(req, res, next) {
+    res.render('aboutUs');
+});
+
+// ---------------------------- users API ------------------------------------
+
+app.get('/users/:username/todos', userCRUD.getUserTodos);
+app.post('/users/todos', userCRUD.createUserTodo);
+app.delete('/users/todos/:id', userCRUD.deleteUserTodo);
+// ---------------------------- commite API ------------------------------------
+
+app.get('/commite/messages/:username', commiteCRUD.getCommitteeMessages);
+
+// ---------------------------- mentors pages ------------------------------------
 
 app.get('/mentors/create', function(req, res, next) {
     res.render('CreateMentorProfile');
@@ -85,12 +98,14 @@ app.get('/mentors/search', function(req, res, next) {
     res.render('MentorsSearch');
 });
 
+// ---------------------------- mentors API ------------------------------------
+
 app.post('/mentors', mentorsCRUD.createMentor);
 app.get('/mentors', mentorsCRUD.getMentors);
 app.get('/mentors/:phoneNumber', mentorsCRUD.getMentor);
 app.post('/mentors/reviews', mentorsCRUD.createMentorReview);
 
-// ---------------------------- ? ------------------------------------
+// ----------------------------  ------------------------------------
 
 app.get('/marathon/new', function(req, res, next) {
     res.render('newMarathon');
