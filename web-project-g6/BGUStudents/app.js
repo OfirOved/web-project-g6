@@ -11,7 +11,7 @@ const PORT = 3000;
 const userCRUD = require("./CRUD functions/users");
 const mentorsCRUD = require("./CRUD functions/mentors");
 const commiteCRUD = require("./CRUD functions/commitee");
-
+const contactCRUD = require("./CRUD functions/contact")
 var app = express();
 
 // set port, listen for requests
@@ -41,9 +41,12 @@ app.get('/committee', function(req, res, next) {
     res.render('committee');
 });
 
+// ---------------------------- Contact page ------------------------------------
 app.get('/contact', function(req, res, next) {
     res.render('contactUs');
 });
+app.post('/contact', contactCRUD.sendMessage);
+
 
 app.get('/documents', function(req, res, next) {
     res.render('documents');
@@ -106,6 +109,7 @@ app.get('/mentors/:phoneNumber', mentorsCRUD.getMentor);
 app.post('/mentors/reviews', mentorsCRUD.createMentorReview);
 
 // ----------------------------  ------------------------------------
+
 
 app.get('/marathon/new', function(req, res, next) {
     res.render('newMarathon');

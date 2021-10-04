@@ -9,29 +9,31 @@ title#pageTitle צור קשר
     #contact
       h2 נשמח לשמוע מכם!
       .contactForm
-        form(action="/todo")
+        form(method="POST" action="/contact" target="dummyframe")
           .form_row
             .row_elem
               label שם:
             .row_elem
-              input.row_elem_input(style="width:250px;", type="text")
+              input#sender_name.row_elem_input(style="width:250px;", type="text" name="name")
             br
           .form_row
             .row_elem
               lable אימייל:
             .row_elem
-              input.row_elem_input(style="width:250px;", type="text")
+              input#sender_email.row_elem_input(style="width:250px;", type="text" name="email")
             br
           .form_row
             .row_elem
               lable נושא הפניה:
             .row_elem
-              input.row_elem_input(style="width:250px;", type="text")
+              input#msg_subject.row_elem_input(style="width:250px;", type="text" name="subject")
             br
           lable תוכן ההודעה:
           br
-          textarea#content(cols="100", rows="10")
+          textarea#content(cols="100", rows="10" name="message")
           br
-          button(type="button") שלח
+          button(type="submit" onclick="alert('הודעה נשלחה בהצלחה!')") שלח
+           iframe#dummyframe(name="dummyframe", style="display: none;")
   include template_footer
 script(src="../javascripts/users.js")
+script(src="../javascripts/contact.js") 
