@@ -1,7 +1,10 @@
+import {sendGetMarathons} from '../connectionHandlers/marathonsHandler.js';
 
 var marathons = [];
-marathons.push(createMarathon('201.1.1111', 'אלגברה לינארית', true, 'ניר ברששת', 1, 15, '12.09.21'));
-marathons.push(createMarathon('201.2.1331', 'חדו"א 2', false, 'אורי יחזקאל',6, 10, '30.09.21'));
+init();
+
+window.onload = ()=> init();
+window.sendRequestforReg = ()=>sendRequestforReg();
 
 const OrderBy = {
     none: 0,
@@ -22,23 +25,22 @@ const OrderType = {
 var selectedOrderBy = OrderBy.courseNum;
 var selectedOrderType = OrderType.ascending;
 
-function createMarathon(courseNum,  courseName, type, mentor, placesAvi, numOfReg, startDate) {
-    return {
-        courseNum: courseNum,
-        courseName: courseName,
-        type: type,
-        mentor: mentor,
-        placesAvi: placesAvi,
-        numOfReg: numOfReg,
-        startDate: startDate
-    };
-}
-
 function init() {
-    initMarathons();
+
+    let onSuccess = (marathons) => {
+        console.log(marathons);
+        initMarathons(marathons);
+    }
+    sendGetMarathons(onSuccess);
 }
 
-function initMarathons() {
+function initMarathons(marathonsList) {
+    marathons = marathonsList;
+    let elt = document.getElementById("marathonsSection");
+    while(elt.lastChild) {
+        elt.removeChild(elt.lastChild);
+    }
+
     var elements = [];
     // build headers
     var courseNumHeader = buildHeader(OrderBy.courseNum, "מספר קורס");

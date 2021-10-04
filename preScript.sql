@@ -89,15 +89,25 @@ CREATE TABLE Marathons(
 );
 
 CREATE TABLE Documents(
-    title VARCHAR(255),
-    caption VARCHAR(255),
-    file VARCHAR(255)
+    title VARCHAR(50),
+    caption VARCHAR(50),
+    `file` VARCHAR(50)    
+    );
+
+CREATE TABLE HWforum(
+    course VARCHAR(50),
+    title VARCHAR(50),
+    content VARCHAR(255)
 );
 
-CREATE TABLE HWForum(
-    course VARCHAR(255), 
-    title VARCHAR(255),
-    content VARCHAR(255)
+CREATE TABLE OurMarathons(
+    courseNum VARCHAR(255),
+    courseName VARCHAR(255),
+    `type` VARCHAR(255),
+    mentor VARCHAR(255),
+    placesAvi INT,
+    numOfReg INT,
+    startDate VARCHAR(255)
 );
 
 INSERT INTO Users (username, `password`) VALUES ('student1', '123456');
@@ -134,3 +144,5 @@ INSERT INTO MentorsCourses(mentorPhoneNumber, course) VALUES ('0503334444', 'ח�
 INSERT INTO Mentors(phoneNumber, firstName, lastName, about, availability, teachingPrivateLessons, pricePerHour) VALUES ('0503334444', 'ניר', 'תברשש', 'מתרגל פצץ', 'פנוי', true, 200);
 
 INSERT INTO ContactMessages (name, email, subject, message) VALUES ('נעימה', 'naimma@post.bgu.ac.il', 'יש אפליקציה?' ,'האתר לא עובד לי בפלאפון, האם יש כבר אפליקציה');
+
+INSERT INTO OurMarathons(courseNum, courseName, `type`, mentor, placesAvi, numOfReg, startDate) VALUES('372.3.202', 'חשבונאות', '2', 'Master itzik', 30, 10, '11.10.2021');

@@ -14,6 +14,7 @@ const commiteCRUD = require("./CRUD functions/commitee");
 const contactCRUD = require("./CRUD functions/contact");
 const documentsCRUD = require("./CRUD functions/documents");
 const hwforumCRUD = require("./CRUD functions/hwforum");
+const marathonsCRUD = require("./CRUD functions/marathon");
 
 var app = express();
 
@@ -116,12 +117,15 @@ app.get('/mentors', mentorsCRUD.getMentors);
 app.get('/mentors/:phoneNumber', mentorsCRUD.getMentor);
 app.post('/mentors/reviews', mentorsCRUD.createMentorReview);
 
-// ----------------------------  ------------------------------------
-
+// ---------------------------- Marathons  ------------------------------------
 
 app.get('/marathon/new', function(req, res, next) {
     res.render('newMarathon');
 });
+
+app.get('/marathons', marathonsCRUD.getMarathons);
+
+// ---------------------------- Rest  ------------------------------------
 
 app.get('/yearly', function(req, res, next) {
     res.render('yearlyPage');
