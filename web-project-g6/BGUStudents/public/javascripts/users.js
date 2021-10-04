@@ -80,14 +80,5 @@ function login_function() {
     set_user_name(logged_user)
 }
 
-document.body.onload = function() {
-    // console.log('HERE');
-    // let coursename = 'פיסיקה 1ב'
-    // let query = `query=INSERT INTO Grades VALUES ('galyaviv', '203.1.1391','${coursename}', 3.5, 91);`
-    // var xhr = new XMLHttpRequest();
-    // xhr.open('POST', '/db/api', true);
-    // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    // xhr.send(query)
-    set_user_name()
-    set_active_classes()
-}
+set_user_name()
+set_active_classes()

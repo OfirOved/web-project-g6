@@ -1,11 +1,10 @@
-import { createTodo, sendGetTodos, sendCreateTodo, sendDeleteTodo} from '../connectionHandlers/usersHandler.js';
-import { createMessage, sendGetCommiteMessages} from '../connectionHandlers/commiteHandler.js';
+import { createTodo, sendGetTodos, sendCreateTodo, sendDeleteTodo } from '../connectionHandlers/usersHandler.js';
+import { createMessage, sendGetCommiteMessages } from '../connectionHandlers/commiteHandler.js';
 
 var todos = [];
 var myMessages = [];
 
 window.onload = () => initPage();
-var userName = 'ofir oved'; // window.localStorage.getItem('logged_user')
 
 var taskInput;
 var dueDateInput;
@@ -14,7 +13,7 @@ function initPage() {
     let onSuccessTodos = (todosList) => {
         getTodos(todosList);
     };
-    sendGetTodos(userName, onSuccessTodos);
+    sendGetTodos(logged_user, onSuccessTodos);
 
     getMessages(myMessages);
 
@@ -22,7 +21,7 @@ function initPage() {
         console.log(messages);
         getMessages(messages);
     };
-    sendGetCommiteMessages(userName, onSuccessMessages);
+    sendGetCommiteMessages(logged_user, onSuccessMessages);
 }
 
 function getMessages(messagesList) {
@@ -59,7 +58,7 @@ function getTodos(todosList) {
 
     // add line to input
     elements.push(buildAddTodo());
-    
+
     // build rows
     todos.forEach(todo => {
         elements.push(buildCustomeTodo(todo));
@@ -91,14 +90,14 @@ function buildCustomeTodo(todo) {
     };
 
     let onSuccess = () => {
-        alert('המשימה נמחקה בהצלחה');
-        initPage();
-    }
-    //deleteButton.onclick = () => remove(output);
+            alert('המשימה נמחקה בהצלחה');
+            initPage();
+        }
+        //deleteButton.onclick = () => remove(output);
     deleteButton.onclick = () => {
         sendDeleteTodo(todo.id, onSuccess);
     };
-    
+
     return output;
 }
 
@@ -113,7 +112,7 @@ function buildAddTodo() {
     addButton.onclick = () => {
         let task = taskInput.value;
         let date = dueDateInput.value;
-        let todo = createTodo(task, date, userName);
+        let todo = createTodo(task, date, logged_user);
 
         let onSuccess = () => {
             alert('המשימה נוספה בהצלחה');
@@ -145,10 +144,9 @@ function remove(element) {
 }
 
 function done(element) {
-    if(element.style.textDecoration == "") {
+    if (element.style.textDecoration == "") {
         element.style.textDecoration = "line-through";
-    }
-    else {
+    } else {
         element.style.textDecoration = "";
     }
 }

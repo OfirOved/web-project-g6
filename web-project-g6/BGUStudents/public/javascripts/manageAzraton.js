@@ -1,7 +1,7 @@
 var azraton_course_num;
 var azraton_capacity = 20;
 
-azratons = {
+var azratons = {
     '364.1.1291': {
         course_name: 'אמידה ומבחני השערות',
         registered: 2,
@@ -10,14 +10,14 @@ azratons = {
 }
 
 
-registered_students = {
+var registered_students = {
     '364.1.1291': {
         313525966: 'גלי אביב',
         316308170: 'אריאל שילה'
     }
 }
 
-waiting_lists = {
+var waiting_lists = {
     '364.1.1291': {
         123456789: 'ישראל ישראלי',
     }
@@ -61,6 +61,7 @@ function add_student_to_azraton() {
         alert('תעודת זהות שהוכנסה אינה חוקית')
         return false;
     }
+    console.log(registered_students[azraton_course_num], waiting_lists[azraton_course_num]);
     if (id in registered_students[azraton_course_num] || id in waiting_lists[azraton_course_num]) {
         alert('סטודנט זה כבר רשום לעזרתון!')
         return false;
