@@ -146,3 +146,8 @@ INSERT INTO Mentors(phoneNumber, firstName, lastName, about, availability, teach
 INSERT INTO ContactMessages (name, email, subject, message) VALUES ('נעימה', 'naimma@post.bgu.ac.il', 'יש אפליקציה?' ,'האתר לא עובד לי בפלאפון, האם יש כבר אפליקציה');
 
 INSERT INTO OurMarathons(courseNum, courseName, `type`, mentor, placesAvi, numOfReg, startDate) VALUES('372.3.202', 'חשבונאות', '2', 'Master itzik', 30, 10, '11.10.2021');
+INSERT INTO OurMarathons(courseNum, courseName, `type`, mentor, placesAvi, numOfReg, startDate) VALUES('372.3.202', 'כלכלה', '1', 'Master splinter', 30, 21, '28.10.2021');
+
+INSERT INTO Documents(title, caption ,`file`) VALUES ('Math101', 'intro to math', 'Math101.pdf');
+
+INSERT INTO HWforum(course, title, content) VALUES('372.3.202', 'עזרה בשאלה 2', 'מישהו יודע למה הרכבת הגיע לםני המכונית?');
