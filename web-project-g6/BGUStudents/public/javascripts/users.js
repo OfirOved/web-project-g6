@@ -45,7 +45,7 @@ function set_user_name() {
 function login() {
     let username = document.getElementById("login_username").value;
     let password = document.getElementById("login_password").value;
-    let query = `query=SELECT * FROM Users WHERE username='${username}' and password='${password}'`
+    let query = `query=SELECT * FROM Users WHERE username='${username}' and password='${password}'`;
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/db/api', true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -61,7 +61,7 @@ function login() {
             logged_user = username;
             window.localStorage.setItem('logged_user', username)
             window.localStorage.setItem('is_logged_in', true)
-            window.localStorage.setItem('logged_user_full_name', json_result.fullname)
+            window.localStorage.setItem('logged_user_full_name', username)
             set_user_name();
             window.location.href = "/";
         }
@@ -80,5 +80,5 @@ function login_function() {
     set_user_name(logged_user)
 }
 
-set_user_name()
-set_active_classes()
+set_user_name();
+set_active_classes();

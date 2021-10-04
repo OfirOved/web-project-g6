@@ -1,9 +1,5 @@
 const sql = require('../DB/db.js');
 
-const createCommitteeMessage = function(req, res) {
-
-}
-
 const getCommitteeMessages = function(req, res) {
     let username = req.params.username;
     console.log(username);
@@ -30,5 +26,38 @@ const getCommitteeMessages = function(req, res) {
     });
 }
 
-module.exports = {createCommitteeMessage, getCommitteeMessages}
+const getRequestMessages = function(req, res) {
+    let getQuery = `SELECT name, date, content FROM RequestsMessages;`;
+
+    console.log(getQuery);
+
+    sql.query(getQuery, (err, sqlRes) => {
+        if (err) {
+            console.log("error: ", err);
+            res.status(400).send({message: "error in get requests: " + err});
+        }
+        else {
+            res.status(200).send(sqlRes);
+        }
+    });
+}
+
+const createCommitteMessage = function(req, res) {
+    let message = req.body;
+    console.log(message);
+    let getQuery = `INSERT INTO CommitteeMessages (\`year\`, \`group\`, date, \`from\`, title, message) 
+    VALUES (${message.year}, ${message.group}, '${message.date}', '${message.from}', '${message.title}', '${message.msg}');`;
+
+    sql.query(getQuery, (err, sqlRes) => {
+        if (err) {
+            console.log("error: ", err);
+            res.status(400).send({message: "error in create committe message: " + err});
+        }
+        else {
+            res.status(200).send();
+        }
+    });
+}
+
+module.exports = {getCommitteeMessages, getRequestMessages, createCommitteMessage}
 

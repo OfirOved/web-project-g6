@@ -57,7 +57,24 @@ CREATE TABLE MentorsReviews(
     content VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE ContactMessages(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    message VARCHAR(500) NOT NULL
+);
+
+CREATE TABLE RequestsMessages(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    date VARCHAR(255) NOT NULL,
+    content VARCHAR(255) NOT NULL
+);
+
 INSERT INTO Users (username, `password`) VALUES ('ofir oved', '123456');
 INSERT INTO UsersYears (username, `year`, `group`) VALUES ('ofir oved', 2021, 1);
 INSERT INTO CommitteeMessages (`year`, `group`, date, `from`, title, message) VALUES (2021, 1, '02.10.2021', 'ועד שנתון 2019', 'פקטור בקורס חקבץ מועד א', 'קיבלנו פקטור במועד א מן הרמצה בסך 5 נקודות');
 INSERT INTO Todos (username, task, dueDate) VALUES ('ofir oved', 'מעבדה ב react', '20.10.2021' );
+INSERT INTO RequestsMessages(name, date, content) VALUES ('קובי קובי', '20.10.2021', 'צריך לבקש הארכה למטלה מספר 1 בקורס חשבונאות');
+INSERT INTO RequestsMessages(name, date, content) VALUES ('יולנדה', '1.9.2021', 'לא קיבלתי את המתנה מהאגודה, האם ניתן לבקש שישלחו לי אותה הבייתה');

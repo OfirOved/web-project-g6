@@ -13,8 +13,9 @@ title#pageTitle ועד שנתון 2019
         h3 הודעות שהתקבלו:
       #msg_container
         h3 שליחת הודעה
-        textarea(rows="15", cols="80")
+        textarea#commiteMessage(rows="15", cols="80")
         br
         button(onclick="sendMessage()") שלח
   include template_footer
 script(src="../javascripts/users.js")
+script(type="module" src="../javascripts/committee.js")

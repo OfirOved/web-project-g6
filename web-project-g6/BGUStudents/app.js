@@ -85,7 +85,9 @@ app.post('/users/todos', userCRUD.createUserTodo);
 app.delete('/users/todos/:id', userCRUD.deleteUserTodo);
 // ---------------------------- commite API ------------------------------------
 
-app.get('/commite/messages/:username', commiteCRUD.getCommitteeMessages);
+app.get('/committee/messages/:username', commiteCRUD.getCommitteeMessages);
+app.get('/committee/requests', commiteCRUD.getRequestMessages);
+app.post('/committe/messages', commiteCRUD.createCommitteMessage);
 
 // ---------------------------- mentors pages ------------------------------------
 

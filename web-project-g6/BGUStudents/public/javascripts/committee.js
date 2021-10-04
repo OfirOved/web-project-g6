@@ -1,4 +1,7 @@
-students_msg = [{
+import {sendGetRequestMessagesFromUsers, createMessage, sendCreateCommiteeMessage} from '../connectionHandlers/commiteHandler.js';
+
+/*
+var students_msg = [{
     name: 'גלי אביב',
     date: '06/09/2021',
     content: 'האם יש חדש לגבי מועד נוסף בחקב"צ?'
@@ -7,8 +10,29 @@ students_msg = [{
     date: '07/09/2021',
     content: 'מתי הבחירות לנציגי הועד?'
 }, ]
+*/
 
-function set_messages() {
+var students_msg = [];
+
+window.onload = () => initPage();
+window.sendMessage = sendMessage;
+
+function initPage() {
+    let onSuccess = (messages) => {
+        set_messages(messages);
+    };
+
+    sendGetRequestMessagesFromUsers(onSuccess);
+}
+
+function set_messages(messages) {
+    students_msg = messages;
+
+    let element = document.getElementById('student_msg');
+    while(element.lastChild) {
+        element.removeChild(element.lastChild);
+    }
+
     for (let i = 0; i < students_msg.length; i++) {
         let msg = students_msg[i];
         let div = document.createElement('div');
@@ -35,7 +59,7 @@ function set_messages() {
         div.style.marginBlock = '30px'
         div.style.width = '70%'
         div.style.marginInline = 'auto'
-        let student_msg_div = document.getElementById('student_msg')
+        let student_msg_div = document.getElementById('student_msg');
         name_div.appendChild(name);
         date_div.appendChild(date)
         top_div.appendChild(name_div);
@@ -47,11 +71,15 @@ function set_messages() {
     }
 }
 
-function setup_page() {
-    set_user_name();
-    set_messages()
-}
-
 function sendMessage() {
-    alert("הודעה פורסמה בהצלחה!");
+    let onSuccess = () => {
+        alert("הודעה פורסמה בהצלחה!");
+    };
+
+    let text = document.getElementById('commiteMessage').value;
+
+    let date = new Date();
+    let message = createMessage(2021, 1, date.toString(), 'ועד תעשייה וניהול שנתון 2021 תבנית א', 'הודעה חשובה', text);
+    
+    sendCreateCommiteeMessage(message, onSuccess);
 }

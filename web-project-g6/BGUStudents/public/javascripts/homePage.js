@@ -1,10 +1,11 @@
 import { createTodo, sendGetTodos, sendCreateTodo, sendDeleteTodo } from '../connectionHandlers/usersHandler.js';
-import { createMessage, sendGetCommiteMessages } from '../connectionHandlers/commiteHandler.js';
+import { sendGetCommiteMessages } from '../connectionHandlers/commiteHandler.js';
 
 var todos = [];
 var myMessages = [];
 
 window.onload = () => initPage();
+var userName = window.localStorage.getItem('logged_user');
 
 var taskInput;
 var dueDateInput;
@@ -13,7 +14,7 @@ function initPage() {
     let onSuccessTodos = (todosList) => {
         getTodos(todosList);
     };
-    sendGetTodos(logged_user, onSuccessTodos);
+    sendGetTodos(userName, onSuccessTodos);
 
     getMessages(myMessages);
 
@@ -21,7 +22,7 @@ function initPage() {
         console.log(messages);
         getMessages(messages);
     };
-    sendGetCommiteMessages(logged_user, onSuccessMessages);
+    sendGetCommiteMessages(userName, onSuccessMessages);
 }
 
 function getMessages(messagesList) {
@@ -112,7 +113,7 @@ function buildAddTodo() {
     addButton.onclick = () => {
         let task = taskInput.value;
         let date = dueDateInput.value;
-        let todo = createTodo(task, date, logged_user);
+        let todo = createTodo(task, date, userName);
 
         let onSuccess = () => {
             alert('המשימה נוספה בהצלחה');
