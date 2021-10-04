@@ -159,13 +159,11 @@ function buildText(text) {
 }
 
 function openMyMentorProfie() {
-    editMyMentorProfile();
-    //location.href = "/mentors/profile";
+    location.href = "/mentors/create";
 }
 
 function editMyMentorProfile() {
-    let content = 'לא נמצא פרופיל קיים!';
-    alert(content);
+    alert('לא נמצא פרופיל קיים!')
 }
 
 function openMentorProfile(mentor) {
