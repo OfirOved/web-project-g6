@@ -11,26 +11,27 @@ title#pageTitle פורום שיעורי בית
       .headline
         h1 פורום שיעורי בית
       .choose
-        .chooseCourse
-          label#choosing בחירת קורס:
-          select#course(name="course")
-            option(value="linear") אלגברה לינארית להנדסה
-            option(value="physics") פיסיקה 1ב
-          br
-        .present
-          button#presentButton(onclick="show()") הצג
-      #forum
-        form(action="/todo")
-          .form_row
-            .row_elem
-              lable נושא:
-            .row_elem
-              input.row_elem_input(style="width:250px;", type="text")
+        form(method="POST" action="/hwforum" onsubmit="upload()" target="dummyframe")
+          .chooseCourse
+            label#choosing בחירת קורס:
+            select#course(name="course")
+              option(value="linear") אלגברה לינארית להנדסה
+              option(value="physics") פיסיקה 1ב
             br
-          lable תוכן:
-          br
-          textarea#content(cols="100", rows="10")
-          br
-          button(type="button", onclick="upload()") שלח
+            .present
+            button#presentButton(onclick="show()") הצג
+          #forum
+            .form_row
+              .row_elem
+                lable נושא:
+              .row_elem
+                input.row_elem_input(style="width:250px;", type="text" name="title")
+              br
+            lable תוכן:
+            br
+            textarea#content(cols="100", rows="10" name="content")
+            br
+            button(type="submit") שלח
+        iframe#dummyframe(name="dummyframe", style="display: none;")
   include template_footer
 script(src="../javascripts/users.js")

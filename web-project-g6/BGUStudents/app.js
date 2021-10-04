@@ -11,7 +11,10 @@ const PORT = 3000;
 const userCRUD = require("./CRUD functions/users");
 const mentorsCRUD = require("./CRUD functions/mentors");
 const commiteCRUD = require("./CRUD functions/commitee");
-const contactCRUD = require("./CRUD functions/contact")
+const contactCRUD = require("./CRUD functions/contact");
+const documentsCRUD = require("./CRUD functions/documents");
+const hwforumCRUD = require("./CRUD functions/hwforum");
+
 var app = express();
 
 // set port, listen for requests
@@ -63,6 +66,9 @@ app.get('/hwforum', function(req, res, next) {
 app.get('/map', function(req, res, next) {
     res.render('map');
 });
+
+app.post('/documents', documentsCRUD.uploadFile);
+app.post('/hwforum', hwforumCRUD.uploadMessage);
 
 // ---------------------------- Home pages ------------------------------------
 

@@ -10,13 +10,13 @@ title#pageTitle שיתוף מסמכים
     br
     br
     .otherButtons(dir="ltr")
-      button(type="button", onclick="window.location.href = \'HWforum.html\';") לפורום שיעורי בית
+      button(type="button", onclick="window.location.href = '/hwforum';") לפורום שיעורי בית
       br
       br
-      button(type="button", onclick="window.location.href = \'YearlyPage.html\';") לדף השנתון
+      button(type="button", onclick="window.location.href = '/yearly'") לדף השנתון
     #yearly(dir="rtl")
       h2 שיתוף סיכומים ומבחנים:
-      form(action, onsubmit="uploadFile()")
+      form(method = "POST", action = "/documents" onsubmit="uploadFile()")
         .form-group
           label(for="title")
             | שם וכותרת הקובץ- 
@@ -28,7 +28,7 @@ title#pageTitle שיתוף מסמכים
             span על מנת לקבל מידע נוסף על הקובץ
           input#caption.form-controll(type="text", name="caption")
         .attributeValue
-          input#image.inputImage(type="file")
+          input#image.inputImage(type="file" name="file")
         input#send(type="submit")
       br
       br

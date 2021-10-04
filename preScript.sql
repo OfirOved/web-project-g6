@@ -88,6 +88,18 @@ CREATE TABLE Marathons(
     price DOUBLE
 );
 
+CREATE TABLE Documents(
+    title VARCHAR(255),
+    caption VARCHAR(255),
+    file VARCHAR(255)
+);
+
+CREATE TABLE HWForum(
+    course VARCHAR(255), 
+    title VARCHAR(255),
+    content VARCHAR(255)
+);
+
 INSERT INTO Users (username, `password`) VALUES ('student1', '123456');
 INSERT INTO Users (username, `password`) VALUES ('student2', '123456');
 
@@ -121,4 +133,4 @@ INSERT INTO MentorsCourses(mentorPhoneNumber, course) VALUES ('0503334444', 'ח�
 
 INSERT INTO Mentors(phoneNumber, firstName, lastName, about, availability, teachingPrivateLessons, pricePerHour) VALUES ('0503334444', 'ניר', 'תברשש', 'מתרגל פצץ', 'פנוי', true, 200);
 
-INSERT INTO ContactMessages (name, email, subject, message) VALUES ('נעימה', 'naimma@post.bgu.ac.il', 'יש אפליקציה?' ,'האתר לא עובד לי בפלאפון, האם יש כבר אפליקציה')
+INSERT INTO ContactMessages (name, email, subject, message) VALUES ('נעימה', 'naimma@post.bgu.ac.il', 'יש אפליקציה?' ,'האתר לא עובד לי בפלאפון, האם יש כבר אפליקציה');
